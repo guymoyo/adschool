@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_ConsigneEleves" items="${consigneeleveses}" z="rw2xKcbCQFWNRkxl3oBT7qjK+xg=">
+        <table:table data="${consigneeleveses}" id="l_adschool_domain_ConsigneEleves" path="/consigneeleveses" z="2SfAlf2BvoOy4NJyYslZR6FL/Es=">
+            <table:column id="c_adschool_domain_ConsigneEleves_consigneKey" property="consigneKey" z="Q34J4i8yLu3UY16iIQdDnmLmAyc="/>
+            <table:column id="c_adschool_domain_ConsigneEleves_evaluation" property="evaluation" z="W3c2M3bpdUBCHAyqGcpmZXk9uho="/>
+            <table:column id="c_adschool_domain_ConsigneEleves_inscriptionEleve" property="inscriptionEleve" z="LzGzh5488kis6YWUR3m2hCAoYVY="/>
+            <table:column date="true" dateTimePattern="${consigneEleves_dateconsigne_date_format}" id="c_adschool_domain_ConsigneEleves_dateConsigne" property="dateConsigne" z="j6qojEjUlNl7FfgBu4sZcYXA890="/>
+        </table:table>
+    </page:list>
+</div>

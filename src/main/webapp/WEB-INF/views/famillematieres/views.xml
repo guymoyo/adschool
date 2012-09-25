@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="famillematieres/list">
+        <put-attribute name="body" value="/WEB-INF/views/famillematieres/list.jspx"/>
+    </definition>
+<definition extends="default" name="famillematieres/show">
+        <put-attribute name="body" value="/WEB-INF/views/famillematieres/show.jspx"/>
+    </definition>
+<definition extends="default" name="famillematieres/create">
+        <put-attribute name="body" value="/WEB-INF/views/famillematieres/create.jspx"/>
+    </definition>
+<definition extends="default" name="famillematieres/update">
+        <put-attribute name="body" value="/WEB-INF/views/famillematieres/update.jspx"/>
+    </definition>
+</tiles-definitions>

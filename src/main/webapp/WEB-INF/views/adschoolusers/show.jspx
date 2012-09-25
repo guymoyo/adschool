@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_security_AdSchoolUser" object="${adschooluser}" path="/adschoolusers" z="jh3km33cI4DrGR8htHcjSDQjHQY=">
+        <field:display field="userName" id="s_adschool_security_AdSchoolUser_userName" object="${adschooluser}" z="uV11RjkT3DVkD7rNlMwoGw7KLDg="/>
+        <field:display field="userNumber" id="s_adschool_security_AdSchoolUser_userNumber" object="${adschooluser}" z="q79SR+LKIZ/sgp0CKMYOII78K+U="/>
+        <field:display field="firstName" id="s_adschool_security_AdSchoolUser_firstName" object="${adschooluser}" z="Q+KBggG1RGFRK6GlP1ExC5QkdjY="/>
+        <field:display field="lastName" id="s_adschool_security_AdSchoolUser_lastName" object="${adschooluser}" z="TbDwtvPHxccdkg++Vf5ux0DJU4Y="/>
+        <field:display field="fullName" id="s_adschool_security_AdSchoolUser_fullName" object="${adschooluser}" z="Mf+4XkOyY86Qp5HKDvH5hK80Nug="/>
+        <field:display field="password" id="s_adschool_security_AdSchoolUser_password" object="${adschooluser}" z="MrSYcyTdGb8WhGhJyyvVmRtxGkg="/>
+        <field:display field="phoneNumber" id="s_adschool_security_AdSchoolUser_phoneNumber" object="${adschooluser}" z="Ga+NB+VhHqa1tHXj00mwzy8qWlU="/>
+        <field:display field="genre" id="s_adschool_security_AdSchoolUser_genre" object="${adschooluser}" z="/Xz0d2omti97dSCNW0x09dZB4+8="/>
+        <field:display field="diseableLogin" id="s_adschool_security_AdSchoolUser_diseableLogin" object="${adschooluser}" z="3guoVgLpZHrie8MkY9uIA9gzNGg="/>
+        <field:display field="accounlLocked" id="s_adschool_security_AdSchoolUser_accounlLocked" object="${adschooluser}" z="0ZnNtNqwrClyJmtwdkXpHkyJN2Y="/>
+        <field:display date="true" dateTimePattern="${adSchoolUser_credentialexpiration_date_format}" field="credentialExpiration" id="s_adschool_security_AdSchoolUser_credentialExpiration" object="${adschooluser}" z="exxnUrdgnmuQvym7DMB0dIW83dk="/>
+        <field:display date="true" dateTimePattern="${adSchoolUser_accountexpiration_date_format}" field="accountExpiration" id="s_adschool_security_AdSchoolUser_accountExpiration" object="${adschooluser}" z="r9yaJeeNyiZXMvS3WrdraSLiTiY="/>
+        <field:display field="etablissement" id="s_adschool_security_AdSchoolUser_etablissement" object="${adschooluser}" z="MCgQWg6Mf1N3YMfCjDCAjOAwiDI="/>
+        <field:display field="roleName" id="s_adschool_security_AdSchoolUser_roleName" object="${adschooluser}" z="8YUeULw2YOYXCycxRqdDeTlN4no="/>
+    </page:show>
+</div>

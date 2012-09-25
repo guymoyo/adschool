@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Salle" items="${salles}" z="PXcYu3/tOw64M5hQzdfMtfkOunE=">
+        <table:table data="${salles}" id="l_adschool_domain_Salle" link="listeoccupations" message="Occupations Salles" path="/salles" z="user-managed">
+            <table:column id="c_adschool_domain_Salle_salleKey" property="salleKey" z="pYiBvoRjb9bKyuPBDnPqm1s6ctI="/>
+            <table:column id="c_adschool_domain_Salle_nomsalle" property="nomsalle" z="hnDZ8PoDDyXNxy6q5u6Xezi+EsI="/>
+            <table:column id="c_adschool_domain_Salle_nombrePlace" property="nombrePlace" z="XQa8AfQkTaYlN3PxzyaD3kfIGZ8="/>
+            <table:column id="c_adschool_domain_Salle_disponible" property="disponible" z="BsIBFZKdrlLdx2U+BYvnOOzEzmY="/>
+            <table:column id="c_adschool_domain_Salle_actif" property="actif" z="kKV6y/vQez+BXtPKV9avuCHPhBw="/>
+            <table:column id="c_adschool_domain_Salle_longueur" property="longueur" z="eSEGTbNOPcT+OprFywoCH1qvY2c="/>
+            <table:column id="c_adschool_domain_Salle_batiment" property="batiment" z="kKV6y/vQez+BXtPKV9avuCHPhBw="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_GroupeMatiere" object="${groupematiere}" path="/groupematieres" z="HuyLlI9I71b3kwrtuep53T6lyJ8=">
+        <field:display field="groupeKey" id="s_adschool_domain_GroupeMatiere_groupeKey" object="${groupematiere}" z="qL/KlO6CT4YlVYSDj2/8BmPrpvo="/>
+        <field:display field="intitule" id="s_adschool_domain_GroupeMatiere_intitule" object="${groupematiere}" z="QV26jU1BznbwYP9hA32PvZIE654="/>
+        <field:display field="disposition" id="s_adschool_domain_GroupeMatiere_disposition" object="${groupematiere}" z="dQMERs34vxHFD5LCdab8X/uqTfE="/>
+        <field:display field="totalcredit" id="s_adschool_domain_GroupeMatiere_totalcredit" object="${groupematiere}" z="L0MMkx+RjNaNdfsJonyCz3ocZ5c="/>
+        <field:display field="classe" id="s_adschool_domain_GroupeMatiere_classe" object="${groupematiere}" z="oLs8sEaX1mssIlgQO5Sily+CfmE="/>
+    </page:show>
+</div>

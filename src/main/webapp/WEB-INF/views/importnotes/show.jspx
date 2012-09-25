@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_ImportNote" object="${importnote}" path="/importnotes" z="JFXVyuScMC1oe313YvbDO2qCecQ=">
+        <field:display field="fichier" id="s_adschool_domain_ImportNote_fichier" object="${importnote}" z="j01ZU3Ybp7QzGIoBQQu+UcYHGyg="/>
+        <field:display field="classe" id="s_adschool_domain_ImportNote_classe" object="${importnote}" z="2zpOI1X7mhYkJgdrVvlY/w1j7yk="/>
+        <field:display field="matiere" id="s_adschool_domain_ImportNote_matiere" object="${importnote}" z="h3woARqLzf1iUZsnHPR9NKGdYVk="/>
+        <field:display field="chemin" id="s_adschool_domain_ImportNote_chemin" object="${importnote}" z="MiqRyCjNdpPmPT82Ic8wzR43WdI="/>
+        <field:display field="evaluation" id="s_adschool_domain_ImportNote_evaluation" object="${importnote}" z="TP96mCZtWijMNc6mEH2BUQhi5rA="/>
+        <field:display field="etablissement" id="s_adschool_domain_ImportNote_etablissement" object="${importnote}" z="5xUkf8NmxmitvaEUlfC1vZ6MZ+8="/>
+    </page:show>
+</div>

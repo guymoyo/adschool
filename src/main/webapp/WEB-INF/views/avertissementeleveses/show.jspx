@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_AvertissementEleves" object="${avertissementeleves}" path="/avertissementeleveses" z="9Anv/D6qWFBoFPF9B5wwJPgjhwk=">
+        <field:display field="avertKey" id="s_adschool_domain_AvertissementEleves_avertKey" object="${avertissementeleves}" z="ptVqEvBVzvcl4XA1IB8bcZ6Zxn8="/>
+        <field:display field="evaluation" id="s_adschool_domain_AvertissementEleves_evaluation" object="${avertissementeleves}" z="1nx5oW5bBBmZYmHK4ZjbF7L8mTQ="/>
+        <field:display field="inscriptionEleve" id="s_adschool_domain_AvertissementEleves_inscriptionEleve" object="${avertissementeleves}" z="Vnm3V63NrtHkArct7txFBD/mEYw="/>
+        <field:display date="true" dateTimePattern="${avertissementEleves_dateavertissement_date_format}" field="dateAvertissement" id="s_adschool_domain_AvertissementEleves_dateAvertissement" object="${avertissementeleves}" z="caPmF8S3DGNlPIM2gzfzJzdbzvw="/>
+        <field:display date="true" dateTimePattern="${avertissementEleves_datesaisie_date_format}" field="dateSaisie" id="s_adschool_domain_AvertissementEleves_dateSaisie" object="${avertissementeleves}" z="1Py5hoeoqVbRdOqsR5ir1Jfqj+g="/>
+        <field:display field="duree" id="s_adschool_domain_AvertissementEleves_duree" object="${avertissementeleves}" z="soSCuQW55wi+YFv1K9mJYT6alLs="/>
+        <field:display field="justified" id="s_adschool_domain_AvertissementEleves_justified" object="${avertissementeleves}" z="bnJA9naDEICrpQy5Em4GZCFqKRQ="/>
+        <field:display date="true" dateTimePattern="${avertissementEleves_debut_date_format}" field="debut" id="s_adschool_domain_AvertissementEleves_debut" object="${avertissementeleves}" z="duwxft5aRNcuX128UiSlLY9YOvY="/>
+        <field:display date="true" dateTimePattern="${avertissementEleves_fin_date_format}" field="fin" id="s_adschool_domain_AvertissementEleves_fin" object="${avertissementeleves}" z="7s7yMH128/xmaF5y6LpmLakvnCA="/>
+    </page:show>
+</div>

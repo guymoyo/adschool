@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Document" modelAttribute="document" path="/documents" versionField="Version" z="UNuTN+Ukt7xfQJtxDdPPv41ZVrc=">
+        
+         <field:display field="documentkey" id="c_adschool_domain_Document_documentkey" object="${document}" showhidden="true" z="user-managed"/>
+       
+        
+        <field:input field="libelle" id="c_adschool_domain_Document_libelle" z="DTbfWnwwYX/k5ooQ8zj1hECmxo4="/>
+        <field:checkbox field="actif" id="c_adschool_domain_Document_actif" z="Uh/Md8m72GSBjhyne3TXjle8jg8="/>
+    </form:update>
+</div>

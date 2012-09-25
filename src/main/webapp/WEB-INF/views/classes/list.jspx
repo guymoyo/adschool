@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Classe" items="${classes}" z="gyU3ASiG+rPrBiE9AIyQ87E9Nvc=">
+        <table:table data="${classes}" id="l_adschool_domain_Classe" link="copierclasse" link2="listeUE" message="copier Classe" message2="liste U.E" message3="liste Modules" link3="listemodules" message4="Occupations Salles" link4="listeoccupations" path="/classes" z="user-managed">
+            <table:column id="c_adschool_domain_Classe_classeKey" property="classeKey" z="goK49oeK6RsjwXOnXm9NQwOXQ5s="/>
+            <table:column id="c_adschool_domain_Classe_nomClasse" maxLength="-1" property="nomClasse" z="user-managed"/>
+            <table:column id="c_adschool_domain_Classe_nomAbreger" property="nomAbreger" z="I7hXYPdU/9zPmdD/GrK0QRMbMgE="/>
+            <table:column id="c_adschool_domain_Classe_nombreplace" property="nombreplace" z="NgnMYs9cG7+u4CJxroNvk0HJ0x0="/>
+            <table:column id="c_adschool_domain_Classe_niveau" property="niveau" z="NgnMYs9cG7+u4CJxroNvk0HJ0x0="/>
+            <table:column id="c_adschool_domain_Classe_actif" property="actif" z="v5pWwIqaPRkFcLoCX/XqQGPHevA="/>
+            <table:column id="c_adschool_domain_Classe_cycles" property="cycles" z="YScdRu64jcrNy+Jrg1LUwE6kfkw="/>
+          
+            <table:column id="c_adschool_domain_Classe_options" property="options" maxLength="-1" z="user-managed"/>
+        </table:table>
+    </page:list>
+</div>

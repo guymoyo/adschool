@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Etablissement" items="${etablissements}" z="DkBLjFbX0t+LvcdncGhsu2Ekjxs=">
+        <table:table data="${etablissements}" id="l_adschool_domain_Etablissement" path="/etablissements" z="hhmUXSuvj5nJwmLB/CIjp71tWyM=">
+            <table:column id="c_adschool_domain_Etablissement_etablissementKey" property="etablissementKey" z="P96evwsjPCWc1ddy0RMmVzOL3D4="/>
+            <table:column id="c_adschool_domain_Etablissement_nomEtablissement" maxLength="-1" property="nomEtablissement" z="user-managed"/>
+            <table:column id="c_adschool_domain_Etablissement_nomAbreger" property="nomAbreger" z="FMOyRuNBZFTg1LhgTH4v7PUS3EM="/>
+            <table:column id="c_adschool_domain_Etablissement_nomResponsable" property="nomResponsable" z="user-managed"/>
+            <table:column id="c_adschool_domain_Etablissement_typeEtablissement" property="typeEtablissement" z="user-managed"/>
+            <table:column id="c_adschool_domain_Etablissement_signatureResponsable" property="signatureResponsable" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Etablissement_logoPath" property="logoPath" render="false" z="user-managed"/>
+        </table:table>
+    </page:list>
+</div>

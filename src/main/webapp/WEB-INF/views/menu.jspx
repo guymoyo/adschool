@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:security="http://www.springframework.org/security/tags" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_cycles" z="puQtS9fW21bWyPMD+VaR/Dgwgq0=">
+            <menu:item id="i_cycles_new" messageCode="global_menu_new" url="/cycleses?form" z="trFoOeDq8ecniCplm9+CAca/+B0="/>
+            <menu:item id="i_cycles_list" messageCode="global_menu_list" url="/cycleses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="mAoDnqZG3N7h5WGyR/uy+24djRE="/>
+        </menu:category>
+        <menu:category id="c_anneescolaire" z="Or+GQHlMYKdfEc0nRRYIBd1eBdE=">
+            <menu:item id="i_anneescolaire_new" messageCode="global_menu_new" url="/anneescolaires?form" z="SiP0sTiqDhN8JZ81b/IK6eHqyfs="/>
+            <menu:item id="i_anneescolaire_list" messageCode="global_menu_list" url="/anneescolaires?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Q/LaVr/jvd395WOAVU1aQ57VTyI="/>
+            <menu:item id="fi_anneescolaire_actif" messageCode="global_menu_find" url="/anneescolaires?find=ByActif&amp;form" z="bJbGd9kXOb8r/lqz+wsACVIoeUU="/>
+        </menu:category>
+        <menu:category id="c_classe" z="kijuoJxhoQgnHnR1R6/2yAeOJw8=">
+            <menu:item id="i_classe_new" messageCode="global_menu_new" url="/classes?form" z="59/W4shX1RMoRoqAVQgUNt9Xy0Y="/>
+            <menu:item id="i_classe_list" messageCode="global_menu_list" url="/classes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p0TzxzyoLuvjpE6v2/aL8lYISPw="/>
+            <menu:item id="fi_classe_actif" messageCode="global_menu_find" url="/classes?find=ByActif&amp;form" z="MmHK1WiIC412seadHVvB8eVm3KA="/>
+            <menu:item id="fi_classe_nomclasselike" messageCode="global_menu_find" url="/classes?find=ByNomClasseLike&amp;form" z="kr+kntjkjgPGO3tgFDcQStNj8f8="/>
+            <menu:item id="fi_classe_nomclassenotequals" messageCode="global_menu_find" url="/classes?find=ByNomClasseNotEquals&amp;form" z="VxJCc37GAtn02l9zY7ecJkDrRAE="/>
+            <menu:item id="fi_classe_options" messageCode="global_menu_find" url="/classes?find=ByOptions&amp;form" z="DJ0PBFLW8uasnJnrPL0RnwhIgI4="/>
+            <menu:item id="fi_classe_filiere" messageCode="global_menu_find" url="/classes?find=ByFiliere&amp;form" z="BlODqBCHw380hsvApj+QqCYHFK4="/>
+        </menu:category>
+        <menu:category id="c_batiment" z="uLiOBFWSXjRd8rSSJFvdFgwmgfg=">
+            <menu:item id="i_batiment_new" messageCode="global_menu_new" url="/batiments?form" z="odvRVZJeU6mva6E3uY4P+9qkcmM="/>
+            <menu:item id="i_batiment_list" messageCode="global_menu_list" url="/batiments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="2Nnz+fxR/0VQ6ViOTbnmpMtkn3s="/>
+        </menu:category>
+        <menu:category id="c_etablissement" z="0tygQ68f9gYYZz/xMaLeFpT9ya0=">
+            <menu:item id="i_etablissement_new" messageCode="global_menu_new" url="/etablissements?form" z="M+Z+NAAu47ADiV93JWUSVs7Gvpo="/>
+            <menu:item id="i_etablissement_list" messageCode="global_menu_list" url="/etablissements?page=1&amp;size=${empty param.size ? 10 : param.size}" z="hjXtg+qRzgYFpRsLbVAsumaGnII="/>
+        </menu:category>
+        <menu:category id="c_pays" z="hmKT6JKMuQvLz2NsJdPEpNu5K2s=">
+            <menu:item id="i_pays_new" messageCode="global_menu_new" url="/payses?form" z="srv2wXH0/6yCGcy8zO3iARxDFKM="/>
+            <menu:item id="i_pays_list" messageCode="global_menu_list" url="/payses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="TXN/nwe2ldM/IuMIqfdBoLSXQKU="/>
+        </menu:category>
+        <menu:category id="c_parent" z="fi6ZYxb25wBYvhkjXvIqbkZ8HSM=">
+            <menu:item id="i_parent_new" messageCode="global_menu_new" url="/parents?form" z="1Sm2H8ouc62T/6SdPx5lIneW+9I="/>
+            <menu:item id="i_parent_list" messageCode="global_menu_list" url="/parents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DTAZKuxonCJw3ld/0pOBw9NOwNA="/>
+            <menu:item id="fi_parent_matriculelike" messageCode="global_menu_find" url="/parents?find=ByMatriculeLike&amp;form" z="vDUeF3e4HEC5JkrLcuOhQhbQFxo="/>
+            <menu:item id="fi_parent_nomlike" messageCode="global_menu_find" url="/parents?find=ByNomLike&amp;form" z="u2u78pZgxsSdq3atcV/q2PVpszg="/>
+            <menu:item id="fi_parent_nomperelikeornommerelike" messageCode="global_menu_find" url="/parents?find=ByNomPereLikeOrNomMereLike&amp;form" z="jpQYKGniNJAMNnEiDIOzssg91xo="/>
+        </menu:category>
+        <menu:category id="c_eleve" z="SVE3ojyQyDy54WlTLPMp/oYpWTc=">
+            <menu:item id="i_eleve_new" messageCode="global_menu_new" url="/eleves?form" z="68UvM0h6A5m0voJK30VpsZDLoVQ="/>
+            <menu:item id="i_eleve_list" messageCode="global_menu_list" url="/eleves?page=1&amp;size=${empty param.size ? 10 : param.size}" z="aXEETyk+wOgaPKtBKWzkE67TP8s="/>
+            <menu:item id="fi_eleve_matriculelike" messageCode="global_menu_find" url="/eleves?find=ByMatriculeLike&amp;form" z="OVuWxZ0P4lEpOR8/RslzL+x5v4s="/>
+            <menu:item id="fi_eleve_nomlike" messageCode="global_menu_find" url="/eleves?find=ByNomLike&amp;form" z="tG5y64ImnNRhtJHVQF3T8mJe3nw="/>
+            <menu:item id="fi_eleve_etablissement" messageCode="global_menu_find" url="/eleves?find=ByEtablissement&amp;form" z="5z2gNN2Uueud8Oy/godVXWfHSAA="/>
+        </menu:category>
+        <menu:category id="c_regime" z="lxoKCjLGREFX2bukB7Y2qR8g/Fw=">
+            <menu:item id="i_regime_new" messageCode="global_menu_new" url="/regimes?form" z="j4p8Y8knE7kmnC0kL/80HRqGzjs="/>
+            <menu:item id="i_regime_list" messageCode="global_menu_list" url="/regimes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="jF7dHtyWkxUmh//BUXOZE8dqh3I="/>
+        </menu:category>
+        <menu:category id="c_configpension" z="ymBQ2wr2tX5jCD6HgbsZRKDGLuY=">
+            <menu:item id="i_configpension_new" messageCode="global_menu_new" url="/configpensions?form" z="je1BLwPLO6Ebv7+b8cqJrSqlW8Y="/>
+            <menu:item id="i_configpension_list" messageCode="global_menu_list" url="/configpensions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Pe35L1CCyw7Oet/JmBPxZ0XVNJ0="/>
+        </menu:category>
+        <menu:category id="c_configinscription" z="WE+AGz8ndLzYj3U9RIASSDcZsaI=">
+            <menu:item id="i_configinscription_new" messageCode="global_menu_new" url="/configinscriptions?form" z="NTwluUGRT7lppsLBA3w0ektL/MQ="/>
+            <menu:item id="i_configinscription_list" messageCode="global_menu_list" url="/configinscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3B36DCZm1Dpm6rrAblnSlW+/2wQ="/>
+        </menu:category>
+        <menu:category id="c_salle" z="eKx/UL5OcPX/1D68nBhgs6gguKk=">
+            <menu:item id="i_salle_new" messageCode="global_menu_new" url="/salles?form" z="eOmNO1yrAanlD6mtsuzAJNdRgho="/>
+            <menu:item id="i_salle_list" messageCode="global_menu_list" url="/salles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="9qzFNDRj04fUgls61w0iAGZPJBM="/>
+            <menu:item id="fi_salle_actif" messageCode="global_menu_find" url="/salles?find=ByActif&amp;form" z="x2yH2xcNlWvZnpeOBVFDOnWu/f0="/>
+            <menu:item id="fi_salle_batiment" messageCode="global_menu_find" url="/salles?find=ByBatiment&amp;form" z="FOXNLsiGndBf4563TaTB2D1vHu4="/>
+        </menu:category>
+        <menu:category id="c_inscription" z="wDWW70o+EOm2xFPeZs6Ad9ycRqg=">
+            <menu:item id="i_inscription_new" messageCode="menu_item_inscription_new_eleve" url="/inscriptions/createEleve?form" z="user-managed"/>
+            <menu:item id="i_inscription_new" messageCode="menu_item_inscription_new_eleve" url="/inscriptions/createEleve?form" z="user-managed"/>
+            <menu:item id="i_inscription_new" messageCode="menu_item_inscription_old_eleve" url="/inscriptions?form" z="user-managed"/>
+            <menu:item id="i_inscription_list" messageCode="global_menu_list" url="/inscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p7PUr3ITwUw8Ee7xlXLzpZ+sWBU="/>
+            <menu:item id="fi_inscription_dateinscriptionbetween" messageCode="global_menu_find" url="/inscriptions?find=ByDateInscriptionBetween&amp;form" z="xf9YjRT+LCLh5WX8fw3WTnSDnoU="/>
+            <menu:item id="fi_inscription_dateinscriptionequals" messageCode="global_menu_find" url="/inscriptions?find=ByDateInscriptionEquals&amp;form" z="R9JfF3pp0Wn8Na916dx7K6JoaAU="/>
+            <menu:item id="fi_inscription_eleve" messageCode="global_menu_find" url="/inscriptions?find=ByEleve&amp;form" z="nCzn5P4w3tPCuTA5AUzUTeAdpU0="/>
+            <menu:item id="fi_inscription_inscriptionkeylike" messageCode="global_menu_find" url="/inscriptions?find=ByInscriptionKeyLike&amp;form" z="cPSMZV4keF0rI5unPkYe/e9d/Gs="/>
+            <menu:item id="fi_inscription_classe" messageCode="global_menu_find" url="/inscriptions?find=ByClasse&amp;form" z="ZZaFCZS1Gw2EQt2ho0KH7/ZOocQ="/>
+            <menu:item id="fi_inscription_annee" messageCode="global_menu_find" url="/inscriptions?find=ByAnnee&amp;form" z="iQSvjKa0Bg+iCTzfzuY3q6jgykg="/>
+        </menu:category>
+        <menu:category id="c_docinscription" z="9JHKqUUMSQAciH7xzlByZCG8u4g=">
+            <menu:item id="i_docinscription_new" messageCode="global_menu_new" url="/docinscriptions?form" z="pa/8XG4PpMcliDpWAAU5Zz9HqKw="/>
+            <menu:item id="i_docinscription_list" messageCode="global_menu_list" url="/docinscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bOX/g9ChSc5jWN85QtKpohuvgQA="/>
+        </menu:category>
+        <menu:category id="c_enseignant" z="N9FqOiULR8/Gi+cyDu2CQnXAzs0=">
+            <menu:item id="i_enseignant_new" messageCode="global_menu_new" url="/enseignants?form" z="OK1zzHDmOQwM0vYOLCuUUFwFrZY="/>
+            <menu:item id="i_enseignant_list" messageCode="global_menu_list" url="/enseignants?page=1&amp;size=${empty param.size ? 10 : param.size}" z="mthsK16sfY7CNl99UaH/ke5qyFA="/>
+        </menu:category>
+        <menu:category id="c_diplome" z="vWrdgOJZDmyiTl75ZtbwM8Q0A+c=">
+            <menu:item id="i_diplome_new" messageCode="global_menu_new" url="/diplomes?form" z="R0DrPmnrFjhSgONBX5RrMaLmc5E="/>
+            <menu:item id="i_diplome_list" messageCode="global_menu_list" url="/diplomes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="hd9VzIsu15+bGis5nHbk8UNrNcY="/>
+        </menu:category>
+        <menu:category id="c_adschooluser" label="Password" z="user-managed">
+            <menu:item id="i_adschooluser_list" messageCode="global_menu_list" url="/adschoolusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="IUGwS8k+nJw0jjzJ9Vb2tv7sggQ="/>
+            <menu:item id="fi_adschooluser_fullnameequals" messageCode="global_menu_find" url="/adschoolusers?find=ByFullNameEquals&amp;form" z="ykwDFgJqmLC+gN9t2Rib/ShkP2A="/>
+            <menu:item id="fi_adschooluser_usernameequals" messageCode="global_menu_find" url="/adschoolusers?find=ByUserNameEquals&amp;form" z="NJL8Ahf3zY6MbsEhGuQb/t8vi1Q="/>
+        </menu:category>
+        <menu:category id="c_adschooluser" label="Password" z="A6zJpYg95asYmcEJitBwdiJL660=">
+            <menu:item id="i_adschooluser_new" label="Changer Mot de Passe" url="/passwordresets?form" z="user-managed"/>
+        </menu:category>
+        <menu:category id="c_consigneeleves" z="oNpFo5YkLP2CMghiZbIboOlYb8I=">
+            <menu:item id="i_consigneeleves_new" messageCode="global_menu_new" url="/consigneeleveses?form" z="Ogwof2Plf8mq0kbkV7vgzamJHs8="/>
+            <menu:item id="i_consigneeleves_list" messageCode="global_menu_list" url="/consigneeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="O7ed2+4K3eiobySOD2HrcScFNV0="/>
+        </menu:category>
+        <menu:category id="c_periode" z="pfK1EvvZQpH2B3NO3ofIdnO6vDs=">
+            <menu:item id="i_periode_new" messageCode="global_menu_new" url="/periodes?form" z="3r3KUwNcJ3z2cwbzYKT9BYpylXg="/>
+            <menu:item id="i_periode_list" messageCode="global_menu_list" url="/periodes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dDu6izLr3FERQTB+FHEMN0TvN2w="/>
+            <menu:item id="fi_periode_annee" messageCode="global_menu_find" url="/periodes?find=ByAnnee&amp;form" z="hybKE4kUD2fXQ3JjCTxXC74AG1A="/>
+        </menu:category>
+        <menu:category id="c_evaluation" z="JnBMH29qZVlosOnQ97JsmfJFpck=">
+            <menu:item id="i_evaluation_new" messageCode="global_menu_new" url="/evaluations?form" z="JpOwR5eZi0JldAjPX1VqRwHTBOc="/>
+            <menu:item id="i_evaluation_list" messageCode="global_menu_list" url="/evaluations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Q35z0Ycw1nKf5JBOFGbKhcSJfCM="/>
+            <menu:item id="fi_evaluation_actif" messageCode="global_menu_find" url="/evaluations?find=ByActif&amp;form" z="S2wyo64mRaUWgkRpvPZ3LeqybPU="/>
+            <menu:item id="fi_evaluation_periode" messageCode="global_menu_find" url="/evaluations?find=ByPeriode&amp;form" z="SzK+LZT1BduPZrQty1TCblbv5tM="/>
+        </menu:category>
+        <menu:category id="c_notes" z="ATNadfqPK2pi539orictqHVGOW8=">
+            <menu:item id="i_notes_new" messageCode="global_menu_new" url="/noteses?form" z="o8Mqk1kXbDTF6lgKD1nfY1D68Ss="/>
+            <menu:item id="i_notes_list" messageCode="global_menu_list" url="/noteses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="rYgvHrF/AR9mJXwgSxL6qikdzOs="/>
+            <menu:item id="fi_notes_eleve" messageCode="global_menu_find" url="/noteses?find=ByEleve&amp;form" z="3W5F9Dmhqi73HDvzi7RGZfRNtqc="/>
+        </menu:category>
+        <menu:category id="c_mentions" z="hNCmvAGcKbe5X25uF+JfIPD3PQw=">
+            <menu:item id="i_mentions_new" messageCode="global_menu_new" url="/mentionses?form" z="9F+DvgYcLfKGhgy0N+k7TmRLh50="/>
+            <menu:item id="i_mentions_list" messageCode="global_menu_list" url="/mentionses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="rsjvRNen8W2orLYD4fnihyjPv7A="/>
+        </menu:category>
+        <menu:category id="c_famillematiere" z="xnRpxUkY/f9SXWEP7UJf+QbEvUw=">
+            <menu:item id="i_famillematiere_new" messageCode="global_menu_new" url="/famillematieres?form" z="9bfK73qn13S7xYXbKhs6BtonZWI="/>
+            <menu:item id="i_famillematiere_list" messageCode="global_menu_list" url="/famillematieres?page=1&amp;size=${empty param.size ? 10 : param.size}" z="W/IWESqZWmLHVCex6Ctmv5Zu+2w="/>
+        </menu:category>
+        <menu:category id="c_matiere" z="bF/hU2+JguT8yC4tcKAhzfNN9Ak=">
+            <menu:item id="i_matiere_new" messageCode="global_menu_new" url="/matieres?form" z="Md58/1517x0Md08BPnRIIFeAi8E="/>
+            <menu:item id="i_matiere_list" messageCode="global_menu_list" url="/matieres?page=1&amp;size=${empty param.size ? 10 : param.size}" z="cTXr8yAaTLhT4wQaTkR3hXALNdU="/>
+            <menu:item id="fi_matiere_classe" messageCode="global_menu_find" url="/matieres?find=ByClasse&amp;form" z="F+f9xpii0gjer2G+k+rOQfvnZGM="/>
+            <menu:item id="fi_matiere_groupe" messageCode="global_menu_find" url="/matieres?find=ByGroupe&amp;form" z="7I5SS246lix7Ivt6gyi68PUYvE4="/>
+            <menu:item id="fi_matiere_famille" messageCode="global_menu_find" url="/matieres?find=ByFamille&amp;form" z="pyoNrO3YJtEWtUvy6skBoAGta6U="/>
+        </menu:category>
+        <menu:category id="c_absenceeleves" z="nIC25YmJkTgDy8wpraURMRhsmUk=">
+            <menu:item id="i_absenceeleves_new" messageCode="global_menu_new" url="/absenceeleveses?form" z="zA9k/KI4pTWDdzggMtG2ei5WnWQ="/>
+            <menu:item id="i_absenceeleves_list" messageCode="global_menu_list" url="/absenceeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ySNC/Ooa7B6lgig8saom/wbkuJU="/>
+        </menu:category>
+        <menu:category id="c_machines" z="GJUonZ8ifj2I/E7m+aCx2sogzZc=">
+            <menu:item id="i_machines_new" messageCode="global_menu_new" url="/machineses?form" z="R9WNcG+4sUuJbRRIRSUoqnqWP5w="/>
+            <menu:item id="i_machines_list" messageCode="global_menu_list" url="/machineses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ziPpvV3IV35aCcIWFIos1tnAcp8="/>
+        </menu:category>
+        <menu:category id="c_enseignantprincipal" z="GVwej8vLCErtlPMCJzSl3kqLZco=">
+            <menu:item id="i_enseignantprincipal_new" messageCode="global_menu_new" url="/enseignantprincipals?form" z="KfPK3v7TxPUvvH8Bi+lLLjrpDZQ="/>
+            <menu:item id="i_enseignantprincipal_list" messageCode="global_menu_list" url="/enseignantprincipals?page=1&amp;size=${empty param.size ? 10 : param.size}" z="UyDblS+vKWkVip0J7IXtITm3Yf8="/>
+        </menu:category>
+        <menu:category id="c_enseignantmatieres" z="xdZFrXFMVfyuct3g5DFsG8ghCtw=">
+            <menu:item id="i_enseignantmatieres_new" messageCode="global_menu_new" url="/enseignantmatiereses?form" z="2CBKTp8zZ9q6ywvxtDSF7COlNRk="/>
+            <menu:item id="i_enseignantmatieres_list" messageCode="global_menu_list" url="/enseignantmatiereses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="vB1KR1j+cOHkElWrxuceqiJIOm8="/>
+        </menu:category>
+        <menu:category id="c_groupematiere" z="cTfQlDPHON1PJWZxza9FlndSsGs=">
+            <menu:item id="i_groupematiere_new" messageCode="global_menu_new" url="/groupematieres?form" z="rhEzVQuW+bvd4lTUlnXfStPWJVI="/>
+            <menu:item id="i_groupematiere_list" messageCode="global_menu_list" url="/groupematieres?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/GNyVOxWdPMe2FGRTdwPeb/KLC0="/>
+            <menu:item id="fi_groupematiere_classe" messageCode="global_menu_find" url="/groupematieres?find=ByClasse&amp;form" z="TAcETmA8wHoCVOrUUYSc1GBZ0G4="/>
+        </menu:category>
+        <menu:category id="c_avertissementeleves" z="QKVLnfPKoXdbKW0cnTBI7Z8Hox8=">
+            <menu:item id="i_avertissementeleves_new" messageCode="global_menu_new" url="/avertissementeleveses?form" z="l7FHZuAQ4wKIUS6tClKrbvTPbCU="/>
+            <menu:item id="i_avertissementeleves_list" messageCode="global_menu_list" url="/avertissementeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="5xah0pAKyru546nJaJ/aXpU7Ea0="/>
+        </menu:category>
+        <menu:category id="c_exclusioneleves" z="kxAry7nG0NRshu6lIQ2FvQ8f5EQ=">
+            <menu:item id="i_exclusioneleves_new" messageCode="global_menu_new" url="/exclusioneleveses?form" z="KOVAUaHDYX3nrHCCRRHFHLLwxU0="/>
+            <menu:item id="i_exclusioneleves_list" messageCode="global_menu_list" url="/exclusioneleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1FAadhhkquS8jNN7nAPE+f9UW4Y="/>
+        </menu:category>
+        <menu:category id="c_pointageenseignants" z="wThC6E/I77Ks9pij/j1BWwnzcTo=">
+            <menu:item id="i_pointageenseignants_new" messageCode="global_menu_new" url="/pointageenseignantses?form" z="gl1b9nW6VC9foWjsNwN/54M4ym0="/>
+            <menu:item id="i_pointageenseignants_list" messageCode="global_menu_list" url="/pointageenseignantses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nEH7XDnpS/Cp8HKMPhOsdgYH6kc="/>
+        </menu:category>
+        <menu:category id="c_pensioneleves" z="1aDxTCh3PkH558fURx5kiTvtxkY=">
+            <menu:item id="i_pensioneleves_new" messageCode="global_menu_new" url="/pensioneleveses?form" z="ABAUvUwMCeCAXAeVIh6GdKhQnMM="/>
+            <menu:item id="i_pensioneleves_list" messageCode="global_menu_list" url="/pensioneleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="jn0lwoLLcnMVtrX5N+xY4POOksQ="/>
+            <menu:item id="fi_pensioneleves_eleve" messageCode="global_menu_find" url="/pensioneleveses?find=ByNomLike&amp;form" z="user-managed"/>
+            <menu:item id="fi_pensioneleves_pensionkeylike" messageCode="global_menu_find" url="/pensioneleveses?find=ByPensionKeyLike&amp;form" z="YmU1lRa3D2sFjkYxqa9W/suO2H0="/>
+        </menu:category>
+        <menu:category id="c_paiementpensions" z="OGyhQ0NqXQAJHxHkRbmgmknxMM0=">
+            <menu:item id="i_paiementpensions_new" messageCode="global_menu_new" url="/paiementpensionses?form" z="OLY117tPMNLe1owvCogwpGTVF90="/>
+            <menu:item id="i_paiementpensions_list" messageCode="global_menu_list" url="/paiementpensionses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MqcDCUehIvC+2dcNfQQO+AtyDKY="/>
+            <menu:item id="fi_paiementpensions_dateversementbetween" messageCode="global_menu_find" url="/paiementpensionses?find=ByDateVersementBetween&amp;form" z="lrlsUJPkptgw1xa5U/jeRfLufM8="/>
+        </menu:category>
+        <menu:category id="c_footprint" z="ZqgWST/7DXO0ft/oZi/GNDo06DI=">
+            <menu:item id="i_footprint_new" messageCode="global_menu_new" url="/footprints?form" z="Gob1zK14FPbgg2CPFervAM/DT1k="/>
+            <menu:item id="i_footprint_list" messageCode="global_menu_list" url="/footprints?page=1&amp;size=${empty param.size ? 10 : param.size}" z="qJ0QOpMfVuq3CCEcGntPU/wxP+A="/>
+        </menu:category>
+        <menu:category id="c_auditrecord" z="MtaKiNcJ19/683oBtqOtVxAwtso=">
+            <menu:item id="i_auditrecord_new" messageCode="global_menu_new" url="/auditrecords?form" z="quby0d6k5aCmzFkzuzbSWfn9jxQ="/>
+            <menu:item id="i_auditrecord_list" messageCode="global_menu_list" url="/auditrecords?page=1&amp;size=${empty param.size ? 10 : param.size}" z="TSJd67vSC61lmCtHF143usvDG4Y="/>
+        </menu:category>
+        <menu:category id="c_filiere" z="U9TTAWu2klb8KbHzSoP7Bal+YgM=">
+            <menu:item id="i_filiere_new" messageCode="global_menu_new" url="/filieres?form" z="VcMX9SepHLgbgqW97uZbGVLDBEE="/>
+            <menu:item id="i_filiere_list" messageCode="global_menu_list" url="/filieres?page=1&amp;size=${empty param.size ? 10 : param.size}" z="5g0G40s2570GcZ/ZppvgbMCAWsw="/>
+        </menu:category>
+        <menu:category id="c_importnote" z="JR4jp9YtDtzzr0wQALLEW5ops4I=">
+            <menu:item id="i_importnote_new" messageCode="global_menu_new" url="/importnotes?form" z="fDKADHJVb8X1Elltc3HBPCP8Cy8="/>
+            <menu:item id="i_importnote_list" messageCode="global_menu_list" url="/importnotes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dkr5a8tivNHBKlaM7s9OlEHcgfk="/>
+        </menu:category>
+        <menu:category id="c_speciality" z="UD05H8KkeN8Djhvbc7o9IPzqjO0=">
+            <menu:item id="i_speciality_new" messageCode="global_menu_new" url="/specialitys?form" z="3F+biyZKYtIMVKG3KWlrjA8s3Hg="/>
+            <menu:item id="i_speciality_list" messageCode="global_menu_list" url="/specialitys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="7LdSEsWlidbWPqKKbQY+HRQItXc="/>
+        </menu:category>
+        <menu:category id="c_options" z="sQPekeTWTQvxDMqNVWK90XRinis=">
+            <menu:item id="i_options_new" messageCode="global_menu_new" url="/optionses?form" z="0CJuTefYXDJo8TfxEmbdKV6mUa8="/>
+            <menu:item id="i_options_list" messageCode="global_menu_list" url="/optionses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ju7NQaYf1aTov9tyTYOYDpeb0dM="/>
+            <menu:item id="fi_options_specialite" messageCode="global_menu_find" url="/optionses?find=BySpecialite&amp;form" z="PUiLn70kqt5hIzEQXXpjt/aKbic="/>
+        </menu:category>
+        <menu:category id="c_document" z="IwaW5r7KHuYYhv8LICTHRKgUWao=">
+            <menu:item id="i_document_new" messageCode="global_menu_new" url="/documents?form" z="bv1eg7qAwaBE1ATd78QiQm2M3ZE="/>
+            <menu:item id="i_document_list" messageCode="global_menu_list" url="/documents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p196XK4gvGXOnIrUwDqNS/p7fzE="/>
+        </menu:category>
+        <menu:category id="c_occupation" z="UX0wahZfbzPeKcHKSFQtkK1+OTA=">
+            <menu:item id="i_occupation_new" messageCode="global_menu_new" url="/occupations?form" z="rK//UFBsPAOU0h3OqhdNIgxEUks="/>
+            <menu:item id="i_occupation_list" messageCode="global_menu_list" url="/occupations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="cquz0Tb/mouVwhzyHxGfqBZ2fjg="/>
+            <menu:item id="fi_occupation_salle" messageCode="global_menu_find" url="/occupations?find=BySalle&amp;form" z="EaRn/WNDy+CtILcdfLAHKIpYXsM="/>
+            <menu:item id="fi_occupation_classe" messageCode="global_menu_find" url="/occupations?find=ByClasse&amp;form" z="CQVbTwbzOMcxQ8Ujn/0TtXRPAqE="/>
+        </menu:category>
+    </menu:menu>
+</div>

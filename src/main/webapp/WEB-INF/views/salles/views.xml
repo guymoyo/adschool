@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="salles/list">
+        <put-attribute name="body" value="/WEB-INF/views/salles/list.jspx"/>
+    </definition>
+<definition extends="default" name="salles/show">
+        <put-attribute name="body" value="/WEB-INF/views/salles/show.jspx"/>
+    </definition>
+<definition extends="default" name="salles/create">
+        <put-attribute name="body" value="/WEB-INF/views/salles/create.jspx"/>
+    </definition>
+<definition extends="default" name="salles/update">
+        <put-attribute name="body" value="/WEB-INF/views/salles/update.jspx"/>
+    </definition>
+<definition extends="default" name="salles/findSallesByActif">
+        <put-attribute name="body" value="/WEB-INF/views/salles/findSallesByActif.jspx"/>
+    </definition>
+<definition extends="default" name="salles/findSallesByBatiment">
+        <put-attribute name="body" value="/WEB-INF/views/salles/findSallesByBatiment.jspx"/>
+    </definition>
+</tiles-definitions>

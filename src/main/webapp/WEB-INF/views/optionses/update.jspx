@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Options" modelAttribute="options" path="/optionses" versionField="Version" z="cZ6gVxFci1Yu+/5T85KKjxeC3R0=">
+        <field:display field="optionsKey" id="c_adschool_domain_Options_optionsKey" object="${options}" showhidden="true" z="user-managed"/>
+        <field:select field="specialite" id="c_adschool_domain_Options_specialite" itemLabel="libelle" itemValue="id" items="${specialitys}" path="/specialitys" z="user-managed"/>
+        <field:input field="libelle" id="c_adschool_domain_Options_libelle" z="5kUbW1YyEkvuhM1I1+WTJgnt6Yc="/>
+        <field:input render="false" field="nbreclasse" id="c_adschool_domain_Options_nbreclasse" z="Ow3hVef0qtU75UkTU3GU5YJtkq8="/>
+    </form:update>
+</div>

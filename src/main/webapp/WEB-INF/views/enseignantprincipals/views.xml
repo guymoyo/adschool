@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="enseignantprincipals/list">
+        <put-attribute name="body" value="/WEB-INF/views/enseignantprincipals/list.jspx"/>
+    </definition>
+<definition extends="default" name="enseignantprincipals/show">
+        <put-attribute name="body" value="/WEB-INF/views/enseignantprincipals/show.jspx"/>
+    </definition>
+<definition extends="default" name="enseignantprincipals/create">
+        <put-attribute name="body" value="/WEB-INF/views/enseignantprincipals/create.jspx"/>
+    </definition>
+<definition extends="default" name="enseignantprincipals/update">
+        <put-attribute name="body" value="/WEB-INF/views/enseignantprincipals/update.jspx"/>
+    </definition>
+</tiles-definitions>

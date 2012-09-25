@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_ConfigInscription" items="${configinscriptions}" z="VdPJnhoh3O/NqHQa7EPcXPSI6uA=">
+        <table:table data="${configinscriptions}" id="l_adschool_domain_ConfigInscription" path="/configinscriptions" z="ieLB4w/+oczgXvuL6zPytg1C0wc=">
+            <table:column id="c_adschool_domain_ConfigInscription_configKey" property="configKey" z="oSbVv4AuP7lnmRFx4CRD02v6hmA="/>
+            <table:column id="c_adschool_domain_ConfigInscription_anneeScolaire" property="anneeScolaire" z="EdXh799O85IV+2oG/vOXJUSA8BM="/>
+            <table:column id="c_adschool_domain_ConfigInscription_classe" property="classe" z="WWydKPaaoxOu2EMgT1Xktgehyvc="/>
+            <table:column id="c_adschool_domain_ConfigInscription_montant" property="montant" z="PKssUw2CZe07/UwMnbIvexm4mYQ="/>
+            <table:column date="true" dateTimePattern="${configInscription_datelimitepaiement_date_format}" id="c_adschool_domain_ConfigInscription_dateLimitePaiement" property="dateLimitePaiement" z="XOAmtjAQSxICCU8g32xGIe2QymY="/>
+            <table:column id="c_adschool_domain_ConfigInscription_regime" property="regime" z="e7n/Nj66gGcfKibC1rC0tt48Mg4="/>
+        </table:table>
+    </page:list>
+</div>

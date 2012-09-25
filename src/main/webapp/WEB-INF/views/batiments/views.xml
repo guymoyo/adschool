@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="batiments/list">
+        <put-attribute name="body" value="/WEB-INF/views/batiments/list.jspx"/>
+    </definition>
+<definition extends="default" name="batiments/show">
+        <put-attribute name="body" value="/WEB-INF/views/batiments/show.jspx"/>
+    </definition>
+<definition extends="default" name="batiments/create">
+        <put-attribute name="body" value="/WEB-INF/views/batiments/create.jspx"/>
+    </definition>
+<definition extends="default" name="batiments/update">
+        <put-attribute name="body" value="/WEB-INF/views/batiments/update.jspx"/>
+    </definition>
+</tiles-definitions>

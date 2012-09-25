@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Options" object="${options}" path="/optionses" z="k84osrgM+ix4PaRkRt5ec0yaHkc=">
+        <field:display field="specialite" id="s_adschool_domain_Options_specialite" object="${options}" z="uSMBmDDffDTEOfe67uTREmtd8tM="/>
+        <field:display field="libelle" id="s_adschool_domain_Options_libelle" object="${options}" z="CoYOgCOaZh84RMqeyYkz0DQWjiU="/>
+        <field:display field="optionsKey" id="s_adschool_domain_Options_optionsKey" object="${options}" z="kaACRReB0wTkPiSNIxYAX4M1pqo="/>
+        <field:display field="nbreclasse" id="s_adschool_domain_Options_nbreclasse" object="${options}" z="kwF4E1SuzNE/B/Afwv8u6RNRfBI="/>
+    </page:show>
+</div>

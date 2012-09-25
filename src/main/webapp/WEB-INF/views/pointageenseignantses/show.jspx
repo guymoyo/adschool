@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_PointageEnseignants" object="${pointageenseignants}" path="/pointageenseignantses" z="zRnU4fpv3W0exRY+ESHkKYJmWfs=">
+        <field:display field="pointageKey" id="s_adschool_domain_PointageEnseignants_pointageKey" object="${pointageenseignants}" z="xQS2E9PiDE2FUV87KpwNt2D/1Cg="/>
+        <field:display field="annee" id="s_adschool_domain_PointageEnseignants_annee" object="${pointageenseignants}" z="gVtlRyowQ6zTYJ8Axm8EHTu58PQ="/>
+        <field:display field="enseignant" id="s_adschool_domain_PointageEnseignants_enseignant" object="${pointageenseignants}" z="XMEU25yge5lhr3O5UMtjoz/4PBM="/>
+        <field:display field="matiere" id="s_adschool_domain_PointageEnseignants_matiere" object="${pointageenseignants}" z="MPVzzzOY/OL9y19+i1XpkgwRhnE="/>
+        <field:display field="classe" id="s_adschool_domain_PointageEnseignants_classe" object="${pointageenseignants}" z="HkKhrGfgH/cfBrH7KUCb+kdflps="/>
+        <field:display date="true" dateTimePattern="${pointageEnseignants_datedebut_date_format}" field="datedebut" id="s_adschool_domain_PointageEnseignants_datedebut" object="${pointageenseignants}" z="ho5rhFWqPMkA3L7oXCXFVCbu/Wc="/>
+        <field:display field="duree" id="s_adschool_domain_PointageEnseignants_duree" object="${pointageenseignants}" z="0++U87lrZtlwEFxRPNDmfWAhIl4="/>
+    </page:show>
+</div>

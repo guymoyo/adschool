@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+xmlns:spring="http://www.springframework.org/tags"
+ xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+        <page:list id="pl_adschool_domain_PensionEleves" items="${pensioneleveses}" z="e4n4dqdyndYPIjskZ3AKG6GP/Ls=">
+        <table:table create="false" data="${pensioneleveses}" update="false" message="Enregistrer Paiement" link="payerpension" message2="Listing Paiement" link2="listingpaiementpension"  message3="Accorder Reduction" link3="reduction" message4="Accorder Moratoire" link4="moratoire" delete="false" id="l_adschool_domain_PensionEleves" path="/pensioneleveses" z="user-managed">
+            <table:column id="c_adschool_domain_PensionEleves_pensionKey" property="pensionKey" z="cEwOo/Sct1Uxpp5OxySGQVGaPwQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_inscriptionEleve" property="inscriptionEleve" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_PensionEleves_eleve" property="eleve" z="user-managed"/>
+            
+            <table:column id="c_adschool_domain_PensionEleves_tranche" property="tranche" z="2Dm88XD/yLUYcQb5LXP0C1I5lsM="/>
+            <table:column date="true" dateTimePattern="${pensionEleves_datelimitepaiement_date_format}" id="c_adschool_domain_PensionEleves_dateLimitePaiement" property="dateLimitePaiement" z="sfyQHqO/MMN6LY0TXL9TeRc1mfM="/>
+            <table:column id="c_adschool_domain_PensionEleves_annee" property="annee" z="xdHnK9fgtiHsEHLxCPCOVi/PSFQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_montant" property="montant" z="xdHnK9fgtiHsEHLxCPCOVi/PSFQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_solder" property="solder" z="xdHnK9fgtiHsEHLxCPCOVi/PSFQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_netAPayer" property="netAPayer" z="3kz/4nNBU9JG9zPbvniZi1Je0ng="/>
+        </table:table>
+        
+    </page:list>
+        
+</div>

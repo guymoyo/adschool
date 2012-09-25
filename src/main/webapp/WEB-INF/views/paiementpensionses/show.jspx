@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:url value="/paiementpensionses/printRecuPaiement/${paiementpensions.id}.pdf" var="print_recu"/>
+    <page:show create="false" delete="false" id="ps_adschool_domain_PaiementPensions" list="false" object="${paiementpensions}" path="/paiementpensionses" update="false" z="user-managed">
+        <FIELDSET>
+            <LEGEND> Informations Paiement </LEGEND>
+            <field:display field="paiementKey" id="s_adschool_domain_PaiementPensions_paiementKey" object="${paiementpensions}" z="Ea/AB+OLP86KV0sRsd0ZYOEd7TQ="/>
+            <field:display field="pension" id="s_adschool_domain_PaiementPensions_pension" object="${paiementpensions}" z="k4X68bY+UY95OZNwvq/sxS2/Q7k="/>
+            <field:display field="inscriptionEleve" id="s_adschool_domain_PaiementPensions_inscriptionEleve" object="${paiementpensions}" z="ZUopK03deQ5snwLDL72v5hXuNQg="/>
+            <field:display field="montantTranche" id="s_adschool_domain_PaiementPensions_montantTranche" object="${paiementpensions}" z="ElYzVLfA6VXJPbypDPVnTtgFUls="/>
+            <field:display date="true" dateTimePattern="${paiementPensions_dateversement_date_format}" field="dateVersement" id="s_adschool_domain_PaiementPensions_dateVersement" object="${paiementpensions}" z="vN93iaYFI/0s5uUeKkPyfz/3MwM="/>
+            <field:display field="montantVersement" id="s_adschool_domain_PaiementPensions_montantVersement" object="${paiementpensions}" z="E0B2Nt98sgDPAboVFFbWi6PXqRY="/>
+       	 <field:display field="imprimer" id="s_adschool_domain_PaiementPensions_imprimer" object="${paiementpensions}" z="4CnztNeiRD0Jm7hAqpmCox124Ls="/>
+       
+            <br/>
+            <DIV>
+                <a href="${print_recu}">Imprimer recu </a>
+            </DIV>
+        </FIELDSET>
+       
+    </page:show>
+</div>

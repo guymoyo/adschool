@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Evaluation" items="${evaluations}" z="CS4iXD2yL0CyofCglXMuPXH++9I=">
+        <table:table create="update" data="${evaluations}" delete="false" id="l_adschool_domain_Evaluation" link="cloturer" message="Cloturer" path="/evaluations" update="false" z="user-managed">
+            <table:column id="c_adschool_domain_Evaluation_evaluationKey" property="evaluationKey" z="Q7hQUgz/fMHQgpthFIEWhWI4/mI="/>
+            <table:column date="true" dateTimePattern="${evaluation_datedebut_date_format}" id="c_adschool_domain_Evaluation_datedebut" property="datedebut" z="yi7OjozHk2HQjkMUscHwAAW2Xlg="/>
+            <table:column date="true" dateTimePattern="${evaluation_datefin_date_format}" id="c_adschool_domain_Evaluation_datefin" property="datefin" z="Guz9Je+DLBIdNUBfOL8+S+eSdyo="/>
+            <table:column id="c_adschool_domain_Evaluation_periode" property="periode" z="o/61JdyyIkCKpmsHQNCBjhxlRA8="/>
+            <table:column id="c_adschool_domain_Evaluation_actif" property="actif" z="c1z3SXHhwNLSYRjOJ3KS4/MTUV8="/>
+            <table:column id="c_adschool_domain_Evaluation_pourcentage" property="pourcentage" z="jvtk1q/c8hOgE27F2LJfpzETr2Y="/>
+            <table:column id="c_adschool_domain_Evaluation_libelle" property="libelle" z="jvtk1q/c8hOgE27F2LJfpzETr2Y="/>
+        </table:table>
+    </page:list>
+</div>

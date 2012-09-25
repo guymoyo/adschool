@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Matiere" items="${matieres}" z="Uwn9xvd3KSIgNqPV4eKEEdbF5Yc=">
+        <table:table data="${matieres}" id="l_adschool_domain_Matiere" path="/matieres" z="n2E5gD9SFfIJmNmwGpKSZViF61M=">
+            <table:column id="c_adschool_domain_Matiere_matiereKey" property="matiereKey" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Matiere_codeMatiere" property="codeMatiere" z="9aSajx5axvBGogMzQTMYxqFo3Fk="/>
+            <table:column id="c_adschool_domain_Matiere_intitule" property="intitule" z="eTfDbhLQS9Q0LOYUvJ0vRXoke+c="/>
+            <table:column id="c_adschool_domain_Matiere_actif" property="actif" z="DjBW+L0itdCVTHutUcPiUP9H4G4="/>
+            <table:column id="c_adschool_domain_Matiere_coefficient" property="coefficient" z="3P7+0Wgj3rgGu7+g09R6mxjbdYg="/>
+            <table:column id="c_adschool_domain_Matiere_classe" property="classe" z="nkyW7Ouik6Qi4A8MMIkmqOblX1Q="/>
+
+			<table:column id="c_adschool_domain_Matiere_credit" property="credit" z="nkyW7Ouik6Qi4A8MMIkmqOblX1Q="/>
+			<table:column id="c_adschool_domain_Matiere_disposition" property="disposition" z="nkyW7Ouik6Qi4A8MMIkmqOblX1Q="/>
+	
+	
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_ConfigPension" modelAttribute="configPension" path="/configpensions" versionField="Version" z="roct7Z5M1048Z0ZiCojctyvyO9o=">
+        <field:input field="configKey" id="c_adschool_domain_ConfigPension_configKey" z="laMcKutlEzKWIYDBBp6Vmapg6Z0="/>
+        <field:select field="anneeScolaire" id="c_adschool_domain_ConfigPension_anneeScolaire" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="cxap17LvPJOKLsVZof6h4EEksaI="/>
+        <field:select field="classe" id="c_adschool_domain_ConfigPension_classe" itemValue="id" items="${classes}" path="/classes" z="5RYQWPir9MqmP/yQoRUhkEdCZi4="/>
+        <field:input field="montant" id="c_adschool_domain_ConfigPension_montant" validationMessageCode="field_invalid_integer" z="6SBlWrUFsWYuorJYQS+lewXyW0Q="/>
+        <field:input field="tranche" id="c_adschool_domain_ConfigPension_tranche" z="7gMhHzc/qpGpSAuYQFsntjIAIV0="/>
+        <field:datetime dateTimePattern="${configPension_datelimitepaiement_date_format}" field="dateLimitePaiement" id="c_adschool_domain_ConfigPension_dateLimitePaiement" z="s1EBpGDnJ9iKsOF45j8xqurm5wE="/>
+        <field:select field="regime" id="c_adschool_domain_ConfigPension_regime" itemValue="id" items="${regimes}" path="/regimes" z="E2K4utRrkgXPA+FQtNnG8tSRsFg="/>
+        <field:select field="etablissement" id="c_adschool_domain_ConfigPension_etablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="M/zKni9yA1n5gxogMVE2u3sSfwQ="/>
+        <field:checkbox field="appied_others" id="c_adschool_domain_ConfigPension_appied_others" z="SQicojzwAQL4bvaj1Bw0xDr65no="/>
+    </form:update>
+</div>

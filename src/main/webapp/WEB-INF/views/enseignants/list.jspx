@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Enseignant" items="${enseignants}" z="K/iJk8vwZzBTdO4pgr+x4sRMh4I=">
+        <table:table data="${enseignants}" id="l_adschool_domain_Enseignant" path="/enseignants" z="7MPbCQvRwTlhT4LOe18HOzyHeNw=">
+            <table:column id="c_adschool_domain_Enseignant_matricule" property="matricule" z="I3dir3A1LcjLJJT+pgjodXhWoRk="/>
+            <table:column id="c_adschool_domain_Enseignant_nom" property="nom" z="aO/hjX8KeewN2RGDiBzA5IfpyKQ="/>
+            <table:column id="c_adschool_domain_Enseignant_lieuNaissance" property="lieuNaissance" z="xUyQ3+p9j6q6XOvX2D4ddrr63Ko="/>
+            <table:column id="c_adschool_domain_Enseignant_cni" property="cni" z="QkUfPdcCoaomKzWmWlEepW8MFqs="/>
+            <table:column id="c_adschool_domain_Enseignant_telephone" property="telephone" z="y5a8/dogbLWnoiExA82hYDiPRCs="/>
+            <table:column id="c_adschool_domain_Enseignant_userImage" property="userImage" z="kkqD9IxkkBliTM6ceG/DXApEDJg="/>
+        </table:table>
+    </page:list>
+</div>

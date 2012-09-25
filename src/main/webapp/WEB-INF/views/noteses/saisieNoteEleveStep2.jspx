@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+ 
+ xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page"
+  xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+   
+   
+    <div id="inscriptionDiv">
+    
+    
+    <form:find finderName="ByEleve"  nameButton="Etape III" id="ff_adschool_domain_Eleve" namePanel="Saisie des Notes / Eleve - ETAPE II" path="/noteses/saisieNoteEleveStep2" z="oA03lX4BG2w3dEb2sTLvT6H1CKQ=">
+       
+        <table class="tableform">
+        <td class="tableform">
+        <field:select disableFormBinding="true" field="eleve" id="f_adschool_domain_Eleve_nom" itemValue="id" items="${eleves}" path="/eleves" required="true" z="pfdBGl/A8/YsCHeFS5bQMuskxRk="/>
+      </td>
+          
+       
+       </table>
+       
+    </form:find>
+    
+     </div>
+    
+    
+    
+    <!-- find student div  -->
+    
+    <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+    
+</div>

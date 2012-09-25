@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+
+ xmlns:spring="http://www.springframework.org/tags" 
+xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    
+    <spring:url value="/etats/rapportperiodiqueinscription" var="print_recu">
+     
+    <spring:param name="dateD" value ="${dateD}" />
+    
+    <spring:param name="dateF" value ="${dateF}" />
+     
+	</spring:url>    
+	
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Inscription" items="${inscriptions}" z="OgOHHh2TVSBssOnK0tj4EkaE37k=">
+        <table:table data="${inscriptions}" create="false" delete="false" update="false"  id="l_adschool_domain_Inscription" path="/inscriptions" z="user-managed">
+            <table:column id="c_adschool_domain_Inscription_inscriptionKey" property="inscriptionKey" z="6ra8no8Vtu+3UTuSjNvDIXjDQX0="/>
+            <table:column id="s_adschool_domain_Inscription_annee" property="annee" z="user-managed"/>
+            <table:column id="s_adschool_domain_Inscription_classe" property="classe" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${inscription_dateinscription_date_format}" id="c_adschool_domain_Inscription_dateInscription" property="dateInscription" z="cooFP8oGBafS+2ElmoU88kCAVJY="/>
+            <table:column id="c_adschool_domain_Inscription_eleve" property="eleve" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${inscription_datesaisie_date_format}" id="c_adschool_domain_Inscription_dateSaisie" property="dateSaisie" z="3pnL/Po28QMWa+wJz9FxnS+lvXM="/>
+            <table:column id="c_adschool_domain_Inscription_montantInscription" property="montantInscription" z="Z+gpIueOM5r5MeL7IR6ggsZOJsI="/>
+            <table:column id="s_adschool_domain_Inscription_avance" property="avance" z="WgPZ9NEbkNrKWVWJ9WAXFv0dxn8="/>
+            <table:column id="c_adschool_domain_Inscription_etablissement" property="etablissement" z="8N1RTeYNhGoG3vnusSwhIWa5njc="/>
+            <table:column id="c_adschool_domain_Inscription_agentSaisie" property="agentSaisie" z="xsf0bP45MEB3yfM++VssF8ZrmkU="/>
+        </table:table>
+    </page:list>
+    
+    
+</div>

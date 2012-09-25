@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_GroupeMatiere" items="${groupematieres}" z="OBsdNLpgtUazRvuHW31EAXHxYPQ=">
+        <table:table data="${groupematieres}" id="l_adschool_domain_GroupeMatiere" link="listeUE" message="Liste UE" path="/groupematieres" z="user-managed">
+            <table:column id="c_adschool_domain_GroupeMatiere_groupeKey" property="groupeKey" z="qhWW/GiQaiqNlI3uFc0kULc6wDc="/>
+            <table:column id="c_adschool_domain_GroupeMatiere_intitule" property="intitule" z="h1YdmOxhjjvoJhq6ge/5ymQ+ESo="/>
+            <table:column id="c_adschool_domain_GroupeMatiere_disposition" property="disposition" z="HhI2wK1cY8Sxuw1p+MPik5kGltY="/>
+            <table:column id="c_adschool_domain_GroupeMatiere_totalcredit" property="totalcredit" z="kNFYcyrPVG7AP5b7W0VhQqeRtjw="/>
+            <table:column id="c_adschool_domain_GroupeMatiere_classe" property="classe" z="QuN1u/0kQZDInMtNTtpqLFyADtY="/>
+        </table:table>
+    </page:list>
+</div>

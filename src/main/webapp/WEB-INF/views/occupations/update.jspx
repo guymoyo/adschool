@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Occupation" modelAttribute="occupation" path="/occupations" versionField="Version" z="6uOaET6jR4SkyNvKCnCYc6MHFsQ=">
+       
+       <field:display field="occupationKey" id="c_adschool_domain_Occupation_occupationKey" object="${occupation}" showhidden="true" z="user-managed"/>
+        <field:select field="classe" id="c_adschool_domain_Occupation_classe" itemValue="id" itemLabel="nomAbreger" items="${classes}" path="/classes" z="YoVwvQBfNFqos+usSQ3lb39oEPA="/>
+        <field:select field="salle" id="c_adschool_domain_Occupation_salle" itemValue="id" items="${salles}" itemLabel="nomsalle" path="/salles" z="EGu/vqN0JT94C6UzHzJWCwYyvY8="/>
+        <field:datetime dateTimePattern="${occupation_heurestart_date_format}" field="heureStart" id="c_adschool_domain_Occupation_heureStart" z="KOFzXjv4QMP1XRGV8PibZC0O5uw="/>
+        <field:datetime dateTimePattern="${occupation_heurestop_date_format}" field="heureStop" id="c_adschool_domain_Occupation_heureStop" z="UiAnqARS8WrHlE5eebj/BfaoBv8="/>
+        <field:select field="jour" id="c_adschool_domain_Occupation_jour" items="${jourses}" path="jourses" z="9YwxmVeXrh5PFHUT5kYGeNpsjIY="/>
+    </form:update>
+</div>

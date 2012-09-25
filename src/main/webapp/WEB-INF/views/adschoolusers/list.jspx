@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_security_AdSchoolUser" items="${adschoolusers}" z="ylQUKpzaiRSFziFP+/X7xCoQT7A=">
+        <table:table data="${adschoolusers}" id="l_adschool_security_AdSchoolUser" path="/adschoolusers" z="HG0hzhc+5YifpHMBfiVPiLNUIYw=">
+            <table:column id="c_adschool_security_AdSchoolUser_userName" property="userName" z="c4N29nCB9zxxX+lX2+WLMq15X1U="/>
+            <table:column id="c_adschool_security_AdSchoolUser_userNumber" property="userNumber" z="4LrtQTs1AofPhDJTgo/4j3K0yf4="/>
+            <table:column id="c_adschool_security_AdSchoolUser_firstName" property="firstName" z="4ys7Q0Rl1Im7BlHatTEJ+dYqcJU="/>
+            <table:column id="c_adschool_security_AdSchoolUser_lastName" property="lastName" z="a3d9Mn1yu7hsRkGNEvF4nGIlCpg="/>
+            <table:column id="c_adschool_security_AdSchoolUser_fullName" property="fullName" z="FJ6ac9mmD0j9SxfUXIPCxMnCj8s="/>
+            <table:column id="c_adschool_security_AdSchoolUser_roleName" property="roleName" z="s1gxhP3N68SeWSpdID2vntxmBDs="/>
+            <table:column id="c_adschool_security_AdSchoolUser_password" property="password" z="s1gxhP3N68SeWSpdID2vntxmBDs="/>
+        </table:table>
+    </page:list>
+</div>

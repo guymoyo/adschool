@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_PointageEnseignants" modelAttribute="pointageEnseignants" path="/pointageenseignantses" versionField="Version" z="sBHMtlk8vALtr0UJq7d2OIITuLU=">
+        <field:input field="pointageKey" id="c_adschool_domain_PointageEnseignants_pointageKey" z="wh2UjMZcliogHcNK3qm/cUnkzV8="/>
+        <field:select field="annee" id="c_adschool_domain_PointageEnseignants_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="Za+JELBnv4xoAX8Bfxc3RJ+kAa4="/>
+        <field:select field="enseignant" id="c_adschool_domain_PointageEnseignants_enseignant" itemValue="id" items="${enseignants}" path="/enseignants" z="r7s3+crJA7Vro7RUDLcIpgrqsY4="/>
+        <field:select field="matiere" id="c_adschool_domain_PointageEnseignants_matiere" itemValue="id" items="${matieres}" path="/matieres" z="YGMz5S9lvF47HAklbAAhcYNvucg="/>
+        <field:select field="classe" id="c_adschool_domain_PointageEnseignants_classe" itemValue="id" items="${classes}" path="/classes" z="BS66TKfyHaXBIfAAG+9rfu7liqI="/>
+        <field:datetime dateTimePattern="${pointageEnseignants_datedebut_date_format}" field="datedebut" id="c_adschool_domain_PointageEnseignants_datedebut" z="amu/ZC0m/g6khNgp/bVgWf+J/BM="/>
+        <field:input field="duree" id="c_adschool_domain_PointageEnseignants_duree" z="OPj9Iy2CRn5dOBLFvmfealgt72c="/>
+    </form:update>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_PointageEnseignants" items="${pointageenseignantses}" z="MsvdJ4x7eHfPslyzFgb6hwlMlPA=">
+        <table:table data="${pointageenseignantses}" id="l_adschool_domain_PointageEnseignants" path="/pointageenseignantses" z="+DKMV5IJTV2g8Tz8h5/eoJjeYkk=">
+            <table:column id="c_adschool_domain_PointageEnseignants_pointageKey" property="pointageKey" z="/VsDobJbFx0T5dskjgkeJojfKPY="/>
+            <table:column id="c_adschool_domain_PointageEnseignants_annee" property="annee" z="myOpcytE/GUacsaKg6L+hNzNS1E="/>
+            <table:column id="c_adschool_domain_PointageEnseignants_enseignant" property="enseignant" z="SWuiknlag27n0OhINpOPzqeylbU="/>
+            <table:column id="c_adschool_domain_PointageEnseignants_matiere" property="matiere" z="aOqiwJAukrAACsdyqMMIxw73Qig="/>
+            <table:column id="c_adschool_domain_PointageEnseignants_classe" property="classe" z="/Huv9gQMgAu3xAj9ib+HgU2IPIw="/>
+            <table:column date="true" dateTimePattern="${pointageEnseignants_datedebut_date_format}" id="c_adschool_domain_PointageEnseignants_datedebut" property="datedebut" z="m8jGicuvfBqu0s35zRklnSHLkDM="/>
+        </table:table>
+    </page:list>
+</div>

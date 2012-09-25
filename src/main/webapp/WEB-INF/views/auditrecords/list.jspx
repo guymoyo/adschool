@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_AuditRecord" items="${auditrecords}" z="M6vffzlVlhyuNI1a9u8fO2xWjLg=">
+        <table:table data="${auditrecords}" id="l_adschool_domain_AuditRecord" path="/auditrecords" z="HoAnZoZkBRAtdMEOyWrh3pP+/OE=">
+            <table:column id="c_adschool_domain_AuditRecord_bussinessName" property="bussinessName" z="+/twtsz25+IPyUCC4r8MnLUOYJw="/>
+            <table:column id="c_adschool_domain_AuditRecord_bussinessKey" property="bussinessKey" z="7IwBXblGFE6K26NzqKfsw7jFlvM="/>
+            <table:column id="c_adschool_domain_AuditRecord_createBy" property="createBy" z="0bPUKCcbrU6rWphtvT7geX7NZHA="/>
+            <table:column date="true" dateTimePattern="${auditRecord_creele_date_format}" id="c_adschool_domain_AuditRecord_creeLe" property="creeLe" z="ShKd1SRcDOSbZ7mypRaZkRNdKtE="/>
+            <table:column id="c_adschool_domain_AuditRecord_updateBy" property="updateBy" z="nFQNmrksf29SFEoV3OBhHO3/cLM="/>
+            <table:column date="true" dateTimePattern="${auditRecord_updatele_date_format}" id="c_adschool_domain_AuditRecord_updateLe" property="updateLe" z="IETNVLlboRufob5aCEuNMhxHJnQ="/>
+        </table:table>
+    </page:list>
+</div>

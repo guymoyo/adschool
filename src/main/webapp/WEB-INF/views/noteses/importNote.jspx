@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+ xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+xmlns:spring="http://www.springframework.org/tags"
+xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    
+     <spring:url value="/importnotes/importerStep2" var="import_url"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+     <c:if test="${empty apMessage}">
+     
+    <page:list id="pl_adschool_domain_Notes" items="${noteses}" z="PfWsDg33gjQg/AHBa0ZlCBWXeqQ=">
+        <table:table data="${noteses}" create="false" update="false" delete="false" show="false" id="l_adschool_domain_Notes" path="/noteses" z="KxBnMWOfvrkQN/6CmSsMVF9IjnI=">
+            <table:column id="c_adschool_domain_Notes_eleve" property="eleve" z="GQywW3vZAfkQAvAWCnyPJitCY4A="/>
+            <table:column id="c_adschool_domain_Notes_evaluation" property="evaluation" z="U7M0O73GHVr4CeuIPwmmQX0q0yc="/>
+            
+            <table:column id="c_adschool_domain_Notes_valeur" property="valeur" z="BtpN5Wx9M+x2KW9Onra6qpHzWJQ="/>
+            
+            <table:column id="c_adschool_domain_Notes_coefficient" property="coefficient" z="DyKbA9pDx8iL4TMhtlKTpq0LaB4="/>
+            <table:column id="c_adschool_domain_Notes_pourcentage" property="pourcentage" z="gpfck94VL3aZZd4iKyMlcQyemcA="/>
+        </table:table>
+        
+         <a href="${import_url}">
+    	Importer ces Notes
+    	</a>
+    </page:list>
+    
+    </c:if>
+    
+      <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+    
+   
+    
+</div>

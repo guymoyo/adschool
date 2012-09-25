@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:url value="/eleves/findEleve/ByAjax" var="find_student_url"/>
+        <spring:url value="/parents/findParents/ByAjax" var="find_parent_url"/>
+        
+        <spring:message code="informations_student"  var="informations_student"/>
+        
+        <spring:message code="informations_inscription"  var="informations_inscription"/>
+        
+        <spring:message code="informations_parent"  var="informations_parent"/>
+        
+        <spring:message code="informations_pension"  var="informations_pension"/>
+        
+        <spring:message code="enter_informations_student"  var="enter_informations_student"/>
+ 
+ 	    <spring:message code="school_year_informations"  var="school_year_informations"/>
+    
+    <spring:url value="/eleves/getStudentByAjax" var="get_student_url"/>
+        <spring:url value="/configpensions/ajouterconfigByAjax" var="ajouter_config_url"/>
+         <spring:url value="/configpensions/findconfigByAjax" var="find_config_url"/>
+            <spring:url value="/parents/saveParentByAjax" var="save_parent_url"/> 
+                <spring:url value="/eleves/saveStudentByAjax" var="save_student_url"/> 
+                
+                <spring:url value="/configpensions/deletePensionByAjax" var="delete_pension_url"/> 
+    
+    <spring:url value="/configinscriptions/displayCnfInscriptionByAjax" var="displayCnfInscription_url"/>
+    <spring:url value="/configpensions/displayCnfInscriptionByAjax" var="displayCnfPension_url"/>
+    
+    <spring:url value="/resources/" var="image_url"/>
+    <script>
+	$(function() {
+		
+		
+		find();
+		
+	    $( "#accordion" ).accordion({
+			autoHeight: false,
+			navigation: true,
+			fillSpace: true
+		});
+		
+		
+		$('#find').click(function(){
+			clearPensionTable();
+			$('#findStudentDiv').show();
+			$('#inscriptionDiv').hide();
+			return false;
+		});
+		$('#findp').click(function(){
+			clearPensionTable();
+			$('#findParentDiv').show();
+			$('#createParentDiv').hide();
+			return false;
+		});
+		$('#cancelbt').click(function(){
+			$('#findStudentDiv').hide();
+			$('#inscriptionDiv').show();
+			return false;
+		});
+		$('#annuler').click(function(){
+			$('#findParentDiv').hide();
+			$('#createParentDiv').hide();
+			return false;
+		});
+			
+		$('#cancel').click(function(){
+			$('#createStudentDiv').hide();
+			$('#inscriptionDiv').show();
+			return false;
+		});
+		$('#ajouterbt').click(function(){
+			ajouter();
+			
+			return false;
+		});
+		
+		$('#findbt').click(function(){
+			
+			find();
+			return false;
+		});
+          $('#enregistrer').click(function(){
+        	  saveStudent();
+			return false;
+		});
+       
+         
+		
+		
+	});
+	
+	$( "#accordionResizer" ).resizable({
+		minHeight: 300,
+		resize: function() {
+			$( "#accordion" ).accordion( "resize" );
+		}
+	});
+	$( "#accordionParentResizer" ).resizable({
+		minHeight: 350,
+		resize: function() {
+			//$( "#accordion" ).accordion( "resize" );
+		}
+	});
+	
+
+	function ajouter(){
+	
+        var paramsObj ={yearId:$('#_annee_academique_id :selected').val() ,etsId: $('#_etablissement_id :selected').val(),classeId:$('#_niveau_id :selected').val(),regimeId:$('#_regime_id :selected').val(),montantId:$('#_montant_id').val(),trancheId:$('#_tranche_id').val(),datelimite:$('#_datelimite_id').val()};
+		var params = $.param(paramsObj);
+		$.getJSON( '${ajouter_config_url}',
+				    params,
+	                function(data){
+			
+			if( data == null){
+				
+				alert("Cette tranche a deja ete configuree");
+				return;
+			}
+			      
+			clearPensionTable();
+			$(data).each(function(){
+                  $('#pensionTable').append(
+          '<tr>
+          <td>'+this.etablissement.nomAbreger+'</td>
+          <td>'+this.anneeScolaire.libelle+'</td>
+          <td>'+this.tranche+'</td>
+          <td>'+this.montant+'</td>
+          <td>'+dojo.date.locale.format(new Date(this.dateLimitePaiement), {datePattern: "dd-MM-yyyy", selector: "date"})+'</td>
+          <td>'+this.classe.nomAbreger+'</td>
+          <td>'+this.regime.libelle+'</td>
+          
+          <td>  <a id="'+this.id+'" > Supprimer</a> </td>
+          </tr>'
+                          
+          );
+                  
+          });
+			
+			
+			$('table#pensionTable a ').each(function(){
+				var current = this;
+				this.onclick = function(event) {
+					supprime(this.id);
+					return false;
+					
+				};
+				});
+			
+
+					});
+       
+	};
+	
+	
+	function find(){
+		
+	        var paramsObj ={yearId:$('#_annee_academique_id :selected').val() ,etsId: $('#_etablissement_id :selected').val(),classeId:$('#_niveau_id :selected').val(),regimeId:$('#_regime_id :selected').val()};
+			var params = $.param(paramsObj);
+			$.getJSON( '${find_config_url}',
+					    params,
+		                function(data){
+				      
+				clearPensionTable();
+				$(data).each(function(){
+	                  $('#pensionTable').append(
+	          
+	          '<tr>
+	          <td>'+this.etablissement.nomEtablissement+'</td>
+	          <td>'+this.anneeScolaire.libelle+'</td>
+	          <td>'+this.tranche+'</td>
+	          <td>'+this.montant+'</td>
+	          <td>'+dojo.date.locale.format(new Date(this.dateLimitePaiement), {datePattern: "dd-MM-yyyy", selector: "date"})+'</td>
+	          <td>'+this.classe.nomAbreger+'</td>
+	          <td>'+this.regime.libelle+'</td>
+	          
+	          <td>  <a id="'+this.id+'" > Supprimer</a> </td>
+	          
+	          
+	          </tr>'
+	                          
+	          );
+	                  
+	          });
+				
+				$('table#pensionTable a ').each(function(){
+					var current = this;
+					this.onclick = function(event) {
+						supprime(this.id);
+						return false;
+						
+					};
+					});
+
+						});
+	       
+		};
+		
+		
+
+		function supprime(_idPension){
+			
+			  var paramsObj = {idPension:_idPension, yearId:$('#_annee_academique_id :selected').val() ,etsId: $('#_etablissement_id :selected').val(),classeId:$('#_niveau_id :selected').val(),regimeId:$('#_regime_id :selected').val()};
+				var params = $.param(paramsObj);
+				$.getJSON( '${delete_pension_url}',
+						    params,
+			                function(data){
+			
+			   clearPensionTable();
+							$(data).each(function(){
+								$('#pensionTable').append(
+		        '<tr id="'+this.id+'">
+		        <td>'+this.etablissement.nomEtablissement+'</td>
+		          <td>'+this.anneeScolaire.libelle+'</td>
+		          <td>'+this.tranche+'</td>
+		          <td>'+this.montant+'</td>
+		          <td>'+dojo.date.locale.format(new Date(this.dateLimitePaiement), {datePattern: "dd-MM-yyyy", selector: "date"})+'</td>
+		          <td>'+this.classe.nomAbreger+'</td>
+		          <td>'+this.regime.libelle+'</td>
+		        
+		        <td>  <a id="'+this.id+'" > Supprimer</a> </td>
+		        
+		        </tr>'
+									
+							);
+								
+							});
+						
+							
+							$('table#pensionTable a ').each(function(){
+								var current = this;
+								this.onclick = function(event) {
+									supprime(this.id);
+									return false;
+									
+								};
+							});
+						
+
+						});
+			
+		}
+		
+		
+		
+		
+	
+	function findStudent(){
+		$.getJSON( '${find_student_url}',
+				$('#findStudentForm').serialize(),
+	                function(data){
+			clearPensionTable();
+						$(data).each(function(){
+							$('#studentListTable').append(
+	        '<tr id="'+this.id+'">
+            <td>'+this.matricule+'</td>
+            <td>'+this.nom+'</td>
+            <td>'+this.genre+'</td>
+            <td>'+this.nationalite.libelle+'</td>
+            <td>'+this.lieuNaissance+'</td>
+            <td>'+this.telephone+'</td>
+            </tr>'
+								
+						);
+							
+						});
+						$('table#studentListTable tr ').each(function(){
+							var current = this;
+							this.onclick = function(event) {
+								getSelectedStudent(this.id);
+								$('#findStudentDiv').hide();
+								$('#inscriptionDiv').show();
+								return false;
+							
+								
+							};
+							});
+					
+
+					});
+		return false ;
+};
+
+
+	function clearPensionTable(){
+        $('#pensionTable').html(
+                        '<tr>
+				
+		  <th>Etablissement</th> 
+          <th>Annee Academique</th> 
+          <th>Tranche</th> 
+          <th>Montant</th> 
+          <th>Date Limite</th> 
+          <th>Classe</th>
+          <th>Regime</th>
+          <th>Actions</th>
+		
+		</tr>');
+	}
+	
+	
+	function getSelectedStudent(studentId){
+		$.getJSON( '${get_student_url}/'+studentId,
+                function(data){
+			var stdimg = '${image_url}'+data.pathPhoto;
+			var prtimg = '${image_url}'+data.parent.pathPhoto;
+			     $('#_eleve_id').val(data.nom);
+			     $('#stdImg').attr("src",stdimg).load();
+			     $('#nom_disp').html(data.nom);
+			     $('#matricule_disp').html(data.matricule);
+			     $('#lieuNaissance_disp').html(data.lieuNaissance);
+			     $('#cni_disp').html(data.cni);
+			     $('#telephone_disp').html(data.telephone);
+			     $('#email_disp').html(data.email);
+			     $('#nationalite_disp').html(data.nationalite.libelle);
+			     $('#pathPhoto_disp').html(data.pathPhoto);
+			     $('#genre_disp').html(data.genre);
+			     $('#dateNaissance_disp').html(data.dateNaissance);
+			     //load parent information
+			     $('#_eleve_id').val(data.nom);
+			     $('#prtImg').attr("src",prtimg).load();
+			     $('#nomPere_prt').html(data.parent.nomPere);
+			     $('#nomMere_prt').html(data.parent.nomMere);
+			     $('#telephoneMere_prt').html(data.parent.telephoneMere);
+			     $('#telephonePere_prt').html(data.parent.telephonePere);
+			     $('#matricule_prt').html(data.parent.matricule);
+			     $('#lieuNaissance_prt').html(data.parent.lieuNaissance);
+			     $('#cni_prt').html(data.parent.cni);
+			     $('#telephone_prt').html(data.parent.telephone);
+			     $('#email_prt').html(data.parent.email);
+			     $('#nationalite_prt').html(data.parent.nationalite.libelle);
+			     $('#pathPhoto_prt').html(data.parent.pathPhoto);
+			     $('#genre_prt').html(data.parent.genre);
+			     $('#dateNaissance_prt').html(data.parent.dateNaissance);
+			     $('#_studentId_id').val(data.id);
+			     $('#_etudiant_id').val(data.nom);
+			     
+
+				});
+		
+	}
+	
+
+	</script>
+   
+    <div id="inscriptionDiv">
+    
+    
+    
+        <form:create id="fc_adschool_domain_Inscription" label="Configuration" modelAttribute="configpension" path="/configpensions" render="${empty dependencies}" z="Ic4SiQNcoyfFyHiquyM9hIpKUYk=">
+            <fieldset>
+                <LEGEND> Informations Parametrage</LEGEND>
+                <table class="tableform">
+                     <tr>
+                        <td class="tableform">
+                            <field:jqueryselect custumId="true" onChange="find();" field="anneeScolaire"   id="c_adschool_domain_Inscription_annee" itemLabel="libelle" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="user-managed"/>
+                        </td>
+                        <td class="tableform">
+                            <field:jqueryselect custumId="true" onChange="find();" field="etablissement" id="c_adschool_domain_Inscription_etablissement" itemLabel="nomEtablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="user-managed"/>
+                        </td>
+                        <td class="tableform">
+                            <field:jqueryselect custumId="true" onChange="find();" field="classe" id="c_adschool_domain_Inscription_classe" itemLabel="nomClasse" itemValue="id" items="${classes}" path="/classes" z="user-managed"/>
+                        </td>
+                        <td class="tableform">
+                            <field:jqueryselect custumId="true" onChange="find();" field="regime" id="c_adschool_domain_Inscription_regime" itemLabel="libelle" itemValue="id" items="${regimes}" path="/regimes" z="user-managed"/>
+                        </td>
+                        
+                       
+                   
+                    	<td class="tableform" style="width: 10%;">
+                                <field:button id="findbt" type="button" value="Rechercher"/>
+                       </td>
+                   
+                   
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <fieldset>
+                <LEGEND> Infos </LEGEND>
+           
+
+        <form action="#" id="findParentForm">
+                    <table class="tableform">
+                        <tr>
+                            <td class="tableform" style="width: 25%;">
+                                <field:input disableFormBinding="true"  field="montant" id="pere" label="Montant"/>
+                            </td>
+                            <td class="tableform" style="width: 25%;">
+                                <field:input disableFormBinding="true"  field="tranche" id="mere" label="Tranche"/>
+                            </td>
+                            
+                             <td class="tableform" style="width: 25%;">
+                                <field:datetime  dateTimePattern="${inscription_dateinscription_date_format}" disableFormBinding="true"  field="datelimite" id="mere" label="Date Limite Paiement"/>
+                            
+                            </td>
+                            
+                            
+                            
+                            <td class="tableform" style="width: 10%;">
+                                <field:button id="ajouterbt" type="button" value="Ajouter"/>
+                            </td>
+                        </tr>
+                    </table>
+                
+            </form>
+
+
+            </fieldset>
+            
+            <fieldset>
+                <LEGEND>Liste des Tranches</LEGEND>
+                
+                     <p id="cnfPension"/>
+                                     <div style="overflow-y: scroll; height: 200px; width: auto;">
+                                                                        <table class="search" id="pensionTable">
+                                                                            <tr>
+                                                                             <th>Etablissement</th> 
+                                                                             <th>Annee Academique</th> 
+                                                                             <th>Tranche</th> 
+                                                                             <th>Montant</th> 
+                                                                             <th>Date Limite</th> 
+                                                                             <th>Classe</th>
+                                                                             <th>Regime</th>
+                                                                             <th>Actions</th>
+                                                                            </tr>
+                                                                        </table>
+                                      </div>
+                
+                
+            </fieldset>
+            
+            
+        </form:create>
+        <form:dependency dependencies="${dependencies}" id="d_adschool_domain_Inscription" render="${not empty dependencies}" z="csBZc3Yyeh6LXS6RxcfqTrDHM8w="/>
+    </div>
+    
+    
+    
+    <!-- find student div  -->
+    
+    <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+    
+</div>

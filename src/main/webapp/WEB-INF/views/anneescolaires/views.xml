@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="anneescolaires/list">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/list.jspx"/>
+    </definition>
+<definition extends="default" name="anneescolaires/show">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/show.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="anneescolaires/close">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/close.jspx"/>
+    </definition>
+<definition extends="default" name="anneescolaires/create">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/create.jspx"/>
+    </definition>
+<definition extends="default" name="anneescolaires/update">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/update.jspx"/>
+    </definition>
+<definition extends="default" name="anneescolaires/findAnneeScolairesByActif">
+        <put-attribute name="body" value="/WEB-INF/views/anneescolaires/findAnneeScolairesByActif.jspx"/>
+    </definition>
+</tiles-definitions>

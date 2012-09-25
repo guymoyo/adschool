@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:url value="/eleves/findEleve/ByAjax" var="find_student_url" />
+        <spring:url value="/eleves/getStudentByAjax" var="get_student_url" />
+          <spring:url var="image_url" value="/resources/" />
+    
+    
+    <script>
+	$(function() {
+		$( "#accordion" ).accordion({
+			autoHeight: false,
+			navigation: true,
+			fillSpace: true
+		});
+		$('#create').click(function(){
+			$('#createStudentDiv').show();
+			$('#inscriptionDiv').hide();
+			return false;
+		});
+		$('#find').click(function(){
+			clearTable();
+			$('#findStudentDiv').show();
+			$('#inscriptionDiv').hide();
+			return false;
+		});
+		$('#cancelbt').click(function(){
+			$('#findStudentDiv').hide();
+			$('#inscriptionDiv').show();
+			return false;
+		});
+		
+		$('#cancel').click(function(){
+			$('#createStudentDiv').hide();
+			$('#inscriptionDiv').show();
+			return false;
+		});
+		$('#searchbt').click(function(){
+			clearTable();
+			findStudent();
+			return false;
+		});
+		
+		
+	});
+	$( "#accordionResizer" ).resizable({
+		minHeight: 300,
+		resize: function() {
+			$( "#accordion" ).accordion( "resize" );
+		}
+	});
+	function findStudent(){
+		$.getJSON( '${find_student_url}',
+				$('#findStudentForm').serialize(),
+	                function(data){
+			        clearTable();
+						$(data).each(function(){
+							$('#studentListTable').append(
+								'<tr >
+								  <td>'+this.matricule+'</td>
+								  <td><a id="'+this.id+'">'+this.nom+'</a></td>
+								  <td>'+this.genre+'</td>
+								  <td>'+this.nationalite.libelle+'</td>
+								  <td>'+this.lieuNaissance+'</td>
+								  <td>'+this.telephone+'</td>
+								  </tr>'
+								
+						);
+							
+						});
+						$('table#studentListTable a').each(function(){
+							var current = this;
+							this.onclick = function(event) {
+								getSelectedStudent(this.id);
+								$('#findStudentDiv').hide();
+								$('#inscriptionDiv').show();
+								return false;
+							
+								
+							};
+							});
+					
+
+					});
+		return false ;
+};
+	function clearTable(){
+		$('#studentListTable').html(
+				'<tr>
+				   <th> Matricule</th>
+			    	<th>Nom Complet</th>
+		    		<th>Genre</th>
+		    		 <th>Nationalite</th>
+		    		<th>Lieu Naissance</th>
+		    		<th>Telephone</th>
+				</tr>');
+	
+		
+	}
+	function getSelectedStudent(studentId){
+		$.getJSON( '${get_student_url}/'+studentId,
+                function(data){
+			var stdimg = '${image_url}'+data.pathPhoto;
+			var prtimg = '${image_url}'+data.parent.pathPhoto;
+			     $('#_eleve_id').val(data.nom);
+			     $('#stdImg').attr("src",stdimg).load();
+			     $('#nom_disp').html(data.nom);
+			     $('#matricule_disp').html(data.matricule);
+			     $('#lieuNaissance_disp').html(data.lieuNaissance);
+			     $('#cni_disp').html(data.cni);
+			     $('#telephone_disp').html(data.telephone);
+			     $('#email_disp').html(data.email);
+			     $('#nationalite_disp').html(data.nationalite.libelle);
+			     $('#pathPhoto_disp').html(data.pathPhoto);
+			     $('#genre_disp').html(data.genre);
+			     $('#dateNaissance_disp').html(data.dateNaissance);
+			     //load parent informatio
+			     $('#_eleve_id').val(data.nom);
+			     $('#prtImg').attr("src",prtimg).load();
+			     $('#nom_prt').html(data.parent.nom);
+			     $('#matricule_prt').html(data.parent.matricule);
+			     $('#lieuNaissance_prt').html(data.parent.lieuNaissance);
+			     $('#cni_prt').html(data.parent.cni);
+			     $('#telephone_prt').html(data.parent.telephone);
+			     $('#email_prt').html(data.parent.email);
+			     $('#nationalite_prt').html(data.parent.nationalite.libelle);
+			     $('#pathPhoto_prt').html(data.parent.pathPhoto);
+			     $('#genre_prt').html(data.parent.genre);
+			     $('#dateNaissance_prt').html(data.parent.dateNaissance);
+
+			     
+
+				});
+		
+	}
+	</script>
+				
+	
+    <div id="inscriptionDiv">
+        <form:create id="fc_adschool_domain_Inscription" modelAttribute="inscription" path="/inscriptions" render="${empty dependencies}" z="Ic4SiQNcoyfFyHiquyM9hIpKUYk=">
+            <fieldset>
+                <LEGEND> School year Information</LEGEND>
+                <table class="tableform">
+                    <tr>
+                        <td class="tableform">
+                            <field:select field="etablissement" id="c_adschool_domain_Inscription_etablissement" itemLabel="nomEtablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="user-managed"/>
+                        </td>
+                        <td class="tableform">
+                            <field:select field="classe" id="c_adschool_domain_Inscription_classe" itemLabel="nomClasse" itemValue="id" items="${classes}" path="/classes" z="user-managed"/>
+                        </td>
+                        <td class="tableform">
+                            <field:select field="regime" id="c_adschool_domain_Inscription_regime" itemLabel="libelle" itemValue="id" items="${regimes}" path="/regimes" z="user-managed"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <table class="tableform">
+                <tr>
+                    <td class="tableform" style="width: 50%;">
+                        <field:input bulleInfos="rechercher un ancien creer un nouveau" createLinkId="create" field="eleve" findLinkId="find" id="c_adschool_domain_Inscription_eleve" z="user-managed"/>
+                        <field:select field="statut" id="c_adschool_domain_Inscription_statut" items="${statutinscriptions}" path="statutinscriptions" z="8n1qO/2e2uvAPLb9LveGknxUvUo="/>
+                        <field:select field="annee" id="c_adschool_domain_Inscription_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" render="false" z="user-managed"/>
+                        <field:input field="inscriptionKey" id="c_adschool_domain_Inscription_inscriptionKey" render="false" z="user-managed"/>
+                        <field:datetime dateTimePattern="${inscription_dateinscription_date_format}" field="dateInscription" id="c_adschool_domain_Inscription_dateInscription" z="p21MwZbnnf86jQecaStUyw564Uw="/>
+                        <field:input field="agentSaisie" id="c_adschool_domain_Inscription_agentSaisie" render="false" z="user-managed"/>
+                        <field:datetime dateTimePattern="${inscription_datesaisie_date_format}" field="dateSaisie" id="c_adschool_domain_Inscription_dateSaisie" render="false" z="user-managed"/>
+                        <field:input field="montantInscription" disabled="true" style="color:blue; font-weight: bold;" disableFormBinding="true" id="c_adschool_domain_Inscription_montantInscription" z="t2EpRNL5aYLt63/G7U0P9EopCAQ="/>
+                         <field:input field="avance" id="c_adschool_domain_Inscription_avance" z="7rMbIrDfcfFLyXx8C5HdrkX0jC8="/>
+                        <field:checkbox field="solder" render="false" id="c_adschool_domain_Inscription_solder" z="MHJAbj2rJTLqpyxRZMTaT0aOG9I="/>
+                        <field:checkbox field="redoublant" id="c_adschool_domain_Inscription_redoublant" z="fvlLMewIT+SGfSK5nsD7LQzPUOc="/>
+                        <field:checkbox field="actif" id="c_adschool_domain_Inscription_actif" z="puz+HNBMoR0cazzUbVywyt0qGA8="/>
+                        <field:checkbox field="demission" id="c_adschool_domain_Inscription_demission" z="dWz+GqgVWwfFHcokBHhNogBkYrs="/>
+                        <field:datetime dateTimePattern="${inscription_datedemission_date_format}" field="dateDemission" id="c_adschool_domain_Inscription_dateDemission" z="Ct3mkKcMwqpbkPSJUpmioTd2O3M="/>
+                        <field:checkbox field="exclu" id="c_adschool_domain_Inscription_exclu" z="Fpmqw5qXxnLkY7K3itbWjvm/oKA="/>
+                        <field:datetime dateTimePattern="${inscription_dateexclusion_date_format}" field="dateExclusion" id="c_adschool_domain_Inscription_dateExclusion" z="1ongqNuWtiQHSsLXxSYARf/W1O8="/>
+                    </td>
+                    <td class="tableform" valign="top">
+               <div id="accordionResizer" style="padding:10px; width:auto; height:400px;" class="ui-widget-content">
+                        <div  class="ui-accordion ui-widget ui-helper-reset" id="accordion">
+                            <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top">
+                                <a  style="color: blue; font-weight: bold;" href="#">Student Informations</a>
+                            </h3>
+                            <div >
+          <p id="stdInfo">
+         <field:image imagePath="images/user.jpeg"  id="stdImg" />
+		<field:custumDisplay field="matricule" idExt="disp"  id="s_adschool_domain_Eleve_matricule" z="QX4VQ/wAhV9qEwr5hv5yTjcM/tM="/>
+        <field:custumDisplay field="nom" idExt="disp" id="s_adschool_domain_Eleve_nom" z="q/Vyz+HjuEVb1OtY4r6GUU/KmMs="/>
+        <field:custumDisplay field="nationalite" idExt="disp" id="s_adschool_domain_Eleve_nationalite" z="Jd229iHNvNXZAOs5mgm3gxmK2+E="/>
+        <field:custumDisplay field="genre" idExt="disp" id="s_adschool_domain_Eleve_genre" z="7tNakPkeE4Nkimt0GY0qwb5bTkE="/>
+        <field:custumDisplay field="telephone" idExt="disp" id="s_adschool_domain_Eleve_telephone" z="ZQM4tHlttZ+HxnK94vNrwsfclWs="/>
+        <field:custumDisplay  field="lieuNaissance" idExt="disp" id="s_adschool_domain_Eleve_lieuNaissance" z="7tNakPkeE4Nkimt0GY0qwb5bTkE="/>
+        <field:custumDisplay  date="true" idExt="disp" dateTimePattern="dd-MM-yyyy" field="dateNaissance" id="s_adschool_domain_Eleve_dateNaissance" z="NdQ3DZ5Nw7l8U1xxj7PhzmCFpfU="/>
+        <field:custumDisplay br="true" idExt="disp" field="boitePostale" id="s_adschool_domain_Eleve_boitePostale" z="jim2YU/gF0MYpSCD6lQg5ytslU0="/>
+        <field:custumDisplay br="true" idExt="disp" field="pathPhoto" id="s_adschool_domain_Eleve_pathPhoto" z="eaWfGamYCcZgRB3hN0yn59PRUFg="/>
+        <field:custumDisplay field="email" idExt="disp" id="s_adschool_domain_Eleve_email" z="KGk+oTWCkQ3+PXDS67eKp7caTvU="/>
+        <field:custumDisplay br="true" idExt="disp" field="etablissement" id="s_adschool_domain_Eleve_etablissement" z="udNKv0TdRhY4/onS5DTR4z7UFu0="/>
+        <field:custumDisplay br="true" idExt="disp" field="parent" id="s_adschool_domain_Eleve_parent" z="PFuhJMZWYKOzNx0MNE/ICN1RPdw="/>
+        <field:custumDisplay br="true" idExt="disp" field="password" id="s_adschool_domain_Eleve_password" z="tlo4hDX7JMkT1HL4JBI3gI+5qrY="/>
+ 	   
+       	</p>
+                            </div>
+                            <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top">
+                                <a href="#" style="color: blue; font-weight: bold;">Parents Informations</a>
+                            </h3>
+                            <div>
+                                <p id="prtInfo">
+		 <field:image imagePath="images/user.jpeg"  id="prtImg" />
+		<field:custumDisplay field="matricule" idExt="prt"  id="s_adschool_domain_Eleve_matricule" z="QX4VQ/wAhV9qEwr5hv5yTjcM/tM="/>
+        <field:custumDisplay field="nom" idExt="prt" id="s_adschool_domain_Eleve_nom" z="q/Vyz+HjuEVb1OtY4r6GUU/KmMs="/>
+        <field:custumDisplay field="nationalite" idExt="prt" id="s_adschool_domain_Eleve_nationalite" z="Jd229iHNvNXZAOs5mgm3gxmK2+E="/>
+        <field:custumDisplay field="genre" idExt="prt" id="s_adschool_domain_Eleve_genre" z="7tNakPkeE4Nkimt0GY0qwb5bTkE="/>
+        <field:custumDisplay field="telephone" idExt="prt" id="s_adschool_domain_Eleve_telephone" z="ZQM4tHlttZ+HxnK94vNrwsfclWs="/>
+        <field:custumDisplay  field="lieuNaissance" idExt="prt" id="s_adschool_domain_Eleve_lieuNaissance" z="7tNakPkeE4Nkimt0GY0qwb5bTkE="/>
+        <field:custumDisplay  date="true" idExt="prt" dateTimePattern="dd-MM-yyyy" field="dateNaissance" id="s_adschool_domain_Eleve_dateNaissance" z="NdQ3DZ5Nw7l8U1xxj7PhzmCFpfU="/>
+        <field:custumDisplay br="true" idExt="prt" field="boitePostale" id="s_adschool_domain_Eleve_boitePostale" z="jim2YU/gF0MYpSCD6lQg5ytslU0="/>
+        <field:custumDisplay br="true" idExt="prt" field="pathPhoto" id="s_adschool_domain_Eleve_pathPhoto" z="eaWfGamYCcZgRB3hN0yn59PRUFg="/>
+        <field:custumDisplay field="email" idExt="prt" id="s_adschool_domain_Eleve_email" z="KGk+oTWCkQ3+PXDS67eKp7caTvU="/>
+        <field:custumDisplay br="true" idExt="prt" field="etablissement" id="s_adschool_domain_Eleve_etablissement" z="udNKv0TdRhY4/onS5DTR4z7UFu0="/>
+        <field:custumDisplay br="true" idExt="prt" field="parent" id="s_adschool_domain_Eleve_parent" z="PFuhJMZWYKOzNx0MNE/ICN1RPdw="/>
+        <field:custumDisplay br="true" idExt="prt" field="password" id="s_adschool_domain_Eleve_password" z="tlo4hDX7JMkT1HL4JBI3gI+5qrY="/>
+ 		</p>
+                            </div>
+                            <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top">
+                                <a style="color: blue; font-weight: bold;" href="#">Inscription Informations</a>
+                            </h3>
+                            <div>
+                                <p>
+		Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+		Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+		ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+		lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+		</p>
+                                <ul>
+                                    <li>List item one</li>
+                                    <li>List item two</li>
+                                    <li>List item three</li>
+                                </ul>
+                            </div>
+                            <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top">
+                                <a  style="color: blue; font-weight: bold;" href="#">Pention Informations</a>
+                            </h3>
+                            <div>
+                                <p>
+		Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+		et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+		faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+		mauris vel est.
+		</p>
+                                <p>
+		Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+		inceptos himenaeos.
+		</p>
+                            </div>
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form:create>
+        <form:dependency dependencies="${dependencies}" id="d_adschool_domain_Inscription" render="${not empty dependencies}" z="csBZc3Yyeh6LXS6RxcfqTrDHM8w="/>
+    </div>
+    <DIV id="createStudentDiv" style="display: none;">
+        <form:jqueryCreate actionButton="enregistrer" paneTitle="Create a Student" formId="createStudent" id="fc_adschool_domain_Eleve" modelAttribute="eleve" multipart="true" otherButton="cancel" path="/eleves" z="user-managed">
+        <field:input field="matricule" id="c_adschool_domain_Eleve_matricule" render="false" z="user-managed"/>
+        <field:input field="nom" id="c_adschool_domain_Eleve_nom" z="DBrrgjyZK2riL754mEr99LegshI="/>
+        <field:input field="lieuNaissance" id="c_adschool_domain_Eleve_lieuNaissance" z="UAQijip96jglbxQq6A4Qg2ew0tc="/>
+        <field:input field="cni" id="c_adschool_domain_Eleve_cni" z="R1EdDFcJO83ea756+pq8abVryKU="/>
+        <field:input field="telephone" id="c_adschool_domain_Eleve_telephone" z="jHGVA9R6ehiTqZxsBMLDBzY/4mQ="/>
+        <field:input field="email" id="c_adschool_domain_Eleve_email" validationMessageCode="field_invalid_email" z="fwoLVJXJXwFGFHVOmfDf4yFu3UI="/>
+        <field:input field="boitePostale" id="c_adschool_domain_Eleve_boitePostale" z="Krfi22lHq58oNK4XGUwQUGmZrzw="/>
+        <field:datetime dateTimePattern="dd-MM-yyyy" field="dateNaissance" id="c_adschool_domain_Eleve_dateNaissance" z="4jMb5MvhwK8ZXFP+UVBsuhw7Lgw="/>
+        <field:select field="nationalite" id="c_adschool_domain_Eleve_nationalite" itemValue="id" items="${payses}" path="/payses" z="Bu8QD6qUi1SckUa2cNdzzRRsAUE="/>
+        <field:select field="genre" id="c_adschool_domain_Eleve_genre" items="${genres}" path="genres" z="6Ga95jzREVVEoUsM53TAYJVrMSE="/>
+        <field:input field="pathPhoto" id="c_adschool_domain_Eleve_pathPhoto" render="false" type="file" z="user-managed"/>
+        <field:input field="userImage" id="c_adschool_domain_Eleve_userImage" type="file" z="user-managed"/>
+        <field:input field="parent" id="c_adschool_domain_Eleve_parent" z="user-managed"/>
+        <field:input field="password" id="c_adschool_domain_Eleve_password" z="CH00tfY+aw9OpXVbR/KF2F+12bY="/>
+     </form:jqueryCreate>
+    </DIV>
+    
+    <DIV id="findStudentDiv" style="display: none;" >
+   <util:panel title="Search Student Form" id="search" openPane="true">
+        <form action="#" id="findStudentForm">
+        <fieldset>
+                <LEGEND> Enter Student name</LEGEND>
+          <table class="tableform">
+              <tr>
+                  <td class="tableform" style="width: 25%;">
+                  <field:input id="nom" disableFormBinding="true" field="nomcomplet"  label="Nom Complet"/>
+                  </td>
+                   <td class="tableform" style="width: 25%;">
+                  <field:input id="matricule" disableFormBinding="true" field="matricules"  label="Matricule" />
+                  </td>
+                  <td class="tableform" style="width: 10%;">
+                  <field:button id="searchbt" type="button" value="rechercher ..."/>
+                  </td>
+                  <td class="tableform">
+                  <field:button id="cancelbt" type="button" value="cancel"/>
+                  </td>
+              </tr>
+          </table>
+         
+          </fieldset>
+          
+        
+        </form>
+  <div style="overflow: scroll; height: 400px;">
+         <table id="studentListTable" class="search" >
+              <tr>
+                  <th >
+                  Matricule
+                  </th>
+                  <th >
+                  Nom Complet
+                  </th>
+                   <th >
+                  Genre
+                  </th>
+                   <th >
+                  Nationalite
+                  </th>
+                   <th >
+                  Lieu Naissance
+                  </th>
+                   <th >
+                  Telephone
+                  </th>
+              </tr>
+          </table>
+  </div>
+  </util:panel>
+    </DIV>
+    
+    <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+</div>

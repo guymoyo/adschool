@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Etablissement" modelAttribute="etablissement" multipart="true" path="/etablissements" versionField="Version" z="user-managed">
+        <field:display field="etablissementKey" id="c_adschool_domain_Etablissement_etablissementKey" object="${etablissement}"/>
+        <field:input field="etablissementKey" id="c_adschool_domain_Etablissement_etablissementKey" type="hidden" z="skeYB+vkHCmniuWZUPW+VuW9Nmk="/>
+        <field:input field="nomEtablissement" id="c_adschool_domain_Etablissement_nomEtablissement" z="yL5rlCDHFyATVSJSdpMwNgZo7TI="/>
+        <field:input field="nomAbreger" id="c_adschool_domain_Etablissement_nomAbreger" z="IJoIjlwdO+CoNGk8FJhJEKSdBLw="/>
+        <field:input field="nomResponsable" id="c_adschool_domain_Etablissement_nomResponsable" z="DeZMFmUNZlmPlQ2w0cNZj7QDZTY="/>
+        <field:input field="signatureResponsable" id="c_adschool_domain_Etablissement_signatureResponsable" z="lYbSfTAcvDjt5fA1/w/56kQu8Wo="/>
+        <field:input field="logoPath" id="c_adschool_domain_Etablissement_logoPath" z="i8+jxwnvqk8LEiAL7aDqdUm+Zlo="/>
+        <field:input field="logoFile" id="c_adschool_domain_Etablissement_logoFile" type="file" z="user-managed"/>
+        <field:input field="adresse" id="c_adschool_domain_Etablissement_adresse" z="6jxb4VV34p6oT697YIajXX+RAOc="/>
+        <field:input field="boitePostale" id="c_adschool_domain_Etablissement_boitePostale" z="y3H8jkNd4eYKBAqfYPiA1r5QGUE="/>
+        <field:input field="ville" id="c_adschool_domain_Etablissement_ville" z="/qYNGr/mmfH3HObtnQk+xcAJQfM="/>
+        <field:input field="phoneMobile" id="c_adschool_domain_Etablissement_phoneMobile" z="dUSC18spQXOsW3QfREaIlwSHg+M="/>
+        <field:input field="phoneFixe" id="c_adschool_domain_Etablissement_phoneFixe" z="K/7KY3O8BgYdGTykTb6EMGW/Ea4="/>
+        <field:input field="siteWeb" id="c_adschool_domain_Etablissement_siteWeb" z="xWVu98XVmqHn3j2z3lh1RbUPseE="/>
+        <field:input field="email" id="c_adschool_domain_Etablissement_email" validationMessageCode="field_invalid_email" z="dA1tJWpafoFHugMjAcX+hAfFBYM="/>
+        <field:input field="ministere" id="c_adschool_domain_Etablissement_ministere" z="xroyQAPimaeosfiD/Ddk3i7uO3Q="/>
+        <field:input field="typeResponsable" id="c_adschool_domain_Etablissement_typeResponsable" z="p0uvsDtRA505ImbLpbQCNAu5LVY="/>
+        <field:select field="division" id="c_adschool_domain_Etablissement_division" items="${divisions}" path="divisions" z="Ve5VoTU+Le02fDA9PiSYGACw7V0="/>
+        <field:select field="typeEtablissement" id="c_adschool_domain_Etablissement_typeEtablissement" items="${typeetablissements}" path="typeetablissements" z="QM95q9Lcn25qztdKATiIcMFL2X8="/>
+    </form:update>
+</div>

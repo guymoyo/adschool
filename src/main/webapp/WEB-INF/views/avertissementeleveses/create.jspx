@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_domain_AvertissementEleves" modelAttribute="avertissementEleves" path="/avertissementeleveses" render="${empty dependencies}" z="+ZpOAYz6IplrWNu1n8GDxfDvb3M=">
+        <field:input field="avertKey" id="c_adschool_domain_AvertissementEleves_avertKey" z="az93SIPXpJyQ7FlSKdBEjlNod8o="/>
+        <field:select field="evaluation" id="c_adschool_domain_AvertissementEleves_evaluation" itemValue="id" items="${evaluations}" path="/evaluations" z="7fXlaxKYo8cnRj27DoVNkg27/ws="/>
+        <field:select field="inscriptionEleve" id="c_adschool_domain_AvertissementEleves_inscriptionEleve" itemValue="id" items="${inscriptions}" path="/inscriptions" z="PHwRQwhn4igJmed6qaK0j8Bxad0="/>
+        <field:datetime dateTimePattern="${avertissementEleves_dateavertissement_date_format}" field="dateAvertissement" id="c_adschool_domain_AvertissementEleves_dateAvertissement" z="prv044ly3zvw4S9eVa5gVeknSBs="/>
+        <field:datetime dateTimePattern="${avertissementEleves_datesaisie_date_format}" field="dateSaisie" id="c_adschool_domain_AvertissementEleves_dateSaisie" z="UbsLf3yJWlUMr+j33N9wGeZJIcs="/>
+        <field:input field="duree" id="c_adschool_domain_AvertissementEleves_duree" z="sCHnSA4PkKGjwcgCR2XT4MEOJBg="/>
+        <field:checkbox field="justified" id="c_adschool_domain_AvertissementEleves_justified" z="mSX66N9SWGc41olORS6vHznwy+w="/>
+        <field:datetime dateTimePattern="${avertissementEleves_debut_date_format}" field="debut" id="c_adschool_domain_AvertissementEleves_debut" z="kQxcEmDagZOMDa90w/t92pBEua4="/>
+        <field:datetime dateTimePattern="${avertissementEleves_fin_date_format}" field="fin" id="c_adschool_domain_AvertissementEleves_fin" z="GKUU11rXIEe9euxHm/xK1/UZ1eM="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_AvertissementEleves" render="${not empty dependencies}" z="No00i/LFPj4ggv+1VEyxou9HNas="/>
+</div>

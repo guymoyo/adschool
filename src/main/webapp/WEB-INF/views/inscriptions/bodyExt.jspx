@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"  xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" 
+	xmlns:jsp="http://java.sun.com/JSP/Page"  	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0"  xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" >
+	
+	<spring:message code="informations_pension"  var="informations_pension"/>
+	
+	<spring:message code="informations_student"  var="informations_student"/>
+	
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <div>
+    <FIELDSET>
+   <LEGEND> ${informations_pension}</LEGEND>
+         <table:table create="false" show="false" data="${pensioneleveses}" update="false" delete="false" id="l_adschool_domain_PensionEleves" path="/pensioneleveses" z="user-managed">
+            <table:column id="c_adschool_domain_PensionEleves_pensionKey" property="pensionKey" z="cEwOo/Sct1Uxpp5OxySGQVGaPwQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_tranche" property="tranche" z="2Dm88XD/yLUYcQb5LXP0C1I5lsM="/>
+            <table:column date="true" dateTimePattern="dd-MM-yyyy" id="c_adschool_domain_PensionEleves_dateLimitePaiement" property="dateLimitePaiement" z="sfyQHqO/MMN6LY0TXL9TeRc1mfM="/>
+            <table:column id="c_adschool_domain_PensionEleves_montant" property="montant" z="xdHnK9fgtiHsEHLxCPCOVi/PSFQ="/>
+            <table:column id="c_adschool_domain_PensionEleves_avance" property="avance"  z="user-managed"/>
+            <table:column id="c_adschool_domain_PensionEleves_netAPayer" property="netAPayer" z="3kz/4nNBU9JG9zPbvniZi1Je0ng="/>
+            <table:column id="c_adschool_domain_PensionEleves_solder" property="solder" z="xdHnK9fgtiHsEHLxCPCOVi/PSFQ="/>
+        </table:table>
+         </FIELDSET>
+ </div>
+  <div>
+    <FIELDSET>
+   <LEGEND> ${informations_student}</LEGEND>
+   <table class="tableform">
+      <tr>
+           <td class="tableform" >
+              <field:display field="matricule" id="s_adschool_domain_Eleve_matricule" object="${inscription.eleve}" z="QX4VQ/wAhV9qEwr5hv5yTjcM/tM="/>
+           <field:display field="fullName" id="s_adschool_domain_Eleve_nom" object="${inscription.eleve}" z="q/Vyz+HjuEVb1OtY4r6GUU/KmMs="/>
+        <field:display field="lieuNaissance" id="s_adschool_domain_Eleve_lieuNaissance" object="${inscription.eleve}" z="7tNakPkeE4Nkimt0GY0qwb5bTkE="/>
+        <field:display field="cni" id="s_adschool_domain_Eleve_cni" object="${inscription.eleve}" z="9XSH9GfqsxIwwQgIxA3muuLVbig="/>
+        <field:display field="telephone" id="s_adschool_domain_Eleve_telephone" object="${inscription.eleve}" z="ZQM4tHlttZ+HxnK94vNrwsfclWs="/>
+        <field:display field="email" id="s_adschool_domain_Eleve_email" object="${inscription.eleve}" z="KGk+oTWCkQ3+PXDS67eKp7caTvU="/>
+        <field:display field="boitePostale" id="s_adschool_domain_Eleve_boitePostale" object="${inscription.eleve}" z="jim2YU/gF0MYpSCD6lQg5ytslU0="/>
+        <field:display date="true" dateTimePattern="${eleve_datenaissance_date_format}" field="dateNaissance" id="s_adschool_domain_Eleve_dateNaissance" object="${inscription.eleve}" z="NdQ3DZ5Nw7l8U1xxj7PhzmCFpfU="/>
+        <field:display field="nationalite" internalfield="libelle" id="s_adschool_domain_Eleve_nationalite" object="${inscription.eleve}" z="Jd229iHNvNXZAOs5mgm3gxmK2+E="/>
+        <field:display field="genre" id="s_adschool_domain_Eleve_genre" object="${inscription.eleve}" z="Sb5Z/xJ3QvRfjDheF8yRwQEJ44s="/>
+        <field:display field="parent" internalfield="nomPere" id="s_adschool_domain_Eleve_parent" object="${inscription.eleve}" z="PFuhJMZWYKOzNx0MNE/ICN1RPdw="/>
+          </td>
+           <td class="tableform"  style="20%;" >
+                  <field:image id="${inscription.eleve.id}" imagePath="${inscription.eleve.pathPhoto}"/>
+          </td>
+          
+      </tr>
+   </table>
+           <field:display field="pathPhoto" id="s_adschool_domain_Eleve_pathPhoto" object="${inscription.eleve}" z="eaWfGamYCcZgRB3hN0yn59PRUFg="/>
+   
+            </FIELDSET>
+ </div>     
+	
+</div>

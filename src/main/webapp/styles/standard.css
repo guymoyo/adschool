@@ -1,0 +1,520 @@
+/* main elements */
+body,div,td, label {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666;
+}
+
+body {
+	background: #f4f4f4;
+	text-align: center;
+	width: auto;
+}
+
+#header {
+	margin-bottom: 0px;
+}
+
+.dijitTitlePaneContentOuter{
+	min-height: 150px;
+}
+
+.dijitTitlePaneContentOuter{
+	border-width: 0px 0px 0px;
+}
+
+#headerTable {
+	background-color: rgb(48, 39, 58);
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+input.datepicker {
+	width: 180px;
+	height: 20px;
+}
+
+#headerTable td {
+	background-color: rgb(48, 39, 58);
+	border: 0px;
+	padding: 0px;
+}
+
+.loginarea {
+	color: #fff;
+}
+.acord {
+	color: blue;
+	font-weight: bold;
+}
+.tableform {
+	border: none;
+	background-color: white;
+	text-align: center;
+	vertical-align: top;
+}
+.fieldset{
+	border-color: blue;
+}
+
+.loginarea a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.imageBox {
+	float: left
+	display: block;
+	margin-bottom: 10px;
+	border-color: silver;
+	margin-right: 5px;
+}
+
+#wrapper {
+	width:90%;
+	min-width: 90%;
+	max-width: 1260px;
+
+	width: auto;
+	min-width: auto;
+	max-width: 1auto;
+	margin: 10px;
+
+	/* fix max-width incompatibility in IE6 */
+	width:expression(document.body.clientWidth > 800? "800px": "auto" );
+	
+	min-width: 960px; max-width: 1260px;
+	margin: 0 auto; padding: 0 10px;
+	/* width:expression(document.body.clientWidth < 961? "960px" : document.body.clientWidth > 1261? "1260px" : "auto"); */
+	
+	overflow:hidden;
+	display:block;
+	width: expression(document.body.clientWidth >   800 ?   "800px" :   "auto");
+	overflow: hidden;
+	display: block;
+}
+
+/* header and footer elements */
+#main {
+	overflow:hidden;
+	display:box;
+}
+
+#content{
+	background-color: #fff;
+	overflow: hidden;
+	display: box;
+	text-align: left;
+}
+
+#menu {
+	background: #eee;
+	position: relative;
+	float: left;
+	left: 0px;
+	width: 240px;
+	margin-right: 15px;
+}
+
+#menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li {
+	padding: 0px;
+}
+
+#menu a,#menu h2 {
+	display: block;
+	margin: 0;
+	padding: 2px 6px;
+	color: #FFFFFF;
+}
+
+#menu h2 {
+	color: #fff;
+	background: rgb(48, 39, 58);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#menu a {
+	color: rgb(48, 39, 58);
+	background: #efefef;
+	text-decoration: none;
+	padding: 2px 12px;
+}
+
+#menu a:hover {
+	color: #648C1D;
+	background: #fff;
+}
+
+#footer {
+	background: #fff;
+	border: none;
+	margin-top: 15px;
+	border-top: 1px solid #999999;
+}
+
+#footer .new {
+	float: left;
+}
+
+#footer a:link {
+	color: #7db223;
+}
+
+.quicklinks {
+	clear: both;
+	padding-bottom: 20px;
+}
+
+.quicklinks span {
+	float: right;
+}
+
+table.navigation {
+	border: 0px;
+}
+
+label {
+	width: 200px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 0px;
+	font-weight: bold;
+}
+.custum label {
+	width: 100px;
+	float: left;
+	margin-left: 2px;
+	margin-top: 0px;
+	font-weight: bold;
+}
+
+input {
+	height: 20px;
+}
+
+input.search{
+	border:none;
+}
+
+input, textarea, select {
+	border:1px solid #B3B3B3;
+
+
+}
+.dijitTitlePaneContentInner{
+	overflow:auto;
+	height: auto;
+}
+input.image {
+	border: none;
+	height: auto;
+	vertical-align: middle;
+}
+
+submit {
+	height: 25px;
+}
+
+div {
+	text-align: left;
+}
+
+div .box {
+	display: block;
+	margin-left: 105px;
+}
+
+/* menu elements*/
+a.menu,a.menu:link,a.menu:visited {
+	display: block;
+	width: 150px;
+	height: 25px;
+}
+
+/* text styles */
+h1,h2,h3 {
+	font-family: Trebuchet MS, Helvetica, sans-serif;
+	color: #7db223;
+}
+
+h1 {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+h2 {
+	font-size: 18px;
+	line-height: 20px;
+}
+
+h3 {
+	font-size: 15px;
+	line-height: 21px;
+	color: #555;
+}
+
+h4 {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.errors {
+	color: red;
+	font-weight: bold;
+	display: block;
+	margin-left: 105px;
+}
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+	color: blue;
+	
+}
+
+a img {
+	border: 0 none;
+	vertical-align: middle;
+}
+
+tr:nth-child(odd) {
+	background-color: #FFFFFF;
+}
+
+tr:nth-child(even) {
+	background-color: #EFEFEF;
+}
+
+a:link {
+	color: blue;
+	text-transform: capitalize;
+}
+
+a:hover {
+	color:green;
+}
+
+a:active {
+	color:blue;
+}
+
+a:visited {
+	color: #7db553;
+}
+
+li {
+	padding-top: 5px;
+	text-align: left;
+}
+
+ul li {
+	margin: 0 0 0.25em 0;
+	padding: 0;
+}
+/* table elements */
+table {
+	background: #EEEEEE;
+	margin: 2px 0 0 0;
+	border: 1px solid #BBBBBB;
+	border-collapse: collapse;
+	width: 100%
+}
+
+table table {
+	margin: -5px 0;
+	border: 0px solid #e0e7d3;
+	width: 100%;
+}
+
+table td,table th {
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+}
+
+table td form {
+	text-align: center;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+table th {
+	font-size: 0.9em;
+	text-align: left;
+	font-weight: bold;
+	color: #FFF;
+	background: #999;
+}
+
+table thead {
+	font-weight: bold;
+	font-style: italic;
+	background-color: #BBBBBB;
+}
+
+table a:link {
+	color: #303030;
+}
+
+.utilbox {
+	width: 18px;
+}
+
+caption {
+	caption-side: top;
+	width: auto;
+	text-align: left;
+	font-size: 12px;
+	color: #848f73;
+	padding-bottom: 4px;
+}
+
+fieldset {
+	background: white;
+	padding: 5px;
+	padding-bottom: 10px;
+	border-color: rgb(230,242,242);
+	margin-bottom: 10px;
+}
+
+legend {
+	text-transform: capitalize;
+	color: blue;
+	font-weight: bold;
+}
+
+fieldset textfield {
+	margin: 3px;
+	height: 20px;
+	background: #e0e7d3;
+}
+
+fieldset textarea {
+	margin: 3px;
+	height: 165px;
+	background: #e0e7d3;
+}
+
+fieldset input {
+	margin: 3px;
+	height: 20px;
+	background: #e0e7d3;
+	width: 100px;
+}
+
+fieldset table {
+	width: 100%;
+}
+
+fieldset th {
+	padding-left: 25px;
+}
+
+select {
+	margin: 3px;
+	height: 50px;
+	background-color: white;
+	width: 200px;
+	text-transform: uppercase;
+}
+select.custumSelect {
+	margin: 3px;
+	height: 23px;
+	background-color: white;
+	width: 200px;
+}
+
+
+.table-buttons {
+	background-color: #fff;
+	border: none;
+}
+
+.table-buttons td {
+	border: none;
+}
+
+.submit input {
+	border: 1px solid #BBBBBB;
+	color: rgb(48, 39, 58);
+	padding: 2px 7px;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	height: 24px;
+}
+
+.updated {
+	background: #ecf1e5;
+	font-size: 11px;
+	margin-left: 2px;
+	border: 4px solid #ecf1e5;
+}
+
+.updated td {
+	padding: 2px 8px;
+	font-size: 11px;
+	color: #888888;
+}
+
+.dijitArrowButton {
+	height: 20px;
+}
+.button {
+	background-color: white;
+}
+.search   {
+	color: black;
+	text-transform: capitalize;
+	
+}
+
+
+.search tr:hover  {
+	background-color: rgb(178, 210, 129);
+	color: white;
+	font-weight: bold;
+    cursor: pointer;
+}
+
+tr.list:hover  {
+	background-color: rgb(178, 210, 129);
+	color: white;
+	font-weight: bold;
+    cursor: pointer;
+}
+.search td:hover  {
+	background-color: rgb(178, 210, 129);
+	color: white;
+	font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+.dijitTextArea {
+	min-height: 5.5em !important;
+	max-height: 22em !important;
+	overflow-y: auto !important;
+	max-width: 175px;
+}
+
+.RichTextEditable {
+	min-height: 18em !important;
+	max-height: 18em !important;
+}
+
+.flag {
+	height: 11px;
+	width: 16px;
+}

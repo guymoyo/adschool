@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="classes/list">
+        <put-attribute name="body" value="/WEB-INF/views/classes/list.jspx"/>
+    </definition>
+<definition extends="default" name="classes/show">
+        <put-attribute name="body" value="/WEB-INF/views/classes/show.jspx"/>
+    </definition>
+<definition extends="default" name="classes/create">
+        <put-attribute name="body" value="/WEB-INF/views/classes/create.jspx"/>
+    </definition>
+<definition extends="default" name="classes/update">
+        <put-attribute name="body" value="/WEB-INF/views/classes/update.jspx"/>
+    </definition>
+<definition extends="default" name="classes/findClassesByActif">
+        <put-attribute name="body" value="/WEB-INF/views/classes/findClassesByActif.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="classes/copierclasse">
+        <put-attribute name="body" value="/WEB-INF/views/classes/copierclasse.jspx"/>
+    </definition>
+<definition extends="default" name="classes/findClassesByNomClasseLike">
+        <put-attribute name="body" value="/WEB-INF/views/classes/findClassesByNomClasseLike.jspx"/>
+    </definition>
+<definition extends="default" name="classes/findClassesByNomClasseNotEquals">
+        <put-attribute name="body" value="/WEB-INF/views/classes/findClassesByNomClasseNotEquals.jspx"/>
+    </definition>
+<definition extends="default" name="classes/findClassesByOptions">
+        <put-attribute name="body" value="/WEB-INF/views/classes/findClassesByOptions.jspx"/>
+    </definition>
+<definition extends="default" name="classes/findClassesByFiliere">
+        <put-attribute name="body" value="/WEB-INF/views/classes/findClassesByFiliere.jspx"/>
+    </definition>
+</tiles-definitions>

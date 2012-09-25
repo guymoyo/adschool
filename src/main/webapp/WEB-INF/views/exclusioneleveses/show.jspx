@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_ExclusionEleves" object="${exclusioneleves}" path="/exclusioneleveses" z="VQ9nWhmjdElh5JaU2jRh7HBECek=">
+        <field:display field="exclusionKey" id="s_adschool_domain_ExclusionEleves_exclusionKey" object="${exclusioneleves}" z="K7a4JjSFBpilIXmKClgFbZQHzt0="/>
+        <field:display field="annee" id="s_adschool_domain_ExclusionEleves_annee" object="${exclusioneleves}" z="4y6G3GrDOX5VxklVTRT9gbWQw2c="/>
+        <field:display field="inscriptionEleve" id="s_adschool_domain_ExclusionEleves_inscriptionEleve" object="${exclusioneleves}" z="PfO5hR2JQcIlgh2Zx2Ongy9IJkQ="/>
+        <field:display date="true" dateTimePattern="${exclusionEleves_datedebut_date_format}" field="datedebut" id="s_adschool_domain_ExclusionEleves_datedebut" object="${exclusioneleves}" z="JzjmrqbXbf7UnNDfP3N4wlgUMW8="/>
+        <field:display date="true" dateTimePattern="${exclusionEleves_datefin_date_format}" field="datefin" id="s_adschool_domain_ExclusionEleves_datefin" object="${exclusioneleves}" z="3NxwuIuGhQyHTnWoQ2pEJ2ewcyI="/>
+        <field:display field="actif" id="s_adschool_domain_ExclusionEleves_actif" object="${exclusioneleves}" z="ePWZzAqtN+L3HFPnGc+6kb80/xA="/>
+        <field:display field="duree" id="s_adschool_domain_ExclusionEleves_duree" object="${exclusioneleves}" z="lYvmLSa+P7oPRq6nEWC4vvAqQpg="/>
+    </page:show>
+</div>

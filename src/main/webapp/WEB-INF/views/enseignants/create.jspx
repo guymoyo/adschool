@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_domain_Enseignant" modelAttribute="enseignant" path="/enseignants" render="${empty dependencies}" z="P2TucxAs15fjX4cIRj+n7ghtd4I=">
+        <field:input field="matricule" id="c_adschool_domain_Enseignant_matricule" render="false" z="user-managed"/>
+        <field:input field="nom" id="c_adschool_domain_Enseignant_nom" z="/z0xitZ4KwV4rDQReIvMBIg4bgc="/>
+        <field:input field="lieuNaissance" id="c_adschool_domain_Enseignant_lieuNaissance" z="4mIuejIgFwBLyy4EQdk6Hmohj0c="/>
+        <field:input field="cni" id="c_adschool_domain_Enseignant_cni" z="mQfwuKqTvqhOZxA5rdUZ6KXh5Ow="/>
+        <field:input field="telephone" id="c_adschool_domain_Enseignant_telephone" z="o7tm2uB56hcemQ5Umq9FXeNFuMQ="/>
+        <field:input field="email" id="c_adschool_domain_Enseignant_email" validationMessageCode="field_invalid_email" z="6K4jWgr7NSFLZdeI5Jpi5rSWuGo="/>
+        <field:input field="boitePostale" id="c_adschool_domain_Enseignant_boitePostale" z="CcetLG5r+WRvnJ/o4BYYhAYpWos="/>
+        <field:datetime dateTimePattern="${enseignant_datenaissance_date_format}" field="dateNaissance" id="c_adschool_domain_Enseignant_dateNaissance" z="eZjVNzD2xEp95bzR1jRYTO6B+gI="/>
+        <field:select field="nationalite" id="c_adschool_domain_Enseignant_nationalite" itemValue="id" items="${payses}" path="/payses" z="0SwzxYRBXxD4hx4RBh7GKQZEKdc="/>
+        <field:select field="genre" id="c_adschool_domain_Enseignant_genre" items="${genres}" path="genres" z="huZTXbA79585bBUu1760/aGqy4A="/>
+        <field:input field="pathPhoto" id="c_adschool_domain_Enseignant_pathPhoto" z="a6ehYIXLztogUNRQCeIKsoWC5io="/>
+        <field:input field="volumeHoraire" id="c_adschool_domain_Enseignant_volumeHoraire" z="oY46lquFXgKf/4OYA+1jF7Xpfzw="/>
+        <field:input field="coutHoraire" id="c_adschool_domain_Enseignant_coutHoraire" z="mUAuZxGyeJWauwTlwA7zgLT5zus="/>
+        <field:input field="salaireBase" id="c_adschool_domain_Enseignant_salaireBase" z="94jzwsvbEM4lAUhxt3z4Y8nyUe0="/>
+        <field:select field="diplome" id="c_adschool_domain_Enseignant_diplome" itemValue="id" items="${diplomes}" path="/diplomes" z="Jha4wpZpnqcnxEOJKCyajz0Ej0I="/>
+        <field:input field="userImage" id="c_adschool_domain_Enseignant_userImage" z="KMrTj5jkCYPvnKzy7B3aLGEb10s="/>
+        <field:input field="password" id="c_adschool_domain_Enseignant_password" z="YGSgJ1vP43CSKii9Vplbtv/f6qE="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_Enseignant" render="${not empty dependencies}" z="jVnNhWISUCJ1YkCQSSwIrM3Cs/0="/>
+</div>

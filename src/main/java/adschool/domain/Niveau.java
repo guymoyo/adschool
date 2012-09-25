@@ -1,0 +1,6 @@
+package adschool.domain;
+
+
+public enum Niveau {
+	NIVEAU_I,NIVEAU_II,NIVEAU_III,NIVEAU_IV,NIVEAU_V,NIVEAU_VI,NIVEAU_VII,NIVEAU_VIII,NIVEAU_IX,NIVEAU_X;
+}

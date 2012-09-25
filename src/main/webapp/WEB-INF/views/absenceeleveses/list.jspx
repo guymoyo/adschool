@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_AbsenceEleves" items="${absenceeleveses}" z="02fSenTRKB9v1zYoa/C8fTvscl8=">
+        <table:table data="${absenceeleveses}" id="l_adschool_domain_AbsenceEleves" path="/absenceeleveses" z="nJZbPLfU6PiQYEFA5EO6UpiSXZ0=">
+            <table:column id="c_adschool_domain_AbsenceEleves_absenceKey" property="absenceKey" z="AmLrrUv1qTnZUpyMvefwdHpSNBg="/>
+            <table:column id="c_adschool_domain_AbsenceEleves_evaluation" property="evaluation" z="14IeU13j95K/A88Cij60tuGR9JE="/>
+            <table:column id="c_adschool_domain_AbsenceEleves_inscriptionEleve" property="inscriptionEleve" z="qm5u+D/2zlIOLuGY0Us+RftjQ0Y="/>
+            <table:column id="c_adschool_domain_AbsenceEleves_matiere" property="matiere" z="xKbKYb4TJ7AmWyNkwq90HRQ3XMg="/>
+            <table:column date="true" dateTimePattern="${absenceEleves_dateabsence_date_format}" id="c_adschool_domain_AbsenceEleves_dateAbsence" property="dateAbsence" z="kWxSTEbepZeLtcAco+t8jDYdBFo="/>
+            <table:column date="true" dateTimePattern="${absenceEleves_datesaisie_date_format}" id="c_adschool_domain_AbsenceEleves_dateSaisie" property="dateSaisie" z="BfNll/DKa236wju59UjSDQ4NK8M="/>
+        </table:table>
+    </page:list>
+</div>

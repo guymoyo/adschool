@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Notes" object="${notes}" path="/noteses" z="jImpKivrSpBxxp7Cl1VCrQcdaog=">
+        <field:display field="noteKey" id="s_adschool_domain_Notes_noteKey" object="${notes}" z="LkiaKz03T/6l7JzXL95S7/05nVk="/>
+        <field:display field="valeur" id="s_adschool_domain_Notes_valeur" object="${notes}" z="aw/2OxPrENrSU4CUpjMyIH3DwhE="/>
+        <field:display field="inscripionEleve" id="s_adschool_domain_Notes_inscripionEleve" object="${notes}" z="YSpXy2VdKJ4h7xPg7hoVwqNVcUk="/>
+        <field:display field="evaluation" id="s_adschool_domain_Notes_evaluation" object="${notes}" z="ODWzgfa2Hqx9+6uQL6/nue63Q5E="/>
+        <field:display field="coefficient" id="s_adschool_domain_Notes_coefficient" object="${notes}" z="7egU7m1jqP/8YnG2cZXyOcFeypg="/>
+        <field:display field="pourcentage" id="s_adschool_domain_Notes_pourcentage" object="${notes}" z="231Qlu4CdjXNingSLtEERuev+O4="/>
+        <field:display field="etablissement" id="s_adschool_domain_Notes_etablissement" object="${notes}" z="vLVnmXVJ3XlWMhkRIPg26rCRTOo="/>
+        <field:display date="true" dateTimePattern="${notes_datesaisie_date_format}" field="dateSaisie" id="s_adschool_domain_Notes_dateSaisie" object="${notes}" z="aAB2AbxwHdc7aHa5+yRU6BUBCss="/>
+        <field:display field="eleve" id="s_adschool_domain_Notes_eleve" object="${notes}" z="kG0XVO+jQpmdrgE7/JlBz4Wf9SQ="/>
+        <field:display field="matiere" id="s_adschool_domain_Notes_matiere" object="${notes}" z="/4+4cGGGyPfVvDjqqoULUUVg5uo="/>
+        <field:display field="agentSaisie" id="s_adschool_domain_Notes_agentSaisie" object="${notes}" z="hOG4llPSyC2gw/cO0CfeLIub/Zs="/>
+        <field:display date="true" dateTimePattern="${notes_dateupdate_date_format}" field="dateUpdate" id="s_adschool_domain_Notes_dateUpdate" object="${notes}" z="amXhivc1LYhlCOan1M6RMQmp20s="/>
+        <field:display field="agentUpdate" id="s_adschool_domain_Notes_agentUpdate" object="${notes}" z="cQbJQn+Xvjqq549KDK2xeVPP+SY="/>
+    </page:show>
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_domain_Classe" modelAttribute="classe" path="/classes/copierclasse/${myId}"  render="${empty dependencies}" z="eEGoI6QmQU6UpZ7/lDtf3cWHifc=">
+        <field:select field="filiere" id="c_adschool_domain_Classe_filiere" itemValue="id" items="${filieres}" path="/filieres" z="user-managed"/>
+        <field:select field="niveau" id="c_adschool_domain_Classe_niveau" items="${niveaus}" path="niveaus" z="user-managed"/>
+        <field:select field="cycles" id="c_adschool_domain_Classe_cycles" itemLabel="libelle" itemValue="id" items="${cycleses}" path="/cycleses" z="user-managed"/>
+        
+        <field:input field="classeKey" id="c_adschool_domain_Classe_classeKey" render="false" z="user-managed"/>
+        <field:input field="nomClasse" id="c_adschool_domain_Classe_nomClasse" z="user-managed"/>
+        <field:input field="nomAbreger" id="c_adschool_domain_Classe_nomAbreger" z="user-managed"/>
+        <field:input field="nombreplace" id="c_adschool_domain_Classe_nombreplace" z="user-managed"/>
+        <field:checkbox field="actif" id="c_adschool_domain_Classe_actif" z="user-managed"/>
+        
+        <field:input field="codeFixe" id="c_adschool_domain_Classe_codeFixe" z="user-managed"/>
+    	<field:checkbox field="copy_to_matiere" id="c_adschool_domain_Classe_copy_to_matiere2" label="Copier egalement les UE" z="user-managed"/>
+    	
+    	
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_Classe" render="${not empty dependencies}" z="p0d5czgbyZva4SgNdb0HopHdCgU="/>
+</div>

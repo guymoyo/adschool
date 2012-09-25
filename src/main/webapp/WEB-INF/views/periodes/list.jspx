@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Periode" items="${periodes}" z="BOrIAj41MGxx65nAA1vaImeySMI=">
+        <table:table data="${periodes}" delete="false" id="l_adschool_domain_Periode" link="cloturer" message="cloturer" link2="listeExamens" message2="Liste Examens" path="/periodes" update="false" z="user-managed">
+            <table:column id="c_adschool_domain_Periode_periodeKey" property="periodeKey" z="wXsdbhviWilCwXqnRCLx4z/w7EM="/>
+            <table:column date="true" dateTimePattern="${periode_datedebut_date_format}" id="c_adschool_domain_Periode_datedebut" property="datedebut" z="ZtoeTuUV/7L8BMPTD+TKx40z6kU="/>
+            <table:column date="true" dateTimePattern="${periode_datefin_date_format}" id="c_adschool_domain_Periode_datefin" property="datefin" z="hcK2+eAZQexOnrlPG+gqjxJQ8OY="/>
+            <table:column id="c_adschool_domain_Periode_annee" property="annee" z="aTcECq6dAoLRilPe8dLayFvpclE="/>
+            <table:column id="c_adschool_domain_Periode_actif" property="actif" z="4u7yBxwnPSyrI30X168lkZ2pJJ8="/>
+            <table:column id="c_adschool_domain_Periode_libelle" property="libelle" z="MbvUUJVev5t7MDiOHPj76fQe0T0="/>
+        </table:table>
+    </page:list>
+</div>

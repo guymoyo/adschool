@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_ConfigInscription" object="${configinscription}" path="/configinscriptions" z="tQIh2DBjlhUR/KNTpoyGO1fKjjQ=">
+        <field:display field="configKey" id="s_adschool_domain_ConfigInscription_configKey" object="${configinscription}" z="Lcg6SzU8U7lTN4zcsFmtPNx2e2k="/>
+        <field:display field="anneeScolaire" id="s_adschool_domain_ConfigInscription_anneeScolaire" object="${configinscription}" z="cEqGikviSTtUHEDdTosZL6WrRws="/>
+        <field:display field="classe" id="s_adschool_domain_ConfigInscription_classe" object="${configinscription}" z="xY0/t5uGstPf5AyE5IWC0bVVknI="/>
+        <field:display field="montant" id="s_adschool_domain_ConfigInscription_montant" object="${configinscription}" z="fcZzSnQpFMGJx664HTN8lgK0Tvg="/>
+        <field:display date="true" dateTimePattern="${configInscription_datelimitepaiement_date_format}" field="dateLimitePaiement" id="s_adschool_domain_ConfigInscription_dateLimitePaiement" object="${configinscription}" z="mR89x3e12pAWI1B4gfQuWxA++Nc="/>
+        <field:display field="regime" id="s_adschool_domain_ConfigInscription_regime" object="${configinscription}" z="G3buFdQubrQuEsMIQVOpxmFnFNE="/>
+        <field:display field="etablissement" id="s_adschool_domain_ConfigInscription_etablissement" object="${configinscription}" z="+Eu9chvAe1eHLiwHyLogdxoEkz0="/>
+        <field:display field="appied_others" id="s_adschool_domain_ConfigInscription_appied_others" object="${configinscription}" z="tkMR9xI9ida2yKveOxpzFcIQCRI="/>
+    </page:show>
+</div>

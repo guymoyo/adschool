@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Regime" items="${regimes}" z="cLkf8uSpJeEr8kZMYkUW8udBTgg=">
+        <table:table data="${regimes}" id="l_adschool_domain_Regime" path="/regimes" z="eWYvIBVBu22NVDmkvGfG8plWxu8=">
+            <table:column id="c_adschool_domain_Regime_regimeKey" property="regimeKey" z="AuOyQX3dXx0v7F81ulkFzkOoqL4="/>
+            <table:column id="c_adschool_domain_Regime_libelle" property="libelle" z="SKRj18DmZM61GI6sBSxdIKZhQ3E="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<span xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"  
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0" >
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+     
+      
+     <spring:url value="/inscriptions/printRegistrationReceipt/${itemId}.pdf" var="print_recu_inscription_url">
+           
+                  <spring:param name="form" />
+              
+     </spring:url>
+     
+     
+     <spring:url value="/inscriptions/printCertificatscolarite/${itemId}.pdf" var="print_certificat_scolarite_url">
+           
+                  <spring:param name="form" />
+              
+     </spring:url>
+                
+     <spring:url value="/inscriptions/paiement/eleve?Id=${itemId}" var="paiement_url">
+           
+                  <spring:param name="form" />
+                  
+     </spring:url>
+     
+     <spring:url value="/inscriptions/printBadge/${itemId}.pdf" var="print_badge_url">
+           
+                  <spring:param name="form" />
+                  
+     </spring:url>
+     
+     <spring:url value="/inscriptions" var="new_inscription_url">
+           
+                  <spring:param name="form" />
+                  
+     </spring:url>
+     
+         <spring:url value="/eleves" var="new_eleve_url">
+           
+                  <spring:param name="form" />
+                  
+     </spring:url>
+                
+                
+                
+                
+          
+                <spring:url value="/resources/images/update.png" var="update_image_url" />
+                 <a href="${print_recu_inscription_url }"   title="Imprimer Le recu d'inscription">
+                 Recu d'inscription
+                </a>
+                |
+                <a href="${paiement_url }"   title="Enregistrer Paiement">
+                 
+                 
+                 Enregistrer Paiement Pension
+                </a>
+                |
+                <a href="${print_certificat_scolarite_url }"   title="Imprimer Certificat de Scolarite">
+                 Certificat de Scolarite
+                </a>
+                |
+                 <a href="${print_badge_url }"   title="Imprimer Carte Scolarite">
+                 Carte Scolaire
+                </a>
+                |
+                
+                <a href="${new_inscription_url }"   title="Nouvelle Inscription">
+                 Nouvelle Inscription
+                </a>
+                |
+                <a href="${new_eleve_url }"   title="Nouvel Etudiant">
+                 Nouvel Etudiant
+                </a>
+     
+</span>
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Matiere" object="${matiere}" path="/matieres" z="SI+v1aZuFb5EWSzHhJOd5jcma7k=">
+        <field:display field="matiereKey" id="s_adschool_domain_Matiere_matiereKey" object="${matiere}" z="u0l1LogxeurP5dKvJm2EAoEgNIY="/>
+        <field:display field="codeMatiere" id="s_adschool_domain_Matiere_codeMatiere" object="${matiere}" z="AqLjrCpSCyajTkG3uVWBIGyBXeg="/>
+        <field:display field="intitule" id="s_adschool_domain_Matiere_intitule" object="${matiere}" z="8YX6FrCgebAq1u+7qQkceUBrh5g="/>
+        <field:display field="actif" id="s_adschool_domain_Matiere_actif" object="${matiere}" z="HRCTKdvjzlE9MbqgJm7zLYx/U9o="/>
+        <field:display field="coefficient" id="s_adschool_domain_Matiere_coefficient" object="${matiere}" z="lkXa9WWrwsfxe6ARBO2/8T7xs84="/>
+        <field:display field="classe" id="s_adschool_domain_Matiere_classe" object="${matiere}" z="/+h4kyJ6wj+g9iInqqR8/C4E9fs="/>
+        <field:display field="disposition" id="s_adschool_domain_Matiere_disposition" object="${matiere}" z="11fWb6BoHXSZImYrg2zVKgTLwss="/>
+        <field:display field="famille" id="s_adschool_domain_Matiere_famille" object="${matiere}" z="Bo2jkcHKZzYduitwO9eCSS4psNY="/>
+        <field:display field="groupe" id="s_adschool_domain_Matiere_groupe" object="${matiere}" z="9exk7VmlgE9fD5bP8BdiZM4NtM0="/>
+        <field:display field="credit" id="s_adschool_domain_Matiere_credit" object="${matiere}" z="KzCRTEGgXXCqffeqgPJTHnNbDiQ="/>
+    </page:show>
+</div>

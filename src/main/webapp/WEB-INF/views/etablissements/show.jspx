@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Etablissement" object="${etablissement}" path="/etablissements" z="dLGdyPT+DNpjFgrskq0NkLGzXPU=">
+        <field:image id="${etablissement.etablissementKey}" imagePath="${etablissement.logoPath}"/>
+        <field:display field="etablissementKey" id="s_adschool_domain_Etablissement_etablissementKey" object="${etablissement}" z="iKiWhyuXXcQg5ZFAFICAWaNSIyU="/>
+        <field:display field="nomEtablissement" id="s_adschool_domain_Etablissement_nomEtablissement" object="${etablissement}" z="KeUK3xRoidmKiZqX/15C8KINe/I="/>
+        <field:display field="nomAbreger" id="s_adschool_domain_Etablissement_nomAbreger" object="${etablissement}" z="jT8j8WifEyXVOSqm6xHYZjPDGDg="/>
+        <field:display field="nomResponsable" id="s_adschool_domain_Etablissement_nomResponsable" object="${etablissement}" z="IGAaPMvRMbcyynVUIEFXbKXrquI="/>
+        <field:display field="signatureResponsable" id="s_adschool_domain_Etablissement_signatureResponsable" object="${etablissement}" z="EnWxQXtebFkQQ0SQ7vKTvZswBK8="/>
+        <field:display field="logoPath" id="s_adschool_domain_Etablissement_logoPath" object="${etablissement}" z="a1uC+bCVY/KJekB0tWaoHnj9Pf4="/>
+        <field:display field="adresse" id="s_adschool_domain_Etablissement_adresse" object="${etablissement}" z="SBXcManFWHsJ6ZEEWq7hNuBpJpU="/>
+        <field:display field="boitePostale" id="s_adschool_domain_Etablissement_boitePostale" object="${etablissement}" z="051akWDmDmhI2CE8gYRPPq5gRrM="/>
+        <field:display field="ville" id="s_adschool_domain_Etablissement_ville" object="${etablissement}" z="XQhuLB2CUprOUN6N2w6sYNO93sI="/>
+        <field:display field="phoneMobile" id="s_adschool_domain_Etablissement_phoneMobile" object="${etablissement}" z="khcw/+46XAy673Sl6yji02/6Nic="/>
+        <field:display field="phoneFixe" id="s_adschool_domain_Etablissement_phoneFixe" object="${etablissement}" z="97I1ymQsOqMlT10oqBcdLYktdrM="/>
+        <field:display field="siteWeb" id="s_adschool_domain_Etablissement_siteWeb" object="${etablissement}" z="Kyf8jLEeCijJS3v2JOgTau6WMjo="/>
+        <field:display field="email" id="s_adschool_domain_Etablissement_email" object="${etablissement}" z="Prxf6KWDAVSTNyIldf6Qg7NtuOc="/>
+        <field:display field="ministere" id="s_adschool_domain_Etablissement_ministere" object="${etablissement}" z="HiOooYhAJQN/EVKEAYh/DW0mVMg="/>
+        <field:display field="typeResponsable" id="s_adschool_domain_Etablissement_typeResponsable" object="${etablissement}" z="udGeQptBT3Uaihvwvmn+QfV8E3w="/>
+        <field:display field="division" id="s_adschool_domain_Etablissement_division" object="${etablissement}" z="qo8aThgNz0CUqk9cpJNMfbsnG2E="/>
+        <field:display field="typeEtablissement" id="s_adschool_domain_Etablissement_typeEtablissement" object="${etablissement}" z="3yLwSrDNRMI0m1JeNLd2PFD9GPE="/>
+        <field:display field="logoFile" id="s_adschool_domain_Etablissement_logoFile" object="${etablissement}" render="false" z="user-managed"/>
+    </page:show>
+</div>

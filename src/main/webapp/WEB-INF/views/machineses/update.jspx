@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Machines" modelAttribute="machines" path="/machineses" versionField="Version" z="DY2kXxFzWQmcSlifklsfcH6stQM=">
+       
+         <field:display field="machineKey" id="c_adschool_domain_Machines_machineKey" object="${machines}" showhidden="true" z="user-managed"/>
+       
+        <field:input field="nomMachine" id="c_adschool_domain_Machines_nomMachine" z="+VpENQa8oXU5hovWTKYM+lUdQ9s="/>
+        <field:input field="IpMachine" id="c_adschool_domain_Machines_IpMachine" z="rCC9Cf8pwdQQGQTTq77eUU5/5PY="/>
+        <field:input field="adresseMac" id="c_adschool_domain_Machines_adresseMac" z="JJB0Lg4u7iU6p+P0DYLvJuug+yQ="/>
+        <field:checkbox field="autorised" id="c_adschool_domain_Machines_autorised" z="Wx6XvOWYpNxb3C2T4d51lCPmuyw="/>
+        <field:input field="observation" id="c_adschool_domain_Machines_observation" z="SqBbJI69ZLwYGuox8p6j3PJ9nSo="/>
+    </form:update>
+</div>

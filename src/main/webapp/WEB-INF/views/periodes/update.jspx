@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Periode" modelAttribute="periode" path="/periodes" versionField="Version" z="WqqgdczIqVpDyJeXuiao08t8+EI=">
+        <field:display field="periodeKey" id="c_adschool_domain_Periode_periodeKey" object="${periode}" showhidden="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${periode_datedebut_date_format}" field="datedebut" id="c_adschool_domain_Periode_datedebut" z="nV/fFWuiNbmRin20oyfGfcci5mY="/>
+        <field:datetime dateTimePattern="${periode_datefin_date_format}" field="datefin" id="c_adschool_domain_Periode_datefin" z="K9YZLTYFyFcFe6NdlO+u9VepCNI="/>
+        <field:select field="annee" id="c_adschool_domain_Periode_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="yk/rY+E1yJhCp5vuH86qQCInav0="/>
+        <field:checkbox field="actif" id="c_adschool_domain_Periode_actif" z="EcliDZihLaAMiCeWDGtQwsVHTJs="/>
+        <field:input field="libelle" id="c_adschool_domain_Periode_libelle" z="4Ii32RyV8tlbZkWOq/Xc1dh+7Nk="/>
+    </form:update>
+</div>

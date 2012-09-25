@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Machines" items="${machineses}" z="lo2xiQMhlVPrTJpig3KES0ZU3+w=">
+        <table:table data="${machineses}" id="l_adschool_domain_Machines" path="/machineses" z="oeMCDYufxX4zjLYlv+DSy/xiNMA=">
+            <table:column id="c_adschool_domain_Machines_machineKey" property="machineKey" z="DMszo0f/WupBjtmHDC641VzaqJs="/>
+            <table:column id="c_adschool_domain_Machines_nomMachine" property="nomMachine" z="y7R3Hz6KCbkVZCkODpBFvvczJmU="/>
+            <table:column id="c_adschool_domain_Machines_IpMachine" property="ipMachine" z="NBKk/7tn2mqU69FxBgJiXfgDzjI="/>
+            <table:column id="c_adschool_domain_Machines_adresseMac" property="adresseMac" z="wHD9OEuhoUeOOCIwpcWW7SoN8Hs="/>
+            <table:column id="c_adschool_domain_Machines_autorised" property="autorised" z="NmFzFSgSZyAXGyYPQjqFth0VKn4="/>
+            <table:column id="c_adschool_domain_Machines_observation" property="observation" z="I/9FohQxC34RV2K9/bsRC40eVC4="/>
+        </table:table>
+    </page:list>
+</div>

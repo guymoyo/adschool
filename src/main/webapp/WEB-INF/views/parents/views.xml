@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="parents/list">
+        <put-attribute name="body" value="/WEB-INF/views/parents/list.jspx"/>
+    </definition>
+<definition extends="default" name="parents/show">
+        <put-attribute name="body" value="/WEB-INF/views/parents/show.jspx"/>
+    </definition>
+<definition extends="default" name="parents/create">
+        <put-attribute name="body" value="/WEB-INF/views/parents/create.jspx"/>
+    </definition>
+<definition extends="default" name="parents/update">
+        <put-attribute name="body" value="/WEB-INF/views/parents/update.jspx"/>
+    </definition>
+<definition extends="default" name="parents/findParentsByNomLike">
+        <put-attribute name="body" value="/WEB-INF/views/parents/findParentsByNomLike.jspx"/>
+    </definition>
+<definition extends="default" name="parents/findParentsByMatriculeLike">
+        <put-attribute name="body" value="/WEB-INF/views/parents/findParentsByMatriculeLike.jspx"/>
+    </definition>
+<definition extends="default" name="parents/findParentsByNomPereLikeOrNomMereLike">
+        <put-attribute name="body" value="/WEB-INF/views/parents/findParentsByNomPereLikeOrNomMereLike.jspx"/>
+    </definition>
+</tiles-definitions>

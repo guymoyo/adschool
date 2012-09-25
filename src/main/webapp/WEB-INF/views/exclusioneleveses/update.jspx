@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_ExclusionEleves" modelAttribute="exclusionEleves" path="/exclusioneleveses" versionField="Version" z="5qiiWIrYbrYD3DZ08bW7PsxrGuw=">
+        <field:input field="exclusionKey" id="c_adschool_domain_ExclusionEleves_exclusionKey" z="bhcegqGHKHPLgFLBklemyOhJwAE="/>
+        <field:select field="annee" id="c_adschool_domain_ExclusionEleves_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="oOku4+pa6B7sgLArcNa0UZs8xYg="/>
+        <field:select field="inscriptionEleve" id="c_adschool_domain_ExclusionEleves_inscriptionEleve" itemValue="id" items="${inscriptions}" path="/inscriptions" z="3LDNBEP4fp0QGzzp7QWjpzT040U="/>
+        <field:datetime dateTimePattern="${exclusionEleves_datedebut_date_format}" field="datedebut" id="c_adschool_domain_ExclusionEleves_datedebut" z="k2YsMgfRSQJhSLmZih9Y5GZyEvc="/>
+        <field:datetime dateTimePattern="${exclusionEleves_datefin_date_format}" field="datefin" id="c_adschool_domain_ExclusionEleves_datefin" z="1DY9hGua/xvuYJIJSrm1XlKNbsI="/>
+        <field:checkbox field="actif" id="c_adschool_domain_ExclusionEleves_actif" z="lCC9ULX2Q2xpNFiV4Nw5jbE8r40="/>
+        <field:input field="duree" id="c_adschool_domain_ExclusionEleves_duree" z="rg6uLXDQpuInPGbPLFTt9VW1pEE="/>
+    </form:update>
+</div>

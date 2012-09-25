@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+    <form:create id="fc_adschool_domain_Mentions" modelAttribute="mentions" path="/mentionses" render="${empty dependencies}" z="AafxwTPU3BByknj0dK5TQyJCyBs=">
+        <field:input field="mentionKey" id="c_adschool_domain_Mentions_mentionKey" render="false" z="user-managed"/>
+        <field:input field="intitule" id="c_adschool_domain_Mentions_intitule" z="vpitgra62xCmqLB1n2bpJnLGa4k="/>
+        <field:input field="valueMin" id="c_adschool_domain_Mentions_valueMin" z="XfSh3KZhJpzZdij4j+EXAn2cgHg="/>
+        <field:input field="valueMax" id="c_adschool_domain_Mentions_valueMax" z="E2fwLunQcm8J1FfnjB1KG/ZRs9Q="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_Mentions" render="${not empty dependencies}" z="X8wC40tiJhgWFi6oiLKmzRWGWj0="/>
+</div>

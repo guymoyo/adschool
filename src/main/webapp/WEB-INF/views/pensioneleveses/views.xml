@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="pensioneleveses/list">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/list.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="pensioneleveses/listePensionEleve">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/listePensionEleve.jspx"/>
+    </definition>
+    
+   
+    
+    <definition extends="default" name="pensioneleveses/PaiementOnePension">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/PaiementOnePension.jspx"/>
+    </definition>
+    
+<definition extends="default" name="pensioneleveses/show">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/show.jspx"/>
+    </definition>
+<definition extends="default" name="pensioneleveses/create">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/create.jspx"/>
+    </definition>
+<definition extends="default" name="pensioneleveses/update">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/update.jspx"/>
+    </definition>
+<definition extends="default" name="pensioneleveses/findPensionElevesesByPensionKeyLike">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/findPensionElevesesByPensionKeyLike.jspx"/>
+    </definition>
+<definition extends="default" name="pensioneleveses/findPensionElevesesByEleve">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/findPensionElevesesByEleve.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="pensioneleveses/findElevesByNomLike">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/findElevesByNomLike.jspx"/>
+    </definition>
+    
+  
+    <definition extends="default" name="pensioneleveses/accorderReductionPension">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/accorderReductionPension.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="pensioneleveses/accorderMoratoirePension">
+        <put-attribute name="body" value="/WEB-INF/views/pensioneleveses/accorderMoratoirePension.jspx"/>
+    </definition>
+    
+</tiles-definitions>
+

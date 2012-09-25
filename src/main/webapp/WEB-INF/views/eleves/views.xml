@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="eleves/list">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/list.jspx"/>
+    </definition>
+<definition extends="default" name="eleves/show">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/show.jspx"/>
+    </definition>
+<definition extends="default" name="eleves/create">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/create.jspx"/>
+    </definition>
+<definition extends="default" name="eleves/update">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/update.jspx"/>
+    </definition>
+<definition extends="default" name="eleves/findElevesByNomLike">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/findElevesByNomLike.jspx"/>
+    </definition>
+<definition extends="default" name="eleves/findElevesByMatriculeLike">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/findElevesByMatriculeLike.jspx"/>
+    </definition>
+    
+      <definition extends="default" name="eleves/listeEleveSolde">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/list.jspx"/>
+    </definition>
+    
+    
+<definition extends="default" name="eleves/findElevesByEtablissement">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/findElevesByEtablissement.jspx"/>
+    </definition>
+    
+    
+<definition extends="default" name="eleves/findElevesByNomOrMatriculeLike">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/findElevesByNomOrMatriculeLike.jspx"/>
+    </definition>
+    
+        
+<definition extends="default" name="eleves/listEtudiantUpdate">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/listEtudiantUpdate.jspx"/>
+    </definition>
+    
+    
+    <definition extends="default" name="eleves/findElevesByPension">
+        <put-attribute name="body" value="/WEB-INF/views/eleves/findElevesByPension.jspx"/>
+    </definition>
+    
+    
+    
+</tiles-definitions>

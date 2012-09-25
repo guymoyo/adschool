@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Parent" items="${parents}" z="dKaNG1THiHDg+9Yq2VJKXT2Xbvc=">
+        <table:table data="${parents}" id="l_adschool_domain_Parent" path="/parents" z="6voGvo2rSjjRYYDSVaZvjktVoWQ=">
+            <table:column id="c_adschool_domain_Parent_matricule" property="matricule" z="6U62VC5RPSotkLmlDDvIGL2BSw8="/>
+            <table:column id="c_adschool_domain_Parent_nomPere" maxLength="50" property="nomPere" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_nomMere" maxLength="50" property="nomMere" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_telephonePere" maxLength="50" property="telephonePere" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_telephoneMere" maxLength="50" property="telephoneMere" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_lieuNaissance" property="lieuNaissance" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_cni" property="cni" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_telephone" property="telephone" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_userImage" property="userImage" render="false" z="user-managed"/>
+            <table:column id="c_adschool_domain_Parent_nom" property="nom" render="false" z="user-managed"/>
+        </table:table>
+    </page:list>
+</div>

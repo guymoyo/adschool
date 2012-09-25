@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="inscriptions/list">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/list.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/show">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/show.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/create">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/create.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/update">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/update.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="inscriptions/createinscription">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/createinscription.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="inscriptions/createEleve">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/createEleve.jspx"/>
+    </definition>
+    
+      <definition extends="default" name="inscriptions/findElevesByNomLike">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findElevesByNomLike.jspx"/>
+    </definition>
+    
+      <definition extends="default" name="inscriptions/paiement">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/paiement.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="inscriptions/printMessage">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/printMessage.jspx"/>
+    </definition>
+    
+    
+    
+<definition extends="default" name="inscriptions/findInscriptionsByEleve">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByEleve.jspx"/>
+    </definition>
+    <definition extends="default" name="inscriptions/inscriptionprocessform">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/inscriptionprocessform5.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/findInscriptionsByDateInscriptionEquals">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByDateInscriptionEquals.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/findInscriptionsByDateInscriptionBetween">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByDateInscriptionBetween.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/findInscriptionsByInscriptionKeyLike">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByInscriptionKeyLike.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/findInscriptionsByClasse">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByClasse.jspx"/>
+    </definition>
+<definition extends="default" name="inscriptions/findInscriptionsByAnnee">
+        <put-attribute name="body" value="/WEB-INF/views/inscriptions/findInscriptionsByAnnee.jspx"/>
+    </definition>
+</tiles-definitions>

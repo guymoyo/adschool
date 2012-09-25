@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+xmlns:spring="http://www.springframework.org/tags"
+xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    
+     <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Notes" items="${noteses}" z="PfWsDg33gjQg/AHBa0ZlCBWXeqQ=">
+        <table:table data="${noteses}" id="l_adschool_domain_Notes" path="/noteses" z="KxBnMWOfvrkQN/6CmSsMVF9IjnI=">
+            <table:column id="c_adschool_domain_Notes_noteKey" property="noteKey" z="3R5LhKi3Q6dCVB35iUfTpO42HGE="/>
+            <table:column id="c_adschool_domain_Notes_valeur" property="valeur" z="BtpN5Wx9M+x2KW9Onra6qpHzWJQ="/>
+            <table:column id="c_adschool_domain_Notes_inscripionEleve" property="inscripionEleve" z="GQywW3vZAfkQAvAWCnyPJitCY4A="/>
+            <table:column id="c_adschool_domain_Notes_evaluation" property="evaluation" z="U7M0O73GHVr4CeuIPwmmQX0q0yc="/>
+            <table:column id="c_adschool_domain_Notes_coefficient" property="coefficient" z="DyKbA9pDx8iL4TMhtlKTpq0LaB4="/>
+            <table:column id="c_adschool_domain_Notes_pourcentage" property="pourcentage" z="gpfck94VL3aZZd4iKyMlcQyemcA="/>
+        </table:table>
+        
+       
+    </page:list>
+    
+   
+    
+</div>

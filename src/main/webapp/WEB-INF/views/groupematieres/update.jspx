@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_GroupeMatiere" modelAttribute="groupeMatiere" path="/groupematieres" versionField="Version" z="1TPGqYIS3XQ+HYHH6EkeK5QU6Yw=">
+        <field:display field="groupeKey" id="c_adschool_domain_GroupeMatiere_groupeKey" object="${groupeMatiere}" showhidden="true" z="user-managed"/>
+        <field:input field="intitule" id="c_adschool_domain_GroupeMatiere_intitule" z="r9PVq1B+7HJAMZcqrKrLHtJIUYY="/>
+        <field:input field="disposition" id="c_adschool_domain_GroupeMatiere_disposition" z="PdfXJ8LmW5ExSHQjdRfL1oWAdis="/>
+        <field:input field="totalcredit" id="c_adschool_domain_GroupeMatiere_totalcredit" validationMessageCode="field_invalid_integer" z="QV9Dv+gPYwpct0MdN0b5mNOs6Jg="/>
+        <field:select field="classe" id="c_adschool_domain_GroupeMatiere_classe" itemLabel="nomAbreger" itemValue="id" items="${classes}" path="/classes" z="1ipOm83aK/64VNtQ7KbZRCPQSKc="/>
+    </form:update>
+</div>

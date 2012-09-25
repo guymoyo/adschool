@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <FIELDSET>
+        <LEGEND> ${informations_student}</LEGEND>
+        <page:show bodyExt="bodyExt.jspx" clientLinks="showLink.jspx" create="false" delete="false" id="ps_adschool_domain_Inscription" list="false" object="${inscription}" path="/inscriptions" update="false" z="user-managed">
+            <FIELDSET>
+                <LEGEND> Informations Inscription</LEGEND>
+                <field:display field="inscriptionKey" id="s_adschool_domain_Inscription_inscriptionKey" object="${inscription}" z="mlr1EHXRgXFLTsffrceqNgaKQOY="/>
+                <field:display field="eleve" id="s_adschool_domain_Inscription_eleve" internalfield="fullName" object="${inscription}" z="user-managed"/>
+                <field:display date="true" dateTimePattern="${inscription_datesaisie_date_format}" field="dateInscription" id="s_adschool_domain_Inscription_dateInscription" object="${inscription}" z="user-managed"/>
+                <field:display field="agentSaisie" id="s_adschool_domain_Inscription_agentSaisie" object="${inscription}" z="user-managed"/>
+                <field:display date="true" dateTimePattern="${inscription_datesaisie_date_format}" field="dateSaisie" id="s_adschool_domain_Inscription_dateSaisie" object="${inscription}" z="ZKEJpbVh88Zj1DAkpu7RlVdLu+Y="/>
+                <field:display field="montantInscription" id="s_adschool_domain_Inscription_montantInscription" object="${inscription}" z="lRNovDXfe8H29v8BHQ9cwFdzr+8="/>
+                <field:display field="avance" id="s_adschool_domain_Inscription_avance" object="${inscription}" z="WgPZ9NEbkNrKWVWJ9WAXFv0dxn8="/>
+                <field:display field="etablissement" id="s_adschool_domain_Inscription_etablissement" internalfield="nomEtablissement" object="${inscription}" z="user-managed"/>
+                <field:display field="solder" id="s_adschool_domain_Inscription_solder" object="${inscription}" z="xZTQA0eADNVCRNTZuNRnmCoV8V4="/>
+            </FIELDSET>
+            <FIELDSET>
+                <LEGEND> ${informations_student}</LEGEND>
+                <field:display field="redoublant" id="s_adschool_domain_Inscription_redoublant" object="${inscription}" z="hfIGDcIb2Y15ZmVaNgMiHINo5mE="/>
+                <field:display field="actif" id="s_adschool_domain_Inscription_actif" object="${inscription}" z="U3cxzkcqllHl+k6EGWIpQ2OeVVo="/>
+                <field:display field="demission" id="s_adschool_domain_Inscription_demission" object="${inscription}" render="false" z="user-managed"/>
+                <field:display date="true" dateTimePattern="${inscription_datedemission_date_format}" field="dateDemission" id="s_adschool_domain_Inscription_dateDemission" object="${inscription}" render="false" z="user-managed"/>
+                <field:display field="exclu" id="s_adschool_domain_Inscription_exclu" object="${inscription}" render="false" z="user-managed"/>
+                <field:display date="true" dateTimePattern="${inscription_dateexclusion_date_format}" field="dateExclusion" id="s_adschool_domain_Inscription_dateExclusion" object="${inscription}" render="false" z="user-managed"/>
+                <field:display field="classe" id="s_adschool_domain_Inscription_classe" internalfield="nomClasse" object="${inscription}" z="user-managed"/>
+                <field:display field="annee" id="s_adschool_domain_Inscription_annee" internalfield="libelle" object="${inscription}" z="user-managed"/>
+                <field:display field="regime" id="s_adschool_domain_Inscription_regime" internalfield="libelle" object="${inscription}" z="user-managed"/>
+                <field:display field="statut" id="s_adschool_domain_Inscription_statut" object="${inscription}" z="xDcruDVeQoqEVifMmgsZYilIlQE="/>
+                <field:display field="docInscriptions" id="s_adschool_domain_Inscription_docInscriptions" object="${inscription}" z="DRBBSUjsEI2HNMQevzzq7RRGqDs="/>
+                <field:display field="imprimer" id="s_adschool_domain_Inscription_imprimer" object="${inscription}" z="BJ8Mndan2XIXa4EiGgEVgcJtggM="/>
+            </FIELDSET>
+        </page:show>
+    </FIELDSET>
+</div>

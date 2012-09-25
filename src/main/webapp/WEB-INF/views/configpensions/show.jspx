@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_ConfigPension" object="${configpension}" path="/configpensions" z="Zm1Sv4IEQ6mAylvY7B40N4lEmss=">
+        <field:display field="configKey" id="s_adschool_domain_ConfigPension_configKey" object="${configpension}" z="Bx0woQjTyAtO4IjozKhRMc2c/6U="/>
+        <field:display field="anneeScolaire" id="s_adschool_domain_ConfigPension_anneeScolaire" object="${configpension}" z="1cRztgqjq+L2C7/FODv9zeOro6w="/>
+        <field:display field="classe" id="s_adschool_domain_ConfigPension_classe" object="${configpension}" z="QecRxM8wHg6Q5PtoVjTgXXqU6wo="/>
+        <field:display field="montant" id="s_adschool_domain_ConfigPension_montant" object="${configpension}" z="/kR3cL/QLTr6us1TdTC+nJWqcO4="/>
+        <field:display field="tranche" id="s_adschool_domain_ConfigPension_tranche" object="${configpension}" z="B1sLKy4KjXLQ2lh7YNH32AWJLqM="/>
+        <field:display date="true" dateTimePattern="${configPension_datelimitepaiement_date_format}" field="dateLimitePaiement" id="s_adschool_domain_ConfigPension_dateLimitePaiement" object="${configpension}" z="HfUXhmAwg81PLNFokszu90TLEUE="/>
+        <field:display field="regime" id="s_adschool_domain_ConfigPension_regime" object="${configpension}" z="0Pz1EyR8ZrIrCDMQpsqAjMdDde0="/>
+        <field:display field="etablissement" id="s_adschool_domain_ConfigPension_etablissement" object="${configpension}" z="ebfSuNbzLlXYXvUpFsQNtwCObmQ="/>
+        <field:display field="appied_others" id="s_adschool_domain_ConfigPension_appied_others" object="${configpension}" z="y6D/0g4GVywKE9b5FK+Z+zKMRlE="/>
+    </page:show>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_AnneeScolaire" items="${anneescolaires}" z="VtE805beRBdeq43d1UKNXSDTtMQ=">
+        <table:table data="${anneescolaires}" delete="false" id="l_adschool_domain_AnneeScolaire" link="cloturer" message="cloturer" link2="listePeriodes" message2="Liste des Periodes" path="/anneescolaires" update="false" z="user-managed">
+            <table:column id="c_adschool_domain_AnneeScolaire_anneeKey" property="anneeKey" z="h0dNJoFTmG+aq4HETk/2Dgj+2oU="/>
+            <table:column id="c_adschool_domain_AnneeScolaire_libelle" property="libelle" z="Vt6+Zk0QfSZVh8+5Nm3tMelGz84="/>
+            <table:column date="true" dateTimePattern="${anneeScolaire_datedebut_date_format}" id="c_adschool_domain_AnneeScolaire_datedebut" property="datedebut" z="DSUmmyjoZ/Ip+g80kPyi1ugGNBs="/>
+            <table:column date="true" dateTimePattern="${anneeScolaire_datefin_date_format}" id="c_adschool_domain_AnneeScolaire_datefin" property="datefin" z="K/GyBr5D3NZMQ+yESIUtl7VFHrs="/>
+            <table:column id="c_adschool_domain_AnneeScolaire_objectif" property="objectif" z="FXdUSlbRX4Om+RHYjyOEo0vcAL4="/>
+            <table:column id="c_adschool_domain_AnneeScolaire_state" property="state" z="l7wFmZPA/PZQet2+hhaWOXmHaU0="/>
+        </table:table>
+    </page:list>
+</div>

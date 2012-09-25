@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:message code="informations_parent" var="informations_parent"/>
+    <form:update id="fu_adschool_domain_Parent" modelAttribute="parent" multipart="true" path="/parents" versionField="Version" z="user-managed">
+        <fieldset>
+            <LEGEND>${informations_parent}</LEGEND>
+            <DIV style="float: left;">
+                <field:input field="nomPere" id="c_adschool_domain_Parent_nomPere" z="cjrGRuMWMBkkydHukYHrfQ9DuoU="/>
+                <field:input field="nomMere" id="c_adschool_domain_Parent_nomMere" z="ULsqpFmE8OGRZdzm03AQkfqWIY8="/>
+                <field:input field="telephonePere" id="c_adschool_domain_Parent_telephonePere" z="OXchB0uic0xLnKhI4Z5iF7HurZY="/>
+                <field:input field="telephoneMere" id="c_adschool_domain_Parent_telephoneMere" z="nRjoueg4JyV4V+xqA65jGRZFtTo="/>
+                <field:input field="matricule" id="c_adschool_domain_Parent_matricule" render="false" type="hidden" z="user-managed"/>
+                <field:input bulleInfos="nom du parents" field="nom" id="c_adschool_domain_Parent_nom" render="false" type="text" z="user-managed"/>
+            </DIV>
+            <DIV style="float: left; margin-left: 50px;">
+                <field:input field="EmailPere" id="c_adschool_domain_Parent_EmailPere" validationMessageCode="field_invalid_email" z="KkvTzViHos4yf3y5enO3LopXK68="/>
+                <field:input field="EmailMere" id="c_adschool_domain_Parent_EmailMere" validationMessageCode="field_invalid_email" z="8fDwKQgzCMGFpsarQHgjnIJX/uM="/>
+                <field:input field="lieuNaissance" id="c_adschool_domain_Parent_lieuNaissance" render="false" z="user-managed"/>
+                <field:input field="cni" id="c_adschool_domain_Parent_cni" render="false" z="user-managed"/>
+                <field:input field="telephone" id="c_adschool_domain_Parent_telephone" render="false" z="user-managed"/>
+                <field:input field="email" id="c_adschool_domain_Parent_email" render="false" validationMessageCode="field_invalid_email" z="user-managed"/>
+                <field:input field="boitePostale" id="c_adschool_domain_Parent_boitePostale" render="false" z="user-managed"/>
+                <field:datetime dateTimePattern="${parent_datenaissance_date_format}" field="dateNaissance" id="c_adschool_domain_Parent_dateNaissance" render="false" z="user-managed"/>
+                <field:select field="nationalite" id="c_adschool_domain_Parent_nationalite" itemValue="id" items="${payses}" path="/payses" z="user-managed"/>
+                <field:select field="genre" id="c_adschool_domain_Parent_genre" items="${genres}" path="genres" render="false" z="user-managed"/>
+                <field:input disableFormBinding="true" field="pathPhoto" id="c_adschool_domain_Parent_pathPhoto" type="hidden" z="user-managed"/>
+                <field:input field="password" id="c_adschool_domain_Parent_password" type="password" z="user-managed"/>
+                <field:input field="userImage" id="c_adschool_domain_Parent_userImage" render="false" type="file" z="user-managed"/>
+            </DIV>
+        </fieldset>
+    </form:update>
+</div>

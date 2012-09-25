@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_security_AdSchoolUser" modelAttribute="adSchoolUser" path="/adschoolusers" render="${empty dependencies}" z="+ZHrDq1/X9BiZdUC8HxdIcwUH2E=">
+        <field:input field="userName" id="c_adschool_security_AdSchoolUser_userName" z="MT0oySKzFVh1l8lf+gIwuu+W1aY="/>
+        <field:input field="userNumber" id="c_adschool_security_AdSchoolUser_userNumber" z="/FcmYOS0zwI1ODZ9HMZzO9eLzTQ="/>
+        <field:input field="firstName" id="c_adschool_security_AdSchoolUser_firstName" z="J7/w/UQ1lNyAfqv+vl+9dK4kLPE="/>
+        <field:input field="lastName" id="c_adschool_security_AdSchoolUser_lastName" z="+sPs4MKetFyiVbJptKI5pGvi9RQ="/>
+        <field:input field="fullName" id="c_adschool_security_AdSchoolUser_fullName" z="VCHWXysUcBFYbX3cvguAAM/+O/A="/>
+        <field:input field="password" id="c_adschool_security_AdSchoolUser_password" z="YsNIS+MNSiwQuGMJY+7o/KXmzZU="/>
+        <field:input field="phoneNumber" id="c_adschool_security_AdSchoolUser_phoneNumber" z="ml7sisjcv0ztwiUS4owAC5EXSS4="/>
+        <field:select field="genre" id="c_adschool_security_AdSchoolUser_genre" items="${genres}" path="genres" z="FC0zv7apG8vl665IaUh6WmS5OH8="/>
+        <field:checkbox field="diseableLogin" id="c_adschool_security_AdSchoolUser_diseableLogin" z="g/CBkyy7tLXnTjRWTdeuCmG95s0="/>
+        <field:checkbox field="accounlLocked" id="c_adschool_security_AdSchoolUser_accounlLocked" z="aSAs+ywXkO5oKVEuh534boNhoYU="/>
+        <field:datetime dateTimePattern="${adSchoolUser_credentialexpiration_date_format}" field="credentialExpiration" id="c_adschool_security_AdSchoolUser_credentialExpiration" z="T7uomfJ9+aQ9JEm98Zvc7GTK+tY="/>
+        <field:datetime dateTimePattern="${adSchoolUser_accountexpiration_date_format}" field="accountExpiration" id="c_adschool_security_AdSchoolUser_accountExpiration" z="DBYfYPdImK9h3QivQqfAD9uHfYU="/>
+        <field:select field="etablissement" id="c_adschool_security_AdSchoolUser_etablissement" itemValue="id" items="${etablissements}" multiple="true" path="/etablissements" z="AUhAlN2oFpFXgfyz/zuPSjDMXVY="/>
+        <field:select field="roleName" id="c_adschool_security_AdSchoolUser_roleName" items="${rolenameses}" multiple="true" path="rolenameses" z="user-managed"/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_security_AdSchoolUser" render="${not empty dependencies}" z="12a4EsXNM2VvhYwRMPV9FXoLfI8="/>
+</div>

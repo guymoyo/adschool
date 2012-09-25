@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="matieres/list">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/list.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/show">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/show.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/create">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/create.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/update">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/update.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/findMatieresByClasse">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/findMatieresByClasse.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/findMatieresByGroupe">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/findMatieresByGroupe.jspx"/>
+    </definition>
+<definition extends="default" name="matieres/findMatieresByFamille">
+        <put-attribute name="body" value="/WEB-INF/views/matieres/findMatieresByFamille.jspx"/>
+    </definition>
+</tiles-definitions>

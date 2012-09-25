@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_PaiementPensions" items="${paiementpensionses}" z="6fOVNHs2UFW8jHgs3appGCkrs/I=">
+        <table:table create="false" data="${paiementpensionses}" delete="false" id="l_adschool_domain_PaiementPensions" link="print" message="Imprimer" path="/paiementpensionses" update="false" z="user-managed">
+            <table:column id="c_adschool_domain_PaiementPensions_paiementKey" property="paiementKey" z="HqQ7RSngaEPFiIi8+wj3ZHeNQ2U="/>
+            <table:column id="c_adschool_domain_PaiementPensions_pension" maxLength="-1" property="pension" z="user-managed"/>
+            <table:column id="c_adschool_domain_PaiementPensions_inscriptionEleve" maxLength="-1" property="inscriptionEleve" z="user-managed"/>
+            <table:column id="c_adschool_domain_PaiementPensions_montantTranche" property="montantTranche" z="0DsnV88HTFKAA/YCzwJBoEkurpU="/>
+            <table:column id="c_adschool_domain_PaiementPensions_montantVersement" property="montantVersement" z="VMFQguwc0rBlB5AS1tGPCcAB8Pw="/>
+            <table:column id="c_adschool_domain_PaiementPensions_dateVersement" property="dateVersement" z="VMFQguwc0rBlB5AS1tGPCcAB8Pw="/>
+            
+            <table:column id="c_adschool_domain_PaiementPensions_imprimer" property="imprimer" z="j7rZAyYSyvv3NjOOB6MREBxZ93U="/>
+        </table:table>
+    </page:list>
+</div>

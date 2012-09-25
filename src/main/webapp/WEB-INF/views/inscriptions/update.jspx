@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Inscription" modelAttribute="inscription" path="/inscriptions" versionField="Version" z="21mGL1SOSwp4fW+9cIUV/6XApok=">
+        <field:input field="inscriptionKey" id="c_adschool_domain_Inscription_inscriptionKey" z="IPRZKX2c23RmfjQgvoWsOSXj+hY="/>
+        <field:datetime dateTimePattern="${inscription_dateinscription_date_format}" field="dateInscription" id="c_adschool_domain_Inscription_dateInscription" z="p21MwZbnnf86jQecaStUyw564Uw="/>
+        <field:input field="agentSaisie" id="c_adschool_domain_Inscription_agentSaisie" z="IWS75jbbq1LpTsAsM1YowTgotbQ="/>
+        <field:datetime dateTimePattern="${inscription_datesaisie_date_format}" field="dateSaisie" id="c_adschool_domain_Inscription_dateSaisie" z="q9KzsEmlPeqEgTSRr8UV28+aVzA="/>
+        <field:input field="montantInscription" id="c_adschool_domain_Inscription_montantInscription" z="t2EpRNL5aYLt63/G7U0P9EopCAQ="/>
+        <field:select field="etablissement" id="c_adschool_domain_Inscription_etablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="ZelxqaCq64R6hr209CmexNrnQNs="/>
+        <field:checkbox field="solder" id="c_adschool_domain_Inscription_solder" z="MHJAbj2rJTLqpyxRZMTaT0aOG9I="/>
+        <field:checkbox field="redoublant" id="c_adschool_domain_Inscription_redoublant" z="fvlLMewIT+SGfSK5nsD7LQzPUOc="/>
+        <field:checkbox field="actif" id="c_adschool_domain_Inscription_actif" z="puz+HNBMoR0cazzUbVywyt0qGA8="/>
+        <field:checkbox field="demission" id="c_adschool_domain_Inscription_demission" z="dWz+GqgVWwfFHcokBHhNogBkYrs="/>
+        <field:datetime dateTimePattern="${inscription_datedemission_date_format}" field="dateDemission" id="c_adschool_domain_Inscription_dateDemission" z="Ct3mkKcMwqpbkPSJUpmioTd2O3M="/>
+        <field:checkbox field="exclu" id="c_adschool_domain_Inscription_exclu" z="Fpmqw5qXxnLkY7K3itbWjvm/oKA="/>
+        <field:datetime dateTimePattern="${inscription_dateexclusion_date_format}" field="dateExclusion" id="c_adschool_domain_Inscription_dateExclusion" z="1ongqNuWtiQHSsLXxSYARf/W1O8="/>
+        <field:input field="avance" id="c_adschool_domain_Inscription_avance" z="7rMbIrDfcfFLyXx8C5HdrkX0jC8="/>
+        <field:select field="classe" id="c_adschool_domain_Inscription_classe" itemValue="id" items="${classes}" path="/classes" z="HX40ORxRGPGjo59LWmMuMkcidnI="/>
+        <field:select field="annee" id="c_adschool_domain_Inscription_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="so16zDeV2vnYOwyLEMprBTx8T1Y="/>
+        <field:select field="regime" id="c_adschool_domain_Inscription_regime" itemValue="id" items="${regimes}" path="/regimes" z="e/MngJLgkSdg2sr2plQit5GjWYo="/>
+        <field:select field="statut" id="c_adschool_domain_Inscription_statut" items="${statutinscriptions}" path="statutinscriptions" z="8n1qO/2e2uvAPLb9LveGknxUvUo="/>
+        <field:select field="eleve" id="c_adschool_domain_Inscription_eleve" itemValue="id" items="${eleves}" path="/eleves" z="O4tpRgI2mBPc8MhIGKlBLf+vXWA="/>
+        <field:select field="docInscriptions" id="c_adschool_domain_Inscription_docInscriptions" itemValue="id" items="${documents}" multiple="true" path="/documents" z="CveBs6ilKWabZJMfWMOf633c8O8="/>
+        <field:checkbox field="imprimer" id="c_adschool_domain_Inscription_imprimer" z="V9PI882OhECX/uAdtt/CP9+9hes="/>
+    </form:update>
+</div>

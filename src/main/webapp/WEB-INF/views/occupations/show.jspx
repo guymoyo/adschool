@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Occupation" object="${occupation}" path="/occupations" z="l2TWYMqKpgtUuRgFeTjcC8V/Ors=">
+        <field:display field="occupationKey" id="s_adschool_domain_Occupation_occupationKey" object="${occupation}" z="6zc6+FXDdliic9nqvbVcYy0s0kc="/>
+        <field:display field="classe" id="s_adschool_domain_Occupation_classe" object="${occupation}" z="yxWdM1etmJ0H236Sq/GdLTsyBWY="/>
+        <field:display field="salle" id="s_adschool_domain_Occupation_salle" object="${occupation}" z="R15la2x1xEj5ZWtmyMn2bpOzgtk="/>
+        <field:display date="true" dateTimePattern="${occupation_heurestart_date_format}" field="heureStart" id="s_adschool_domain_Occupation_heureStart" object="${occupation}" z="1mcKqwTKOZkuNqtqqccdhTWU+0w="/>
+        <field:display date="true" dateTimePattern="${occupation_heurestop_date_format}" field="heureStop" id="s_adschool_domain_Occupation_heureStop" object="${occupation}" z="5URtRkHJ7Z/WVZM2Et2y5gTGO5o="/>
+        <field:display field="jour" id="s_adschool_domain_Occupation_jour" object="${occupation}" z="OgAIcurPwE4xGKG4U8fQ6tNBb+4="/>
+    </page:show>
+</div>

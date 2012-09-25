@@ -1,0 +1,723 @@
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-01 19:04:32
+project adschool
+persistence setup --provider HIBERNATE --database MYSQL --databaseName adschool
+// [failed] entity --class ~.domain
+entity --class ~.domain.AnneeScolaire
+field string anneeKey
+field string libelle
+field date --type java.util.Date --fieldName datedebut
+field date --type java.util.Date --fieldName datefin
+field string --fieldName objectif 
+field boolean --fieldName actif
+entity --class adschool.domain.Batiment
+// [failed] field string --fieldName batimentKey --column true
+field string --fieldName batimentKey --unique true
+field string --fieldName nomBatiment
+field number --type int --fieldName nombreEtage
+entity --class adschool.domain.Classe
+field string --fieldName classeKey
+field string --fieldName nomClasse
+field string --fieldName nomAbreger
+field number --type int --fieldName nombreplace
+field boolean --fieldName actif
+entity --class adschool.domain.Cycles
+field string cycleKey
+field string libelle
+enum type --class adschool.domain.Niveau
+enum type --class adschool.domain.Division
+enum type --class adschool.domain.Genre
+focus --class adschool.domain.Classe
+// [failed] field reference --type adschool.domain.Cycles --fieldName cycle --cardinality MANY_TO_ONE 
+field reference --type adschool.domain.Cycles --fieldName cycles --cardinality MANY_TO_ONE 
+field enum --type adschool.domain.Niveau --fieldName niveau
+entity --class adschool.domain.Regime
+field string regimeKey
+field string libelle
+// [failed] enum type --class adschool.domain.Role
+enum type --class adschool.domain.RoleNames
+entity --class adschool.domain.Salle
+field string --fieldName salleKey
+field string --fieldName nomsalle
+field number --type int --fieldName nombrePlace
+field boolean --fieldName disponible --value true
+field boolean --fieldName actif --value true
+field number --type int --fieldName longueur
+field number --type int --fieldName largeur
+field reference --type adschool.domain.Batiment --fieldName batiment
+enum type --class adschool.domain.StatutInscription
+// [failed] enum type --class adschool.domain
+enum type --class adschool.domain.TypeEtablissement
+entity --class adschool.domain.Pays
+field string isoCode
+field string libelle
+entity --class adschool.domain.AuditRecord
+field string bussinessName
+field string bussinessKey
+field string createBy
+field date --type java.util.Date creeLe
+field string updateBy
+field date --type java.util.Date updateLe
+field string details
+entity --class adschool.domain.Etablissement
+field string --fieldName etablissementKey
+field string --fieldName codeEtablissement
+field string --fieldName nomEtablissement
+field string --fieldName nomAbreger
+field string --fieldName nomResponsable
+field string --fieldName signatureResponsable
+field string --fieldName logoPath
+field string --fieldName adresse
+field string --fieldName boitePostale
+field string --fieldName ville
+field string --fieldName phoneMobile
+field string --fieldName phoneFixe
+field string --fieldName siteWeb
+field string --fieldName email
+field string --fieldName ministere
+field string --fieldName typeResponsable
+field enum --type adschool.domain.Division --fieldName division
+field enum --type adschool.domain.TypeEtablissement --fieldName typeEtablissement
+focus --class adschool.domain.AnneeScolaire
+field reference --type adschool.domain.AnneeScolaire --fieldName anneeScolaire
+focus --class adschool.domain.Classe
+field reference --type adschool.domain.AnneeScolaire --fieldName anneeScolaire
+entity --class adschool.domain.FootPrint
+field string --fieldName bussinessName
+field string --fieldName bussinessKey
+field string --fieldName createBy
+field date --type java.util.Date creeLe
+field string --fieldName updateBy
+field date --type java.util.Date updateLe
+field string --fieldName details
+entity --class adschool.domain.ConfigInscription
+field string configKey
+field reference --type adschool.domain.AnneeScolaire anneeScolaire
+field reference --type adschool.domain.Classe classe
+field number --type int montant
+field date --type java.util.Date dateLimitePaiement
+field reference --type adschool.domain.Regime regime
+entity --class adschool.domain.ConfigPension
+field string --fieldName configKey
+field reference --type adschool.domain.AnneeScolaire anneeScolaire
+field reference --type adschool.domain.Classe classe
+field number --type int montant
+field number --type int tranche
+field date --type java.util.Date dateLimitePaiement
+field reference --type adschool.domain.Regime regime
+entity --class adschool.domain.DocInscription
+field string docKey
+field string libelle
+field boolean --fieldName actif --value true
+entity --class adschool.domain.SchoolBaseEntity --abstract true --mappedSuperclass true
+entity --class adschool.domain.Personne --abstract true --extends adschool.domain.SchoolBaseEntity --mappedSuperclass true
+field string --fieldName matricule
+field string --fieldName nom
+field string --fieldName lieuNaissance
+field string --fieldName cni
+field string --fieldName telephone
+field string --fieldName email
+field string --fieldName boitePostale
+field date --type java.util.Date dateNaissance
+field reference --type adschool.domain.Pays nationalite
+// [failed] field reference --type adschool.domain.Genre genre
+field enum --type adschool.domain.Genre genre
+field string --fieldName pathPhoto
+entity --class adschool.domain.Inscription --extends adschool.domain.SchoolBaseEntity
+field string inscriptionKey --unique true
+field string codeInscription
+field date --type java.util.Date dateInscription
+field string --fieldName agentSaisie
+field date --type java.util.Date dateSaisie
+field number --type int montantInscription
+field reference --type adschool.domain.Etablissement etablissement
+field boolean --fieldName solder --value false
+field boolean --fieldName redoublant --value false
+field boolean --fieldName actif --value true
+field boolean --fieldName demission --value false
+field date --type java.util.Date dateDemission
+field boolean --fieldName exclu --value false
+field date --type java.util.Date dateExclusion
+field number --type int avance
+field reference --type adschool.domain.Classe classe
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Regime regime
+field enum --type adschool.domain.StatutInscription atatut
+entity --class adschool.domain.Eleve --extends adschool.domain.Personne --inheritanceType TABLE_PER_CLASS 
+field reference --type adschool.domain.Etablissement etablissement
+entity --class adschool.domain.Parent --extends adschool.domain.Personne --inheritanceType TABLE_PER_CLASS 
+field string nomPere
+field string nomMere
+field string telephonePere
+field string telephoneMere
+field string EmailPere
+field string EmailMere
+field string password
+focus --class adschool.domain.Eleve
+field reference --type adschool.domain.Parent parent
+controller all --package ~.web
+logging setup --level DEBUG --package WEB 
+security setup
+persistence setup --provider HIBERNATE --database MYSQL --userName root --password adorsys --databaseName adschool
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-05-02 08:34:19
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log closed at 2012-05-02 08:38:29
+focus --class adschool.domain.AnneeScolaire
+finder list 
+finder add --finderName findAnneeScolairesByActif
+focus --class adschool.domain.Salle
+finder list 
+finder add findSallesByActif
+focus --class adschool.domain.Classe
+finder list 
+finder add findClassesByActif
+q
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-05-02 10:47:41
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-02 10:51:13
+// script --file log.roo
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-05-02 10:51:13
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-02 11:02:47
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-02 11:22:11
+focus --class adschool.security.AdSchoolUser
+// [failed] field string --fieldName userName
+// [failed] field string phoneNumber
+entity --class adschool.security.AdSchoolUser --extends adschool.domain.SchoolBaseEntity --inheritanceType TABLE_PER_CLASS 
+field string userName
+field string userNumber
+field string firstName
+field string lastName
+field string fullName
+field string password
+field string phoneNumber
+field enum --type adschool.domain.Genre genre
+field boolean diseableLogin
+field boolean accounlLocked
+field date --type java.util.Date credentialExpiration
+field date --type java.util.Date credentialExpira
+field date --type java.util.Date accountExpiration
+field set --type adschool.domain.Etablissement --fieldName etablissement
+field set --type adschool.domain.RoleNames --fieldName roleName
+finder list 
+finder add --finderName findAdSchoolUsersByFullNameEquals
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-05-02 11:59:56
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-02 12:00:31
+focus --class adschool.domain.Inscription
+field reference --type adschool.domain.Eleve eleve
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-05-03 09:03:06
+entity --class adschool.domain.Enseignant --extends adschool.domain.Personne --inheritanceType TABLE_PER_CLASS 
+field number --type int --fieldName volumeHoraire
+field number --type int --fieldName coutHoraire
+field number --type int --fieldName salaireBase
+enum type --class adschool.domain.TypeEnseignant
+field enum --type adschool.domain.TypeEnseignant statut
+enum type --class adschool.domain.LevelDiplome
+entity --class adschool.domain.Diplome
+field string --fieldName diplomekey
+field string --fieldName libelle
+// [failed] field enum --type adschool.domain.LevelDiplome level
+field enum --type adschool.domain.LevelDiplome niveauEtude
+focus --class adschool.domain.Enseignant
+field reference --type adschool.domain.Diplome diplome
+controller all --package adschool.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-03 14:13:39
+focus --class adschool.domain.Pays
+field string --fieldName paysKey
+focus --class adschool.domain.Eleve
+finder list 
+finder add --finderName findElevesByNomLike
+class --class adschool.domain.PasswordReset
+field string --fieldName userName
+field string --fieldName passwordCurrent
+field string --fieldName newPassword
+field string --fieldName confirmNewPassword
+focus --class adschool.domain.Parent
+finder list 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-04 11:55:37
+focus --class adschool.domain.Parent
+finder list 
+finder add findParentsByNomLike
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-08 09:37:00
+entity --class adschool.domain.Periode
+field string --fieldName periodeKey
+field date --type java.util.Date --fieldName datedebut
+field date --type java.util.Date --fieldName datefin
+field reference --type adschool.domain.AnneeScolaire --fieldName annee
+field boolean --fieldName actif
+entity --class adschool.domain.Evaluation
+field string evaluationKey
+field date --type java.util.Date --fieldName datedebut
+field date --type java.util.Date --fieldName datefin
+field reference --type adschool.domain.Periode --fieldName periode
+field boolean --fieldName actif
+field number --type int --fieldName pourcentage
+entity --class adschool.domain.Matiere
+field string --fieldName matiereKey
+field string --fieldName codeMatiere
+field string --fieldName intitule
+field boolean --fieldName actif
+field number --type double --fieldName coefficient
+entity --class adschool.domain.Notes
+field string noteKey
+// [failed] field number --type double --fieldName value
+field number --type double --fieldName valeur
+field reference --type adschool.domain.Inscription --fieldName inscripionEleve
+field reference --type adschool.domain.Evaluation --fieldName evaluation
+field number --type double --fieldName coefficient
+field number --type double --fieldName pourcentage
+field reference --type adschool.domain.Etablissement --fieldName etablissement
+focus --class adschool.domain.Matiere
+field reference --type adschool.domain.Classe --fieldName classe
+entity --class adschool.domain.GroupeMatiere
+field string groupeKey
+field string intitule
+// [failed] field number --type int --fieldName position
+field number --type int --fieldName disposition
+focus --class adschool.domain.Matiere
+field number --type int --fieldName disposition
+entity --class adschool.domain.FamilleMatiere
+field string --fieldName familleKey
+field string --fieldName intitule
+focus --class adschool.domain.Matiere
+field reference --type adschool.domain.FamilleMatiere famille
+entity --class adschool.domain.AbsenceEleves
+field string absenceKey
+field reference --type adschool.domain.Evaluation evaluation
+field reference --type adschool.domain.Inscription inscriptionEleve
+field reference --type adschool.domain.Matiere matiere
+field date --type java.util.Date dateAbsence
+field date --type java.util.Date dateSaisie
+field date --type java.util.Date heureDebut
+field date --type java.util.Date heureFin
+field number --type int --fieldName duree
+field boolean --fieldName justified
+entity --class adschool.domain.AvertissementEleves
+field string --fieldName avertKey
+field reference --type adschool.domain.Evaluation evaluation
+field reference --type adschool.domain.Inscription inscriptionEleve
+field date --type java.util.Date --fieldName dateAvertissement
+// [failed] field date --type java.util.Date --fieldName dateAvertissement 
+field date --type java.util.Date --fieldName dateSaisie
+field number --type int --fieldName duree
+field boolean --fieldName justified
+field date --type java.util.Date debut
+field date --type java.util.Date fin
+entity --class adschool.domain.ConsigneEleves
+field string --fieldName consigneKey
+field reference --type adschool.domain.Evaluation evaluation 
+field reference --type adschool.domain.Inscription inscriptionEleve
+field date --type java.util.Date --fieldName dateConsigne
+entity --class adschool.domain.EnseignantMatieres
+field reference --type adschool.domain.Enseignant enseignant
+field reference --type adschool.domain.Matiere matiere
+field reference --type adschool.domain.AnneeScolaire annee
+entity --class adschool.domain.EnesignantPricipal
+entity --class adschool.domain.EnseignantPrincipal
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Enseignant --fieldName enseignant
+field reference --type adschool.domain.Matiere matiere
+entity --class adschool.domain.Machines
+field string --fieldName machineKey
+field string --fieldName nomMachine
+field string --fieldName IpMachine
+field string --fieldName adresseMac
+field boolean --fieldName autorised --value true
+field string --fieldName observation
+entity --class adschool.domain.Mentions
+field string --fieldName mentionKey
+field string --fieldName intitule
+field number --type double --fieldName valueMin
+field number --type double --fieldName valueMax
+entity --class adschool.domain.PointageEnseignants
+field string --fieldName pointageKey
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Enseignant enseignant
+field reference --type adschool.domain.Matiere matiere 
+field reference --type adschool.domain.Classe classe
+field date --type java.util.Date datedebut
+field number --type int --fieldName duree
+entity --class adschool.domain.ExclusionEleves
+field string --fieldName exclusionKey
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Inscription inscriptionEleve
+field date --type java.util.Date datedebut
+field date --type java.util.Date datefin
+field boolean --fieldName actif
+field number --type int --fieldName duree
+entity --class adschool.domain.PensionEleves
+field string pensionKey
+field reference --type adschool.domain.Inscription inscriptionEleve 
+field number --type int --fieldName tranche
+field date --type java.util.Date --fieldName dateLimitePaiement
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Classe classe
+field number --type int --fieldName montant
+field number --type int --fieldName reduction
+field number --type int --fieldName avance
+field boolean --fieldName solder 
+entity --class adschool.domain.PaiementPensions
+field string --fieldName paiementKey
+field reference --type adschool.domain.PensionEleves pension
+field reference --type adschool.domain.Inscription inscriptionEleve
+field number --type int --fieldName montantversement
+field number --type int --fieldName montantTranche
+field date --type java.util.Date --fieldName dateversement
+class --class adschool.domain.SendMail
+controller all --package adschool.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-08 14:47:48
+focus --class adschool.domain.Matiere
+field reference --type adschool.domain.GroupeMatiere --fieldName groupe
+focus --class adschool.domain.EnseignantMatieres
+field string --fieldName vakueKey
+focus --class adschool.domain.EnseignantPrincipal
+field string --fieldName valueKey
+focus --class adschool.domain.Notes
+field date --type java.util.Date dateSaisie
+focus --class adschool.domain.Parent
+finder list 
+finder add --finderName findParentsByMatriculeLike
+focus --class adschool.domain.Eleve
+finder list 
+focus --class adschool.domain.ConfigInscription
+field reference --type adschool.domain.Etablissement etablissement
+focus --class adschool.domain.ConfigPension
+field reference --type adschool.domain.Etablissement etablissement
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-10 11:56:25
+focus --class adschool.domain.Mentions
+finder list 
+focus --class adschool.domain.PensionEleves
+field reference --type adschool.domain.Regime --fieldName regime
+finder list 
+finder add findPensionElevesesByPensionKeyLike
+field reference --type adschool.domain.Eleve --fieldName eleve
+finder list 
+finder add --finderName findPensionElevesesByEleve
+focus --class adschool.domain.Notes
+field reference --type adschool.domain.Eleve --fieldName eleve
+finder list 
+finder add findNotesesByEleve
+focus --class adschool.domain.Matiere
+field reference --type adschool.domain.Matiere --fieldName matiere
+focus --class adschool.domain.Notes
+field reference --type adschool.domain.Matiere --fieldName matiere
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-15 14:46:20
+focus --class adschool.domain.DocInscription
+finder list 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-15 14:48:09
+focus --class adschool.domain.DocInscription
+finder list 
+finder add findDocInscriptionsByActif
+focus --class adschool.domain.ConfigInscription
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-17 10:12:36
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-24 11:15:20
+hint
+focus --class adschool.domain.Inscription
+finder list 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-24 11:24:43
+focus --class adschool.domain.Inscription
+finder list 
+// [failed] finder add findInscriptionsByEleve
+// [failed] controller class --class adschool.domain.Inscription
+controller all --package adschool.web
+focus --class adschool.domain.Eleve
+finder list 
+finder add findElevesByNomLike
+finder add findElevesByMatriculeLike
+focus --class adschool.domain.Inscription
+finder list 
+finder add --finderName findInscriptionsByEleve
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-28 08:48:38
+focus --class adschool.domain.Classe
+field string --fieldName codeFixe
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-05-28 09:20:22
+focus --class adschool.domain.Matiere
+finder list 
+finder add findMatieresByClasse
+focus --class adschool.domain.Classe
+focus --class adschool.domain.AnneeScolaire
+controller all --package adschool.web
+focus --class adschool.domain.AnneeScolaire
+field string --fieldName st
+field string --fieldName a
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-04 08:51:57
+persistence setup --provider HIBERNATE --database H2_IN_MEMORY
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-09 10:52:14
+// [failed] focus --class adschool.domain.Eleve
+json add 
+persistence setup --provider HIBERNATE --database MYSQL 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-11 10:29:06
+focus --class adschool.domain.Classe
+json add 
+finder list 
+finder add findClassesByNomClasseLike
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-15 11:57:38
+logging setup --level WARN 
+persistence setup --provider HIBERNATE --database MYSQL --databaseName adschooldb --userName root --password adorsys
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-19 14:53:56
+logging setup --level WARN 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-20 12:45:22
+logging setup --level WARN 
+<<<<<<< .mine
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-21 09:35:41
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-22 08:44:49
+focus --class adschool.domain.Eleve
+finder list 
+finder add --finderName findElevesByNomLike
+finder add --finderName findElevesByNomLike
+finder add --finderName findElevesByNomLike
+finder add --finderName findElevesByNomLike
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-23 09:41:07
+focus --class adschool.domain.Inscription
+field set --fieldName docInscriptions --type adschool.domain.DocInscription --cardinality MANY_TO_MANY 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-27 17:00:26
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-06-30 08:42:55
+focus --class adschool.domain.ConfigInscription
+json add 
+json add 
+json add 
+focus --class adschool.domain.ConfigPension
+json add 
+focus --class adschool.domain.Parent
+finder list --depth 2
+finder add --finderName findParentsByNomPereLikeOrNomMereLike
+json add 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-02 08:44:52
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-04 10:49:32
+json add --class adschool.domain.ConfigPension
+=======
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-03 16:31:27
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-03 17:26:21
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-07-04 09:24:43
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-04 09:27:39
+addon list
+// [failed] web mvc install language --code es
+// [failed] web mvc install language --code it
+// [failed] web mvc install language --code en
+// [failed] web mvc install language --code de
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-05 15:43:08
+entity --class adschool.domain.Filiere
+// [failed] entity --class adschool.domain.Filiere
+field string --fieldName FiliereKey
+field string --fieldName libelle
+focus --class adschool.domain.Classe
+field reference --type adschool.domain.Filiere --fieldName filiere
+controller scaffold --class adschool.domain.Filiere
+controller scaffold --class adschool.web.FiliereController --entity adschool.domain.Filiere
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-06 10:29:45
+>>>>>>> .r1519
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-09 08:25:42
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-09 10:07:47
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-07-09 10:34:48
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-10 10:40:38
+logging setup --level ERROR 
+focus --class adschool.domain.ConfigInscription
+json add 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-10 12:26:27
+focus --class adschool.domain.ConfigInscription
+json add 
+focus --class adschool.domain.ConfigPension
+json add 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-14 08:03:18
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-17 16:25:59
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-24 11:20:07
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-07-24 11:34:50
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-07-24 11:40:53
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-07-24 12:27:33
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-08-02 15:56:32
+focus --class adschool.domain.Inscription
+finder list 
+finder add findInscriptionsByDateInscriptionEquals
+finder add findInscriptionsByDateInscriptionBetween
+focus --class adschool.domain.PaiementPensions
+finder list 
+finder add --finderName findPaiementPensionsesByDateVersementBetween
+focus --class adschool.domain.PensionEleves
+finder list 
+finder add --finderName findPensionElevesesByPensionKeyLike
+focus --class adschool.domain.Inscription
+finder list 
+finder add findInscriptionsByInscriptionKeyLike
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-08-04 10:32:00
+focus --class adschool.security.AdSchoolUser
+finder list 
+finder add --finderName findAdSchoolUsersByUserNameEquals
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-08-16 09:19:21
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-08-24 16:13:03
+focus --class adschool.domain.Inscription
+// [failed] field reference --type adschool.security.AdSchoolUser --fieldName user
+// [failed] field reference --type adschool.security.AdSchoolUser --fieldName utilisateur
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-08-30 10:40:24
+focus --class adschool.domain.Evaluation
+finder list 
+finder add findEvaluationsByActif
+focus --class adschool.domain.Evaluation
+field string --fieldName libelle
+field reference --fieldName etablissement --type adschool.domain.Etablissement
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-03 09:59:12
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-05 09:07:29
+class --class adschool.domain.ImportNote
+field reference --type adschool.domain.Classe classe
+field reference --type adschool.domain.Matiere matiere
+hint
+hint controllers
+controller scaffold --class adschool.web.ImportNoteController
+controller scaffold --class adschool.web.ImportNddddddddddd
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-05 10:27:17
+controller scaffold --class adschool.web.ImportNoteController --entity adschool.domain.ImportNote
+controller scaffold --class adschool.web.ImportNoteController --entity adschool.domain.ImportNote
+controller scaffold --class adschool.web.ImportNoteController --entity adschool.domain.ImportNote
+controller scaffold --class adschool.web.ImportNoteController --entity adschool.domain.ImportNote
+field string --fieldName chemin
+field reference --type adschool.domain.Evaluation --fieldName evaluation
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-06 08:42:35
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-07 08:33:32
+focus --class adschool.domain.ImportNote
+field reference --type adschool.domain.Etablissement etablissement
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-10 02:08:12
+focus --class adschool.domain.Eleve
+finder list 
+finder add findElevesByEtablissement
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-12 09:26:37
+focus --class adschool.domain.Classe
+field reference --type adschool.domain.Etablissement etablissement
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-12 15:51:25
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-09-12 16:06:28
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-14 08:55:42
+entity --class adschool.domain.moyenneevaluations
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Periode periode
+field reference --type adschool.domain.Evaluation evaluation
+field reference --type adschool.domain.Inscription inscription
+field number --type java.lang.Long --fieldName rang
+// [failed] field number --type java.lang.Double --fieldName value
+field number --type java.lang.Double --fieldName valeur
+field string --fieldName mention
+field string --fieldName decision
+entity --class adschool.domain.moyenneperiodes
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Periode periode
+field reference --type adschool.domain.Inscription inscription
+field number --type java.lang.Long --fieldName rang
+// [failed] field number --type java.lang.Double --fieldName value
+field number --type java.lang.Double --fieldName valeur
+field string --fieldName mention
+field string --fieldName decision
+entity --class adschool.domain.moyenneegenerales
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Classe --fieldName classe
+field reference --type adschool.domain.Periode periode
+field reference --type adschool.domain.Evaluation evaluation
+field number --type java.lang.Double --fieldName valeur
+// [failed] entity --class adschool.domain.moyenneannuelles
+q
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-09-17 02:39:10
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-17 02:39:27
+entity --class adschool.domain.moyenneannuelles
+field reference --type adschool.domain.AnneeScolaire annee
+field reference --type adschool.domain.Inscription inscription
+field number --type java.lang.Long rang
+field number --type java.lang.Double valeur
+field string --fieldName mention
+field string --fieldName decision
+focus --class adschool.domain.Moyenneevaluations
+finder list 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-17 03:16:28
+// [failed] focus --class adschool.domain.Moyenneevaluations
+finder list 
+finder add findMoyenneevaluationsesByEvaluation
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-17 15:24:23
+focus --class adschool.domain.Periode
+finder list 
+focus --class adschool.domain.Evaluation
+finder list 
+finder add findEvaluationsByPeriode
+focus --class adschool.domain.Classe
+finder list 
+finder add findClassesByNomClasseNotEquals
+focus --class adschool.domain.Eleve
+finder list 
+focus --class adschool.domain.Inscription
+finder list 
+finder add findInscriptionsByClasse
+finder add findInscriptionsByAnnee
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-22 10:28:55
+entity --class adschool.domain.Speciality
+field string --fieldName libelle
+// [failed] entity --class adschool.domain.Option
+entity --class adschool.domain.Options
+field reference --type adschool.domain.Speciality specialite
+focus --class adschool.domain.Classe
+// [failed] field reference --type adschool.domain.Options --fieldName option
+field reference --type adschool.domain.Options --fieldName options
+focus --class adschool.domain.Speciality
+controller scaffold --class adschool.web.SpecialityController
+focus --class adschool.domain.Options
+controller scaffold --class adschool.web.OptionsController
+focus --class adschool.domain.Classe
+focus --class adschool.domain.Matiere
+field number --type java.lang.Integer --fieldName credit
+focus --class adschool.domain.GroupeMatiere
+field number --type java.lang.Integer --fieldName totalcredit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-09-24 10:24:24
+focus --class adschool.domain.Options
+field string --fieldName libelle
+focus --class adschool.domain.Periode
+finder list 
+finder add findPeriodesByAnnee
+focus --class adschool.domain.Classe
+finder list 
+focus --class adschool.domain.Matiere
+finder list 
+finder add findMatieresByClasse
+focus --class adschool.domain.Periode
+field string --fieldName libelle
+entity --class adschool.domain.Document
+field string --fieldName libelle
+field boolean --fieldName actif
+focus --class adschool.domain.DocInscription
+field reference --type adschool.domain.Classe classe
+field set --fieldName listeDocuments --type adschool.domain.Document
+focus --class adschool.domain.Document
+controller scaffold --class adschool.web.DocumentController
+focus --class adschool.domain.DocInscription
+finder list 
+finder add findDocInscriptionsByClasse
+focus --class adschool.domain.Classe
+finder list 
+finder add findClassesByOptions
+focus --class adschool.domain.Options
+finder list 
+finder add findOptionsesBySpecialite
+focus --class adschool.domain.GroupeMatiere
+finder list 
+focus --class adschool.domain.Matiere
+finder list 
+finder add findMatieresByGroupe
+finder add findMatieresByFamille
+focus --class adschool.domain.GroupeMatiere
+field reference --type adschool.domain.Classe classe
+finder list 
+finder add findGroupeMatieresByClasse
+focus --class adschool.domain.Filiere
+finder list 
+focus --class adschool.domain.Classe
+finder list 
+finder add findClassesByFiliere
+focus --class adschool.domain.Periode
+finder list 
+finder add findPeriodesByAnnee
+focus --class adschool.domain.Evaluation
+finder list 
+finder add findEvaluationsByPeriode
+entity --class adschool.domain.Occupation
+field reference --type adschool.domain.Classe classe
+field reference --type adschool.domain.Salle salle
+field date --type java.util.Date --fieldName heureStart
+field date --type java.util.Date --fieldName heureStop
+enum type --class adschool.domain.Jours
+focus --class adschool.domain.Occupation
+field enum --type adschool.domain.Jours --fieldName jour
+controller scaffold --class adschool.web.OccupationController
+finder list 
+finder add findOccupationsBySalle
+finder add findOccupationsByClasse
+focus --class adschool.domain.Salle
+finder list 
+finder add findSallesByBatiment

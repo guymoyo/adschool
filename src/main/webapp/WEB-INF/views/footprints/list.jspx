@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_FootPrint" items="${footprints}" z="+2fXw0xlxHFTs5i/3UJFzKnHrhM=">
+        <table:table data="${footprints}" id="l_adschool_domain_FootPrint" path="/footprints" z="+Om/K2e6pvimD5bb8Lahw5s2FVQ=">
+            <table:column id="c_adschool_domain_FootPrint_bussinessName" property="bussinessName" z="oOIe/cHZ87DConGxM4+9fNm5fH8="/>
+            <table:column id="c_adschool_domain_FootPrint_bussinessKey" property="bussinessKey" z="RHcHZmkykXogCGG20qvEd0uenXE="/>
+            <table:column id="c_adschool_domain_FootPrint_createBy" property="createBy" z="rYt3s5PBF/wEtxZO1kr3zAm7pD8="/>
+            <table:column date="true" dateTimePattern="${footPrint_creele_date_format}" id="c_adschool_domain_FootPrint_creeLe" property="creeLe" z="eHbP2AWsr9B89dJ2ISmN2E6KPB4="/>
+            <table:column id="c_adschool_domain_FootPrint_updateBy" property="updateBy" z="Znd4HCATPKGn2rEAIO+eJ84rs+c="/>
+            <table:column date="true" dateTimePattern="${footPrint_updatele_date_format}" id="c_adschool_domain_FootPrint_updateLe" property="updateLe" z="1WT1uaL5cFI7Ao+SRD0+eVI1lEM="/>
+        </table:table>
+    </page:list>
+</div>

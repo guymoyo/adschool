@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+ xmlns:jsp="http://java.sun.com/JSP/Page" 
+ xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+ xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" 
+  
+ xmlns:spring="http://www.springframework.org/tags"
+  		
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" >
+	  
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+	<jsp:output omit-xml-declaration="yes"/>
+    
+    <spring:message code="informations_inscription"  var="informations_inscription"/>
+        
+    <spring:message code="informations_student"  var="informations_student"/>
+    
+     <spring:url value="/paiementpensionses/payerpension" var="enregistrer_paiement_url"/>
+    
+    <FIELDSET>
+        <LEGEND> ${informations_student2}</LEGEND>
+        <page:show bodyExt="bodyExt.jspx" delete="false" id="ps_adschool_domain_Inscription" list="false" object="${inscription}" path="/inscriptions" update="false" z="user-managed">
+           
+         <FIELDSET>
+   <LEGEND> ${informations_inscription}</LEGEND>  
+           
+            <field:display field="etablissement" id="s_adschool_domain_Inscription_etablissement" internalfield="nomEtablissement" object="${inscription}" z="user-managed"/>
+            <field:display field="classe" id="s_adschool_domain_Inscription_classe" internalfield="nomClasse" object="${inscription}" z="user-managed"/>
+            <field:display field="annee" id="s_adschool_domain_Inscription_annee" internalfield="libelle" object="${inscription}" z="user-managed"/>
+            <field:display field="regime" id="s_adschool_domain_Inscription_regime" internalfield="libelle" object="${inscription}" z="user-managed"/>
+            <field:display field="statut" id="s_adschool_domain_Inscription_statut" object="${inscription}" z="xDcruDVeQoqEVifMmgsZYilIlQE="/>
+            
+         </FIELDSET>
+         
+            <FIELDSET>
+   <LEGEND> Paiement pension</LEGEND>  
+           
+      <FORM action="${enregistrer_paiement_url}" method="get" >
+      
+      <input type="hidden" name="IdInscription" value="${inscription.id}" />
+      <P>
+      Montant Versement :
+      <INPUT id="montant_versement" name="montantVersement" value="0" maxlength="10" style="width: 90px;"  type="text"/>
+      
+      
+     </P>
+       
+       <P>
+      <INPUT value="Enregistrer" type="submit"/>
+       </P>
+      
+      </FORM>
+         </FIELDSET>
+        
+        </page:show>
+    </FIELDSET>
+</div>

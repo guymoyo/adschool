@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Mentions" items="${mentionses}" z="4erlnBq23GJ3cpArdBPd5naJKCY=">
+        <table:table data="${mentionses}" id="l_adschool_domain_Mentions" path="/mentionses" z="BYxo+wOss41he7irscDFA9RDgqo=">
+            <table:column id="c_adschool_domain_Mentions_mentionKey" property="mentionKey" z="BomeUslVgvgj9M6WGynVuFrY5Zw="/>
+            <table:column id="c_adschool_domain_Mentions_intitule" property="intitule" z="Y2fAEF/qUqoBhHJBrh71EhwDMkw="/>
+            <table:column id="c_adschool_domain_Mentions_valueMin" property="valueMin" z="O0J9D9BkgO++F2DPhtMkqnyb25I="/>
+            <table:column id="c_adschool_domain_Mentions_valueMax" property="valueMax" z="+H08QvTdmos3SGktww6HfY83L28="/>
+        </table:table>
+    </page:list>
+</div>

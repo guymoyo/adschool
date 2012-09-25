@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_EnseignantPrincipal" object="${enseignantprincipal}" path="/enseignantprincipals" z="3UVeyI/D3MXhb/PvN6LI0AscKUw=">
+        <field:display field="annee" id="s_adschool_domain_EnseignantPrincipal_annee" object="${enseignantprincipal}" z="QvawWNXn8nV5uZBXDoUa3D+2PbA="/>
+        <field:display field="enseignant" id="s_adschool_domain_EnseignantPrincipal_enseignant" object="${enseignantprincipal}" z="j+zE5T1DswaXS52BdT54KLr3MQ8="/>
+        <field:display field="matiere" id="s_adschool_domain_EnseignantPrincipal_matiere" object="${enseignantprincipal}" z="KAStSVUfL7Mtrcwu5nM1iaPSO7o="/>
+        <field:display field="valueKey" id="s_adschool_domain_EnseignantPrincipal_valueKey" object="${enseignantprincipal}" z="Nqe7m/o9JKlZp1VxOPnY2IqTcMU="/>
+    </page:show>
+</div>

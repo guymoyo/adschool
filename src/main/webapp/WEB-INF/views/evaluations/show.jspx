@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+     <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+        
+        
+    </c:if>
+    
+    <page:show id="ps_adschool_domain_Evaluation" object="${evaluation}" delete="false" update="false" path="/evaluations" z="saRQBi1SrKwVI93nTKEmoG2EmYQ=">
+        <field:display field="evaluationKey" id="s_adschool_domain_Evaluation_evaluationKey" object="${evaluation}" z="9uW6ixNgcd5eq1p+Du+X9qpjXvI="/>
+        <field:display date="true" dateTimePattern="${evaluation_datedebut_date_format}" field="datedebut" id="s_adschool_domain_Evaluation_datedebut" object="${evaluation}" z="fcqpVPPAYlx0+3Bf1dCOsya7j3A="/>
+        <field:display date="true" dateTimePattern="${evaluation_datefin_date_format}" field="datefin" id="s_adschool_domain_Evaluation_datefin" object="${evaluation}" z="N6BjzQmbdrgfNw4A+48op5RKNUI="/>
+        <field:display field="periode" id="s_adschool_domain_Evaluation_periode" object="${evaluation}" z="6Aeaj7Ncx7ERUvmIIMwN6Kd07qM="/>
+        <field:display field="actif" id="s_adschool_domain_Evaluation_actif" object="${evaluation}" z="UyYHY6tQthYV0BuYbyZOVMWn3QU="/>
+        <field:display field="pourcentage" id="s_adschool_domain_Evaluation_pourcentage" object="${evaluation}" z="wfjvh3qhhkCGsaQoIF4uG+3gn/Y="/>
+        <field:display field="libelle" id="s_adschool_domain_Evaluation_libelle" object="${evaluation}" z="TV15dl/pOmCdMS9IkMrseFORSEk="/>
+        <field:display field="etablissement" id="s_adschool_domain_Evaluation_etablissement" object="${evaluation}" z="+zm37TN+pqynP9Z5h8BNIgHxe8o="/>
+    </page:show>
+</div>

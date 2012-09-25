@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Parent" object="${parent}" path="/parents" z="0GbPuyMraqLciH4JS9Iyz+Cb6J4=">
+        <field:image height="200" id="${parent.id}" imagePath="${parent.pathPhoto}" width="200"/>
+        <field:display field="matricule" id="s_adschool_domain_Parent_matricule" object="${parent}" z="nYg9OBrfZJ0GBKDdGKQ73JmJJ74="/>
+        <field:display field="nom" id="s_adschool_domain_Parent_nom" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="genre" id="s_adschool_domain_Parent_genre" label="Sexe" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="nationalite" id="s_adschool_domain_Parent_nationalite" internalfield="libelle" object="${parent}" z="user-managed"/>
+        <field:display field="lieuNaissance" id="s_adschool_domain_Parent_lieuNaissance" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="cni" id="s_adschool_domain_Parent_cni" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="telephone" id="s_adschool_domain_Parent_telephone" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="email" id="s_adschool_domain_Parent_email" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="boitePostale" id="s_adschool_domain_Parent_boitePostale" object="${parent}" render="false" z="user-managed"/>
+        <field:display date="true" dateTimePattern="${parent_datenaissance_date_format}" field="dateNaissance" id="s_adschool_domain_Parent_dateNaissance" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="pathPhoto" id="s_adschool_domain_Parent_pathPhoto" object="${parent}" render="false" z="user-managed"/>
+        <field:display field="nomPere" id="s_adschool_domain_Parent_nomPere" object="${parent}" z="OiAMGO4sJB5QULmRMbDEfNCiNuY="/>
+        <field:display field="nomMere" id="s_adschool_domain_Parent_nomMere" object="${parent}" z="1nZ5Ry+PRit/CZPOXi1RRnqa/0g="/>
+        <field:display field="telephonePere" id="s_adschool_domain_Parent_telephonePere" object="${parent}" z="zTyKKOcNclJwC/mkjHtmAKGyyYo="/>
+        <field:display field="telephoneMere" id="s_adschool_domain_Parent_telephoneMere" object="${parent}" z="dksPZjilZizgm8Sn6gxFTOT7fzg="/>
+        <field:display field="emailPere" id="s_adschool_domain_Parent_EmailPere" object="${parent}" z="HnBwv9YKgkic/WaaHRDnbV420Ic="/>
+        <field:display field="emailMere" id="s_adschool_domain_Parent_EmailMere" object="${parent}" z="6WTYncs7pLGEDMxQ5zaOExjpsOI="/>
+        <field:display field="password" id="s_adschool_domain_Parent_password" object="${parent}" z="UN0YNZ0DCx7SNoNDTAQ0MqmK7pM="/>
+        <field:display field="userImage" id="s_adschool_domain_Parent_userImage" object="${parent}" render="false" z="user-managed"/>
+    </page:show>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Enseignant" object="${enseignant}" path="/enseignants" z="zc7+3rbqHpdXfLKWybu9Gwp+PMU=">
+        <field:display field="matricule" id="s_adschool_domain_Enseignant_matricule" object="${enseignant}" z="wo8o4w3crW4Cw+wTGZb9JCuVLdM="/>
+        <field:display field="nom" id="s_adschool_domain_Enseignant_nom" object="${enseignant}" z="oF2NPFDyDHzPr5kDG07UREbMcFQ="/>
+        <field:display field="lieuNaissance" id="s_adschool_domain_Enseignant_lieuNaissance" object="${enseignant}" z="H9Nz4+L5qVUV+E6LywsAgQuWor4="/>
+        <field:display field="cni" id="s_adschool_domain_Enseignant_cni" object="${enseignant}" z="IkUOUxC8xmCtOMutpkShUjWXR6M="/>
+        <field:display field="telephone" id="s_adschool_domain_Enseignant_telephone" object="${enseignant}" z="rJTf83q+oJ0ZBp+Jg4CC6thhhBU="/>
+        <field:display field="email" id="s_adschool_domain_Enseignant_email" object="${enseignant}" z="CrjSjtVvlaRiQ7xBtOQP0EzWBf4="/>
+        <field:display field="boitePostale" id="s_adschool_domain_Enseignant_boitePostale" object="${enseignant}" z="Ct9by4l0z+Dc5r7Didf2wSxXa7c="/>
+        <field:display date="true" dateTimePattern="${enseignant_datenaissance_date_format}" field="dateNaissance" id="s_adschool_domain_Enseignant_dateNaissance" object="${enseignant}" z="LzNXH6KHW9GCqz4cSsJh8ahzxHQ="/>
+        <field:display field="nationalite" id="s_adschool_domain_Enseignant_nationalite" object="${enseignant}" z="ToAc/estZA4ZWKMZvdu3AXK8gXc="/>
+        <field:display field="genre" id="s_adschool_domain_Enseignant_genre" object="${enseignant}" z="dXrvEydR464xyJ+0H5axNlIQDU4="/>
+        <field:display field="pathPhoto" id="s_adschool_domain_Enseignant_pathPhoto" object="${enseignant}" z="Sd64H/3BA+OGs5a6+KRxWI7iGe0="/>
+        <field:display field="volumeHoraire" id="s_adschool_domain_Enseignant_volumeHoraire" object="${enseignant}" z="W3dfBw7/kVvQhbfflyCzgEUXtbw="/>
+        <field:display field="coutHoraire" id="s_adschool_domain_Enseignant_coutHoraire" object="${enseignant}" z="7jTAB61NnyWgbUqr9izIi01q7nU="/>
+        <field:display field="salaireBase" id="s_adschool_domain_Enseignant_salaireBase" object="${enseignant}" z="Q1MzHYCShqFTMbBtY4Djc+IvYms="/>
+        <field:display field="diplome" id="s_adschool_domain_Enseignant_diplome" object="${enseignant}" z="sSJv48MK+/HGnnTmN+8OrG9MzN4="/>
+        <field:display field="userImage" id="s_adschool_domain_Enseignant_userImage" object="${enseignant}" z="sbyRfJdo9F6bqIQhePOqNab5vKk="/>
+        <field:display field="password" id="s_adschool_domain_Enseignant_password" object="${enseignant}" z="9tV7+nlLuWZcKnxL1SZ2oxkUhbQ="/>
+    </page:show>
+</div>

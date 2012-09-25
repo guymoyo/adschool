@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_AbsenceEleves" object="${absenceeleves}" path="/absenceeleveses" z="2nAnx6gSrNPO5J9qIf0oX63gMaM=">
+        <field:display field="absenceKey" id="s_adschool_domain_AbsenceEleves_absenceKey" object="${absenceeleves}" z="7AgeoRBrjXZbYeG0PVKyvrkGLlA="/>
+        <field:display field="evaluation" id="s_adschool_domain_AbsenceEleves_evaluation" object="${absenceeleves}" z="SG1gS+V7dsAsqjkr0Mq9k5YH9nA="/>
+        <field:display field="inscriptionEleve" id="s_adschool_domain_AbsenceEleves_inscriptionEleve" object="${absenceeleves}" z="JL9AQSys0LMstFyXPEw1ArPzGfY="/>
+        <field:display field="matiere" id="s_adschool_domain_AbsenceEleves_matiere" object="${absenceeleves}" z="DB5icG5SasAskUfznRZjLL4/U2I="/>
+        <field:display date="true" dateTimePattern="${absenceEleves_dateabsence_date_format}" field="dateAbsence" id="s_adschool_domain_AbsenceEleves_dateAbsence" object="${absenceeleves}" z="3tJGUPSjcSwUorNMp9SYut+3hSI="/>
+        <field:display date="true" dateTimePattern="${absenceEleves_datesaisie_date_format}" field="dateSaisie" id="s_adschool_domain_AbsenceEleves_dateSaisie" object="${absenceeleves}" z="HTa6NMNbdgAPavSX9Ity5fFQc00="/>
+        <field:display date="true" dateTimePattern="${absenceEleves_heuredebut_date_format}" field="heureDebut" id="s_adschool_domain_AbsenceEleves_heureDebut" object="${absenceeleves}" z="BQfHuZohwm7DwGkfYDHGEcPouVA="/>
+        <field:display date="true" dateTimePattern="${absenceEleves_heurefin_date_format}" field="heureFin" id="s_adschool_domain_AbsenceEleves_heureFin" object="${absenceeleves}" z="1VBahrx8dwoN6GZsksbcOcy6qxU="/>
+        <field:display field="duree" id="s_adschool_domain_AbsenceEleves_duree" object="${absenceeleves}" z="nYnGPbKjkXT49j425Y4i+HZdNt8="/>
+        <field:display field="justified" id="s_adschool_domain_AbsenceEleves_justified" object="${absenceeleves}" z="2p+U5rY/TKO10ZYnE7MmkbLmoa0="/>
+    </page:show>
+</div>

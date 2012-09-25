@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_Batiment" modelAttribute="batiment" path="/batiments" versionField="Version" z="GGsYCTF3f1L8EDSp9GWvQ3iiRQ8=">
+        
+       	<field:display field="batimentKey" id="c_adschool_domain_Batiment_batimentKey" object="${batiment}" showhidden="true" z="user-managed"/>
+        <field:input field="nomBatiment" id="c_adschool_domain_Batiment_nomBatiment" z="MDycgltYFtvNvjVQxq/vc3Yzk08="/>
+        <field:input field="nombreEtage" id="c_adschool_domain_Batiment_nombreEtage" z="3gQ+IV9ZT2QggCuGIzIDVawUpxA="/>
+    </form:update>
+</div>

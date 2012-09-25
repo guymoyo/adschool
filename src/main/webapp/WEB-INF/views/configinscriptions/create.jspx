@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_domain_ConfigInscription" modelAttribute="configInscription" path="/configinscriptions" render="${empty dependencies}" z="YVAUNrO9bczdMx6c3wZ9cAFcjtY=">
+        <field:input field="configKey" id="c_adschool_domain_ConfigInscription_configKey" render="false" z="user-managed"/>
+        <field:select field="anneeScolaire" id="c_adschool_domain_ConfigInscription_anneeScolaire" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="CVO4vdfRuT5gTIZeMnt6mrNcdZE="/>
+        <field:select field="classe" id="c_adschool_domain_ConfigInscription_classe" itemLabel="nomAbreger" itemValue="id" items="${classes}" path="/classes" z="user-managed"/>
+        <field:input field="montant" id="c_adschool_domain_ConfigInscription_montant" validationMessageCode="field_invalid_integer" z="jrRuTLho+x24MMV6pdva35irfT0="/>
+        <field:datetime dateTimePattern="${configInscription_datelimitepaiement_date_format}" field="dateLimitePaiement" id="c_adschool_domain_ConfigInscription_dateLimitePaiement" z="MoJ1Ecda0y1uP9ASn8MRygA7SsM="/>
+        <field:select field="regime" id="c_adschool_domain_ConfigInscription_regime" itemLabel="libelle" itemValue="id" items="${regimes}" path="/regimes" z="user-managed"/>
+        <field:select field="etablissement" id="c_adschool_domain_ConfigInscription_etablissement" itemLabel="nomEtablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="user-managed"/>
+        <field:checkbox field="appied_others" id="c_adschool_domain_ConfigInscription_appied_others" z="nY6RGWJ2K5AXSaORuTLe0L9xbS8="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_ConfigInscription" render="${not empty dependencies}" z="29VBPv2qKo4ASmma/QfYixyzISw="/>
+</div>

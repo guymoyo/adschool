@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_FootPrint" object="${footprint}" path="/footprints" z="kdIKfr+ssAcmyIiv1hRUyTCDy1Q=">
+        <field:display field="bussinessName" id="s_adschool_domain_FootPrint_bussinessName" object="${footprint}" z="d43+SCNT9GyZwCvdFltfcPfxJwU="/>
+        <field:display field="bussinessKey" id="s_adschool_domain_FootPrint_bussinessKey" object="${footprint}" z="3pos/HBw5jCXINfmJy1387365sM="/>
+        <field:display field="createBy" id="s_adschool_domain_FootPrint_createBy" object="${footprint}" z="OCR+CxPupNo6zCdq8craxOQi/9E="/>
+        <field:display date="true" dateTimePattern="${footPrint_creele_date_format}" field="creeLe" id="s_adschool_domain_FootPrint_creeLe" object="${footprint}" z="3SE5OnPb2XG1tiERiXpvgMpPug0="/>
+        <field:display field="updateBy" id="s_adschool_domain_FootPrint_updateBy" object="${footprint}" z="wHC/JqBdKlSB5WCZJqlNLoYorwc="/>
+        <field:display date="true" dateTimePattern="${footPrint_updatele_date_format}" field="updateLe" id="s_adschool_domain_FootPrint_updateLe" object="${footprint}" z="qdKY+6zBJa84O4aoUgZAepb5yqs="/>
+        <field:display field="details" id="s_adschool_domain_FootPrint_details" object="${footprint}" z="rQJTEYayXBCcPyid0gUaEyuiwrY="/>
+    </page:show>
+</div>

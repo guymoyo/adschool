@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Cycles" items="${cycleses}" z="M7bVT7NopEGOwQk+Qy3Q4qPKhAQ=">
+        <table:table data="${cycleses}" id="l_adschool_domain_Cycles" path="/cycleses" z="kq3HglhFjPC+S5/UsHA8Kzt3vT8=">
+            <table:column id="c_adschool_domain_Cycles_cycleKey" property="cycleKey" z="t+1g6HZAarJsLP4JfFsu+l4DiEY="/>
+            <table:column id="c_adschool_domain_Cycles_libelle" property="libelle" z="c+R9TtVeQGz2XP+cSLEH0AoqT/o="/>
+            <table:column id="c_adschool_domain_Cycles_duree" property="duree" z="CLmIJhIRPQScjhkJH9a1kZh2c7Q="/>
+        </table:table>
+    </page:list>
+</div>

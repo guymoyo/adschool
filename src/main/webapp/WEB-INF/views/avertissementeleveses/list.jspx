@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_AvertissementEleves" items="${avertissementeleveses}" z="MArZq2+yLWoICA4ZpvP80kQ9yYM=">
+        <table:table data="${avertissementeleveses}" id="l_adschool_domain_AvertissementEleves" path="/avertissementeleveses" z="zALaM7w+BGsyWuqEU909rcztwbQ=">
+            <table:column id="c_adschool_domain_AvertissementEleves_avertKey" property="avertKey" z="FLg40ljvaioUZBAFwcJ8St2mnrY="/>
+            <table:column id="c_adschool_domain_AvertissementEleves_evaluation" property="evaluation" z="2J5gWl0FKCKPdkRlFyvWTFV8l9w="/>
+            <table:column id="c_adschool_domain_AvertissementEleves_inscriptionEleve" property="inscriptionEleve" z="WyUSiivxh/8LTUALaWmGSseM9P0="/>
+            <table:column date="true" dateTimePattern="${avertissementEleves_dateavertissement_date_format}" id="c_adschool_domain_AvertissementEleves_dateAvertissement" property="dateAvertissement" z="YFpC+sPSzJxids7dj+qcXDOcH+I="/>
+            <table:column date="true" dateTimePattern="${avertissementEleves_datesaisie_date_format}" id="c_adschool_domain_AvertissementEleves_dateSaisie" property="dateSaisie" z="sOMUaTzBmIBdQkGzHH5MbPjD79o="/>
+            <table:column id="c_adschool_domain_AvertissementEleves_duree" property="duree" z="z2X0MNsWFYBpZHwNPUMB2BtNhGg="/>
+        </table:table>
+    </page:list>
+</div>

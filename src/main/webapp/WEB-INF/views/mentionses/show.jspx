@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Mentions" object="${mentions}" path="/mentionses" z="2yIpB9e2GRPQX59WTy4DIUkSpSE=">
+        <field:display field="mentionKey" id="s_adschool_domain_Mentions_mentionKey" object="${mentions}" z="UF6nMUdGy8fjvVQxtsrV/6DdPT4="/>
+        <field:display field="intitule" id="s_adschool_domain_Mentions_intitule" object="${mentions}" z="07HjUUBHV7Np0k4yIn9y5G3mxfM="/>
+        <field:display field="valueMin" id="s_adschool_domain_Mentions_valueMin" object="${mentions}" z="AkE8iPKqibb3ef0sby4ojOtCQBM="/>
+        <field:display field="valueMax" id="s_adschool_domain_Mentions_valueMax" object="${mentions}" z="CQgI9gL3rbltRFF12s7s7p4vRKI="/>
+    </page:show>
+</div>

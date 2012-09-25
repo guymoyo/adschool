@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show create="false" delete="false" id="ps_adschool_domain_PensionEleves" list="false" object="${pensioneleves}" path="/pensioneleveses" update="false" z="user-managed">
+        <field:display field="pensionKey" id="s_adschool_domain_PensionEleves_pensionKey" object="${pensioneleves}" z="WkJz8AiT0vODLqDjiFXL+5OWHuk="/>
+        <field:display field="inscriptionEleve" id="s_adschool_domain_PensionEleves_inscriptionEleve" object="${pensioneleves}" z="Wk37XvreqfN91YKwOSGuYrGtziw="/>
+        <field:display field="tranche" id="s_adschool_domain_PensionEleves_tranche" object="${pensioneleves}" z="l0be1CsCVR1Z+wSNNg10r9ERTME="/>
+        <field:display date="true" dateTimePattern="${pensionEleves_datelimitepaiement_date_format}" field="dateLimitePaiement" id="s_adschool_domain_PensionEleves_dateLimitePaiement" object="${pensioneleves}" z="Aladrgwi/DFdCsmvSqHlHG8D4cg="/>
+        <field:display field="annee" id="s_adschool_domain_PensionEleves_annee" object="${pensioneleves}" z="+s1vAOUepEbVqHtHOQQh/kS6A2A="/>
+        <field:display field="classe" id="s_adschool_domain_PensionEleves_classe" object="${pensioneleves}" z="yWuhGHFEL32/LX71Zk8+mZj4X7U="/>
+        <field:display field="montant" id="s_adschool_domain_PensionEleves_montant" object="${pensioneleves}" z="5AbP+KdereBULnwLBMeHYnaSvU4="/>
+        <field:display field="reduction" id="s_adschool_domain_PensionEleves_reduction" object="${pensioneleves}" z="ZsWWmpfe3tusPurj7ZmmIUr2AeQ="/>
+        <field:display field="avance" id="s_adschool_domain_PensionEleves_avance" object="${pensioneleves}" z="1yjf3nroiZcsvFtEgHd/PkB+MTA="/>
+        <field:display field="solder" id="s_adschool_domain_PensionEleves_solder" object="${pensioneleves}" z="+3JDTTq78iPA7n2oio2ZqysWS/o="/>
+        <field:display field="regime" id="s_adschool_domain_PensionEleves_regime" object="${pensioneleves}" z="ChWeVQNJfhzJ2AeRv0y3hTAsy70="/>
+        <field:display field="eleve" id="s_adschool_domain_PensionEleves_eleve" object="${pensioneleves}" z="qUEBJhyUjQXwdOKjHQgbr3GlceU="/>
+        <field:display field="netAPayer" id="s_adschool_domain_PensionEleves_netAPayer" object="${pensioneleves}" z="6u907JoNXdwy60DlxkhG/RgQ+Nk="/>
+    </page:show>
+</div>

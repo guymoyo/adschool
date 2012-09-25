@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <c:if test="${not empty apMessage}">
+        <hr/>
+        <center>
+            <p class="appMessage" style="color: green; margin-bottom: 3px;">${apMessage}</p>
+        </center>
+        <hr/>
+    </c:if>
+    <form:create id="fc_adschool_domain_AnneeScolaire" modelAttribute="anneeScolaire" path="/anneescolaires" render="${empty dependencies}" z="Pl2frH8rJ8K3OWKj759K5PSJHm4=">
+        <field:input field="state" id="c_adschool_domain_AnneeScolaire_state" render="false" z="user-managed"/>
+        <field:input field="anneeKey" id="c_adschool_domain_AnneeScolaire_anneeKey" render="false" z="user-managed"/>
+        <field:input field="libelle" id="c_adschool_domain_AnneeScolaire_libelle" z="+HCkr6JJsVuTCs+knpa4bhcTD/s="/>
+        <field:datetime dateTimePattern="${anneeScolaire_datedebut_date_format}" field="datedebut" id="c_adschool_domain_AnneeScolaire_datedebut" z="iHM1EMs216NN0h9AHwZ+OaMWWVs="/>
+        <field:datetime dateTimePattern="${anneeScolaire_datefin_date_format}" field="datefin" id="c_adschool_domain_AnneeScolaire_datefin" z="xZwBovhWUzvaSMnq7dKJT+LM+Jk="/>
+        <field:input field="objectif" id="c_adschool_domain_AnneeScolaire_objectif" z="+KSF+2CFPjeH8YG7S0x4kS3BxFo="/>
+        <field:checkbox field="actif" id="c_adschool_domain_AnneeScolaire_actif" z="xArusrvNqbSgEwEJgrAqIR9mPEY="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_AnneeScolaire" render="${not empty dependencies}" z="CFz3HPhEo1ZE6cP0ympvhj4KH1w="/>
+</div>

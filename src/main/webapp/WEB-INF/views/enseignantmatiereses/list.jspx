@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_EnseignantMatieres" items="${enseignantmatiereses}" z="reandGZeHqAyxzq8lDEJjkCsNbE=">
+        <table:table data="${enseignantmatiereses}" id="l_adschool_domain_EnseignantMatieres" path="/enseignantmatiereses" z="wB+lWCeDbVww6WYqnvF3IPBG7NA=">
+            <table:column id="c_adschool_domain_EnseignantMatieres_enseignant" property="enseignant" z="QNGOEwvJMzR5+9viaigTRJgLNh0="/>
+            <table:column id="c_adschool_domain_EnseignantMatieres_matiere" property="matiere" z="BmwjeQBHiOafK/k2tAvUDnqfARc="/>
+            <table:column id="c_adschool_domain_EnseignantMatieres_annee" property="annee" z="eowlGnHCegXuA7lsESWo3buTtrg="/>
+            <table:column id="c_adschool_domain_EnseignantMatieres_valueKey" property="valueKey" z="pJ6IRKDGcEDC3fNJXflTX1hxg0E="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Pays" object="${pays}" path="/payses" z="Xmp3XVrYROf8PDYftC3pPTdMI+w=">
+        <field:display field="libelle" id="s_adschool_domain_Pays_libelle" object="${pays}" z="kh+V3XD0XADI0Ob6j27m257sGnE="/>
+        <field:display field="paysKey" id="s_adschool_domain_Pays_paysKey" object="${pays}" z="e2/Aj6Z4hV7HnWapbMmnmBMRoRM="/>
+    </page:show>
+</div>

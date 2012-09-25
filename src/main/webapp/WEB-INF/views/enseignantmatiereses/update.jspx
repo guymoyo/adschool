@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_adschool_domain_EnseignantMatieres" modelAttribute="enseignantMatieres" path="/enseignantmatiereses" versionField="Version" z="KFYWftYXviJSfcC6JN4iVd1/a0I=">
+        <field:select field="enseignant" id="c_adschool_domain_EnseignantMatieres_enseignant" itemValue="id" items="${enseignants}" path="/enseignants" z="gt14hRm6JSd2F40bJ2+SDfWmKDk="/>
+        <field:select field="matiere" id="c_adschool_domain_EnseignantMatieres_matiere" itemValue="id" items="${matieres}" path="/matieres" z="YRqXfuPasdqUoB0nPyC74K+38mI="/>
+        <field:select field="annee" id="c_adschool_domain_EnseignantMatieres_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="xLq5U1byIsbrkSQIMssD5GXkJX4="/>
+        <field:input field="valueKey" id="c_adschool_domain_EnseignantMatieres_valueKey" z="s6oRMCwA2vZNqkgOe1+lGVXf0oM="/>
+    </form:update>
+</div>

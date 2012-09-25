@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:url value="/classes/copierclasse/${classe.id}?form" var="copier_url"/>
+    <page:show id="ps_adschool_domain_Classe" object="${classe}" path="/classes" z="u5VYgSXvRZf1FRVCiAc0HHoI8fc=">
+        <field:display field="classeKey" id="s_adschool_domain_Classe_classeKey" object="${classe}" z="YLTtjDcHgdtduRXEixvABAyd5do="/>
+        <field:display field="nomClasse" id="s_adschool_domain_Classe_nomClasse" object="${classe}" z="5/+OomXfZx9fRbK0lQ2zcimKBFE="/>
+        <field:display field="nomAbreger" id="s_adschool_domain_Classe_nomAbreger" object="${classe}" z="w40s70JYjY7OFKyU8vuxC+Z1gcc="/>
+        <field:display field="nombreplace" id="s_adschool_domain_Classe_nombreplace" object="${classe}" z="3mc/CyOSmOvAIv1CTYhrWn5cMGQ="/>
+        <field:display field="actif" id="s_adschool_domain_Classe_actif" object="${classe}" z="P65HoJsOhrds2HOyC41WriMccp0="/>
+        <field:display field="cycles" id="s_adschool_domain_Classe_cycles" object="${classe}" z="EJDM11nzk7QSZSKW1VZTfiTO+IM="/>
+        <field:display field="niveau" id="s_adschool_domain_Classe_niveau" object="${classe}" z="YQB4OG0saHNn7gmiga3v+1uZk+Y="/>
+        <field:display field="codeFixe" id="s_adschool_domain_Classe_codeFixe" object="${classe}" z="3WFHJxCJYyVBKopXRMiRfwH9P0I="/>
+        <field:display field="copy_to_matiere" id="s_adschool_domain_Classe_copy_to_matiere" object="${classe}" render="false" z="user-managed"/>
+        <field:display field="filiere" id="s_adschool_domain_Classe_filiere" object="${classe}" z="H3pRKfsDgyGNtP3iH7rOYeqDdVA="/>
+        <field:display field="etablissement" id="s_adschool_domain_Classe_etablissement" object="${classe}" z="3dfpF0MJLcghYE29PsaUlwY6uuM="/>
+        <field:display field="options" id="s_adschool_domain_Classe_options" object="${classe}" z="pk4KKgKYdM9vl0T0A7018TCoNmU="/>
+    </page:show>
+    <a href="${copier_url}"> Copier Classe</a>
+</div>

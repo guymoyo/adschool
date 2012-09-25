@@ -1,0 +1,866 @@
+<div id="header" xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
+	 xmlns:security="http://www.springframework.org/security/tags"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <jsp:output omit-xml-declaration="yes" />
+  <spring:url var="user" value="/resources/images/usericon.png" />
+  <spring:url var="search" value="/resources/images/search.png" />
+  <spring:url var="dropdown" value="/resources/images/zonebar-downarrow.png" />
+  <spring:url var="logoutimage" value="/resources/images/logout.png" />
+  <spring:url var="home" value="/" />
+  <spring:url var="img" value="/resources/images/logo.png" />
+  <spring:message code="button_home" var="home_label" />
+  <spring:url value="/resources/j_spring_security_logout" var="logout"/>
+  
+  
+ 		<div id="top-bar">
+ 		<a style="text-decoration: none" href="${home}" name="${fn:escapeXml(home_label)}" title="${fn:escapeXml(home_label)}">
+			<img src="${img}" alt="DZone" class="floatleft" />
+		</a>
+			<div id="right-side">
+				<img src="${user}" alt="user icon" style="margin-rigth: 1px;margin-left:1px;" />
+			<c:choose>
+  				<c:when test="${pageContext['request'].userPrincipal != null}">  				 
+		  				<a href="#" title="cliquer pour voir vos Infos" id="userInfos">${pageContext['request'].userPrincipal.name}</a>		      
+  				</c:when>
+  				<c:when test="${pageContext['request'].userPrincipal == null}">
+  					<a href="#" class="first" style="margin-rigth: 1px;margin-left:1px;padding-right: 5px;" >Nom Utilisateur</a>
+  				</c:when>
+  			</c:choose>
+  			
+			<c:choose>
+  				<c:when test="${pageContext['request'].userPrincipal != null}">
+				     <a href="${logout}" style="margin-rigth: 1px;margin-left: 1px;padding-right: 1px;" >Se deconnecter</a> 
+  				</c:when>
+  				<c:otherwise>
+				      <spring:url value="/login" var="login"/>
+				      <a href="${login}" style="margin-rigth: 1px;margin-left: 1px;padding-right: 1px;" >Se Connecter</a> 
+  				</c:otherwise>
+  			</c:choose>	
+				
+				<form id="main-search">
+							<label for="search-field"  id="search-field-label">Search</label>
+							<input type="text" tabindex="1" maxlength="255" id="search-field" class="search" />
+							<input type="image" alt="Search" value="Search" src="${search}" id="search-button" class="search" />  
+				</form>
+			</div>
+		</div>
+		<security:authorize access="isAuthenticated()">
+
+	
+		
+		<div id="zone-bar">
+		
+		<c:if test="${empty configuration}">
+			<c:set value="none" var="configuration" ></c:set>
+		</c:if>
+		<c:if test="${empty economat}">
+			<c:set value="none" var="economat" ></c:set>
+		</c:if>
+		<c:if test="${empty pedagogie}">
+			<c:set value="none" var="pedagogie" ></c:set>
+		</c:if>
+		<c:if test="${empty maintenance}">
+			<c:set value="none" var="maintenance" ></c:set>
+		</c:if>
+		<c:if test="${empty secretariat}">
+			<c:set value="none" var="secretariat" ></c:set>
+		</c:if>
+		
+		<c:if test="${empty securite}">
+			<c:set value="none" var="securite" ></c:set>
+		</c:if>
+		
+		<c:if test="${empty discipline}">
+			<c:set value="none" var="discipline" ></c:set>
+		</c:if>
+		
+		
+		
+		<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION">
+		
+		
+		
+		<!-- ////////////////////////////////////configuration////////////////////////// -->
+			<ul id="confMod" style="display:${configuration};" class="module" >
+				
+				<li>
+					<a href="#"><span>
+						Etablissement
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="etablissements_form_url" value="/etablissements?form" />
+						<spring:url var="etablissements_list_url" value="/etablissements?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${etablissements_form_url}"><spring:message code="global_menu_newe" arguments="etablissement" /></a></li>
+						<li><a href="${etablissements_list_url}"><spring:message code="global_menu_list" arguments="etablissement" /></a></li>
+					</ul>
+				</li>
+				
+				
+				
+					<li>
+					<a href="#"><span>
+						Annee Academique
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="anneescolaires_form_url" value="/anneescolaires?form" />
+						<spring:url var="anneescolaires_list_url" value="/anneescolaires?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${anneescolaires_form_url}"><spring:message code="global_menu_nouvelle" arguments="annee" /></a></li>
+						<li><a href="${anneescolaires_list_url}"><spring:message code="global_menu_list" arguments="annee" /></a></li>
+						
+					</ul>
+				</li>
+				
+				
+				<li>
+					<a href="#"><span>
+						Periodes
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="periodes_form_url" value="/periodes?form" />
+						<spring:url var="periodes_list_url" value="/periodes?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${periodes_form_url}"><spring:message code="global_menu_nouvelle" arguments="periode" /></a></li>
+						<li><a href="${periodes_list_url}"><spring:message code="global_menu_list" arguments="periode" /></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Examens
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="evaluations_form_url" value="/evaluations?form" />
+						<spring:url var="evaluations_list_url" value="/evaluations?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${evaluations_form_url}"><spring:message code="global_menu_newe" arguments="Examen" /></a></li>
+						<li><a href="${evaluations_list_url}"><spring:message code="global_menu_list" arguments="Examen" /></a></li>
+					</ul>
+				</li>
+				
+				
+				<li>
+					<a href="#"><span>
+						Doc Inscriptions
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="docinscription_form_url" value="/docinscriptions?form" />
+						<spring:url var="docinscription_list_url" value="/docinscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<spring:url var="docinscription_findbyclasse_url" value="/docinscriptions?find=ByClasse&amp;form" />
+												
+						<li><a href="${docinscription_form_url}"><spring:message code="global_menu_new2" arguments="doc" text="Affecter Document" /></a></li>
+						<li><a href="${docinscription_list_url}"><spring:message code="global_menu_list2" arguments="doc" text="Lister Documents" /></a></li>
+						<li><a href="${docinscription_findbyclasse_url}"><spring:message code="global_menu_list2" arguments="doc" text="Liste Documents Par Classe" /></a></li>
+						
+						
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><span>
+						Documents
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="i_document_new" value="/documents?form" />
+						<spring:url var="i_document_list" value="/documents?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${i_document_new}"><spring:message code="global_menu_new2" arguments="doc" text="Nouveau Document" /></a></li>
+						<li><a href="${i_document_list}"><spring:message code="global_menu_list2" arguments="doc" text="Liste Documents" /></a></li>
+						
+					</ul>
+				</li>
+				
+			
+				
+				
+				<li>
+					<a href="#"><span>
+						Cycles 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="cycles_form_url" value="/cycleses?form" />
+						<spring:url var="cycles_list_url" value="/cycleses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${cycles_form_url}"><spring:message code="global_menu_new" arguments="cycle" /></a></li>
+						<li><a href="${cycles_list_url}"><spring:message code="global_menu_list" arguments="cycle" /></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Batiments
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="batiment_form_url" value="/batiments?form" />
+						<spring:url var="batiment_list_url" value="/batiments?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${batiment_form_url}"><spring:message code="global_menu_new" arguments="batiment" /></a></li>
+						<li><a href="${batiment_list_url}"><spring:message code="global_menu_list" arguments="batiment" /></a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><span>
+						Salles
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="salles_form_url" value="/salles?form" />
+						<spring:url var="salles_list_url" value="/salles?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${salles_form_url}"><spring:message code="global_menu_nouvelle" arguments="salle" /></a></li>
+						<li><a href="${salles_list_url}"><spring:message code="global_menu_list" arguments="salle" /></a></li>
+						
+					</ul>
+				</li>
+			
+				<li>
+					<a href="#"><span>
+						Regimes
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="regime_form_url" value="/regimes?form" />
+						<spring:url var="regime_list_url" value="/regimes?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${regime_form_url}"><spring:message code="global_menu_new" arguments="regime" /></a></li>
+						<li><a href="${regime_list_url}"><spring:message code="global_menu_list" arguments="regime" /></a></li>
+					</ul>
+				</li>
+	
+		
+				
+		
+		  </ul>	
+		  
+		  </security:authorize>
+			
+	<!-- ////////////////////////////////////////////economat//////////////////////////////// -->		
+	
+	<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION,ROLE_CAISSIER">
+	
+	<ul id="econMod" style="display:${economat};" class="module" >
+	
+	
+	
+				<li>
+					<a href="#"><span>
+						Paiement Pensions 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="paiementpensions_form_url" value="/paiementpensionses?form" />
+						<spring:url var="listing_paiementpensions_form_url" value="/paiementpensionses/listingbyclasse?form" />
+						<spring:url var="paiementpensions_list_url" value="/paiementpensionses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<spring:url var="paiementpensions_find_url" value="/paiementpensionses?find=ByDateVersementBetween&amp;form" />
+						
+						<spring:url var="paiementpensions_find2_url" value="/paiementpensionses?find=ByDateVersementBetweenPdf" />
+			
+						
+						<spring:url var="eleves_solde_url" value="/eleves/listeSoldeEleve?form" />
+						<li><a href="${paiementpensions_find_url}"><spring:message text="Listing Paiements" code="global_menu_list2" arguments="paiement" /></a></li>
+						<li><a href="${paiementpensions_find2_url}"><spring:message text="Imprimer Listing Paiements" code="global_menu_list2" arguments="paiement" /></a></li>
+					
+					<li><a href="${listing_paiementpensions_form_url}"><spring:message text="Listing Paiements/Classe" code="global_menu_list2" arguments="paiement" /></a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Pensions Eleves
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="pensioneleves_list_url" value="/pensioneleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<spring:url var="pensioneleves_list_url2" value="/eleves/getSoldeEtudiant" />
+					
+						<spring:url var="pensioneleves_find_url" value="/pensioneleveses?find=ByPensionKeyLike&amp;form" />
+					
+						<li><a href="${pensioneleves_list_url}"><spring:message text="Liste des Pensions" code="global_menu_list2" arguments="pension" /></a></li>
+						<li><a href="${pensioneleves_find_url}"><spring:message text="Rechercher Pensions" code="global_menu_list2" arguments="pension" /></a></li>
+					
+					
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Inscriptions
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+					
+		
+						<spring:url var="inscriptions_url" value="/inscriptions?form" />
+						
+						<spring:url var="inscriptions_list_url" value="/inscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<spring:url var="inscriptions_find_url" value="/inscriptions?find=ByDateInscriptionBetween&amp;form" />
+						
+						<spring:url var="inscriptions_find_by_code_url" value="/inscriptions?find=ByInscriptionKeyLike&amp;form" />
+						
+						
+						<li><a href="${inscriptions_url}"><spring:message code="global_menu_nouvelle" arguments="inscription" /></a></li>
+						<li><a href="${inscriptions_list_url}"><spring:message code="global_menu_list" arguments="inscription" /></a></li>
+						<li><a href="${inscriptions_find_by_code_url}"><spring:message code="global_menu_list4" text="Rechercher Par Code" arguments="inscription" /></a></li>
+						<li><a href="${inscriptions_find_url}"><spring:message code="global_menu_list4" text="Listing Inscriptions" arguments="inscription" /></a></li>
+						
+						
+					</ul>
+				</li>
+				
+					<li>
+					<a href="#"><span>
+						Pays
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="pays_form_url" value="/payses?form" />
+						<spring:url var="pays_list_url" value="/payses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${pays_form_url}"><spring:message code="global_menu_new" arguments="pays" /></a></li>
+						<li><a href="${pays_list_url}"><spring:message code="global_menu_list" arguments="pays" /></a></li>
+					</ul>
+				</li>
+				
+							
+				<li>
+					<a href="#"><span>
+						Parents
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="parents_form_url" value="/parents?form" />
+						<spring:url var="parents_find_url" value="/parents?find=ByNomPereLikeOrNomMereLike&amp;form" />
+						<spring:url var="parents_list_url" value="/parents?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						
+					
+						
+						<li><a href="${parents_form_url}"><spring:message code="global_menu_new" arguments="parent" /></a></li>
+						<li><a href="${parents_list_url}"><spring:message code="global_menu_list" arguments="parent" /></a></li>
+						
+						<li><a href="${parents_find_url}"><spring:message text="Recherche par Nom" code="global_menu_find10" arguments="parent" /></a></li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Eleves
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="eleves_form_url" value="/eleves?form" />
+						<spring:url var="eleves_list_url2" value="/eleves/list?form" />
+						<spring:url var="eleves_list_url" value="/eleves?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<spring:url var="eleves_find_nom_url" value="/eleves?find=ByNomLike&amp;form" />
+						<spring:url var="eleves_find_matricule_url" value="/eleves?find=ByMatriculeLike&amp;form" />
+						<spring:url var="eleves_find_nom_matricule_url" value="/eleves?find=ByNomOrMatriculeLike&amp;form" />
+						<spring:url var="eleves_insolvables_form_url" value="/eleves?find=ByPension&amp;form" />
+						<li><a href="${eleves_form_url}"><spring:message code="global_menu_newe" arguments="eleve" /></a></li>
+						<li><a href="${eleves_list_url}"><spring:message code="global_menu_list" arguments="eleve" /></a></li>
+						
+						<li><a href="${eleves_find_nom_url}"><spring:message text="Recherche par Nom" code="global_menu_find10" arguments="eleve" /></a></li>
+						<li><a href="${eleves_find_matricule_url}"><spring:message text="Recherche Matricule" code="global_menu_find20" arguments="eleve" /></a></li>
+						
+						<li><a href="${eleves_find_nom_matricule_url}"><spring:message text="Recherche Nom/Matricule" code="global_menu_find20" arguments="eleve" /></a></li>
+						
+						<li><a href="${eleves_insolvables_form_url}"><spring:message text="Recherche Par Solde" code="global_menu_find20" arguments="eleve" /></a></li>
+						
+						
+					</ul>
+				</li>
+				
+				
+		  </ul>
+		  
+		   </security:authorize>
+
+	<!-- /////////////////pedagogie//////////////////////////////// --> 
+
+	<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION,ROLE_CENSEUR">
+	
+	<ul id="pedaMod" style="display:${pedagogie};" class="module" >
+				
+					<li>
+					<a href="#"><span>
+						Mentions 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="mentionses_form_url" value="/mentionses?form" />
+						<spring:url var="mentionses_list_url" value="/mentionses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${mentionses_form_url}"><spring:message code="global_menu_nouvelle" arguments="mention" /></a></li>
+						<li><a href="${mentionses_list_url}"><spring:message code="global_menu_list" arguments="mention" /></a></li>
+					</ul>
+				</li>
+				
+						<li>
+					<a href="#"><span>
+						Diplomes
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="diplome_form_url" value="/diplomes?form" />
+						<spring:url var="diplome_list_url" value="/diplomes?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${diplome_form_url}"><spring:message code="global_menu_new" arguments="diplome" /></a></li>
+						<li><a href="${diplome_list_url}"><spring:message code="global_menu_list" arguments="diplome" /></a></li>
+					</ul>
+				</li>
+				
+					<li>
+					<a href="#"><span>
+						Notes
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="noteses_form_url" value="/noteses?form" />
+						<spring:url var="noteses_list_url" value="/noteses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<spring:url var="saisie_notes_eleve_form_url" value="/noteses/config?form" />
+						<spring:url var="saisie_notes_classe_url" value="/noteses/config2?form" />
+						<spring:url var="import_notes_classe_url" value="/importnotes?form" />
+						
+						
+						<li><a href="${saisie_notes_eleve_form_url}"><spring:message code="global_menu_nouvelle5" text="Saisie Note / Eleve" arguments="note" /></a></li>
+						<li><a href="${saisie_notes_classe_url}"><spring:message code="global_menu_list5" text="Saisie Note / Classe" arguments="note" /></a></li>
+						<li><a href="${import_notes_classe_url}"><spring:message code="global_menu_list6" text="Import Note / Classe" arguments="note" /></a></li>
+						
+						
+						
+					</ul>
+				</li>
+				
+				
+				<li>
+					<a href="#"><span>
+						Enseignants 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="enseignant_form_url" value="/enseignants?form" />
+						<spring:url var="enseignant_list_url" value="/enseignants?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${enseignant_form_url}"><spring:message code="global_menu_newe" arguments="enseig" /></a></li>
+						<li><a href="${enseignant_list_url}"><spring:message code="global_menu_list" arguments="enseignant" /></a></li>
+					</ul>
+				</li>
+				
+					<li>
+					<a href="#"><span>
+						Pointages Enseignants
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="pointageenseignants_form_url" value="/pointageenseignantses?form" />
+						<spring:url var="pointageenseignants_list_url" value="/pointageenseignantses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${pointageenseignants_form_url}"><spring:message code="global_menu_new" arguments="pointage" /></a></li>
+						<li><a href="${pointageenseignants_list_url}"><spring:message code="global_menu_list" arguments="pointage" /></a></li>	
+					</ul>
+				</li>
+				
+				
+				
+				<li>
+					<a href="#"><span>
+						Enseignants UE
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="enseignantmatieres_form_url" value="/enseignantmatiereses?form" />
+						<spring:url var="enseignantmatieres_list_url" value="/enseignantmatiereses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${enseignantmatieres_form_url}"><spring:message code="global_menu_new" arguments="enseig" /></a></li>
+						<li><a href="${enseignantmatieres_list_url}"><spring:message code="global_menu_list" arguments="enseignant" /></a></li>
+					</ul>
+				</li>
+		
+			
+		  </ul>
+	
+	  </security:authorize>
+		 
+		 <!-- /////////////////Maintenance//////////////////////////////// --> 
+		 
+		
+	<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION,ROLE_CENSEUR">
+		 
+	<ul id="mainMod" style="display:${maintenance};" class="module" >
+			
+	
+						<li>
+					<a href="#"><span>
+						Filieres 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="filieres_form_url" value="/filieres?form" />
+						<spring:url var="filieres_list_url" value="/filieres?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${filieres_form_url}"><spring:message code="global_menu_nouvelle" arguments="filiere" /></a></li>
+						<li><a href="${filieres_list_url}"><spring:message code="global_menu_list" arguments="filiere" /></a></li>
+					</ul>
+				</li>
+
+		<li>
+					<a href="#"><span>
+						Specialites 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="i_speciality_new" value="/specialitys?form" />
+						<spring:url var="i_speciality_list" value="/specialitys?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${i_speciality_new}"><spring:message code="global_menu_nouvelle4" arguments="speciality4" text="Nouvelle Specialite" /></a></li>
+						<li><a href="${i_speciality_list}"><spring:message code="global_menu_list2" arguments="speciality2" text="Liste Specialites" /></a></li>
+					</ul>
+				</li>
+				
+				
+					<li>
+					<a href="#"><span>
+						Options 
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="i_options_new" value="/optionses?form" />
+						<spring:url var="i_options_by_specialite" value="//optionses?find=BySpecialite&amp;form" />
+						<spring:url var="i_options_list" value="/optionses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${i_options_new}"><spring:message code="global_menu_nouvelle" arguments="options" /></a></li>
+						<li><a href="${i_options_list}"><spring:message code="global_menu_list" arguments="options" /></a></li>
+						<li><a href="${i_options_by_specialite}"><spring:message code="global_menu_list2" arguments="options2" text="Options par Specialite" /></a></li>
+					
+					
+					</ul>
+				</li>
+
+				
+				
+				<li>
+					<a href="#"><span>
+						Classes
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="classes_form_url" value="/classes?form" />
+						<spring:url var="classes_list_url" value="/classes?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${classes_form_url}"><spring:message code="global_menu_nouvelle" arguments="classe" /></a></li>
+						<li><a href="${classes_list_url}"><spring:message code="global_menu_list" arguments="classe" /></a></li>
+						
+					</ul>
+				</li>
+				
+				
+				<li>
+					<a href="#"><span>
+						Familles U.E
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="famillematieres_form_url" value="/famillematieres?form" />
+						<spring:url var="famillematieres_list_url" value="/famillematieres?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${famillematieres_form_url}"><spring:message code="global_menu_nouvelle" arguments="famille" /></a></li>
+						<li><a href="${famillematieres_list_url}"><spring:message code="global_menu_list" arguments="famille" /></a></li>
+					</ul>
+				</li>
+				
+					<li>
+					<a href="#"><span>
+						Modules
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="groupematieres_form_url" value="/groupematieres?form" />
+						<spring:url var="groupematieres_list_url" value="/groupematieres?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${groupematieres_form_url}"><spring:message code="global_menu_new2" arguments="groupe2" text="Nouveau Module" /></a></li>
+						<li><a href="${groupematieres_list_url}"><spring:message code="global_menu_list2" arguments="groupe2" text="Liste Modules" /></a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><span>
+						Unite Enseignement
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="matieres_form_url" value="/matieres?form" />
+						<spring:url var="matieres_byclasse_url" value="/matieres?find=ByClasse&amp;form" />
+						<spring:url var="matieres_list_url" value="/matieres?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${matieres_form_url}"><spring:message code="global_menu_nouvelle2" arguments="matiere2" text="Nouvelle U.E" /></a></li>
+						<li><a href="${matieres_list_url}"><spring:message code="global_menu_list2" arguments="matiere2" text="Liste des U.E" /></a></li>
+						<li><a href="${matieres_byclasse_url}"><spring:message code="global_menu_list5" text="Liste U.E Par Classe " arguments="matiere" /></a></li>
+						
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><span>
+						Occupations Salles
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="i_occupation_new" value="/occupations?form" />
+						<spring:url var="i_occupation_list" value="/occupations?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${i_occupation_new}"><spring:message code="global_menu_nouvelle1" arguments="consigne" text="Nouvelle Occupation" /></a></li>
+						<li><a href="${i_occupation_list}"><spring:message code="global_menu_list1" arguments="consigne" text="Lister Occupations" /></a></li>
+					</ul>
+				</li>
+				
+				
+					
+		  </ul>
+		  
+	 </security:authorize>
+	
+	
+		   
+		   
+		   <!-- ////////////////////////////////////////////DISCIPLINE//////////////////////////////// -->	
+		  	
+		  	<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION">
+		  			  	
+		  	
+	<ul id="disciplineMod" style="display:${discipline}" class="module" >
+		
+				<li>
+					<a href="#"><span>
+						Configurations Pensions
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="configpensions_form_url" value="/configpensions/config?form" />
+						<spring:url var="configpensions_list_url" value="/configpensions?list" />
+						<li><a href="${configpensions_form_url}"><spring:message code="global_menu_nouvelle" arguments="config" /></a></li>
+						<li><a href="${configpensions_list_url}"><spring:message code="global_menu_list" arguments="config" /></a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Configurations Inscription
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="configinscriptions_form_url" value="/configinscriptions/config?form" />
+						<spring:url var="configinscriptions_list_url" value="/configinscriptions?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${configinscriptions_form_url}"><spring:message code="global_menu_nouvelle" arguments="config" /></a></li>
+						<li><a href="${configinscriptions_list_url}"><spring:message code="global_menu_list" arguments="config" /></a></li>
+					</ul>
+				</li>
+	
+				<li>
+					<a href="#"><span>
+						Exclusions Eleves
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="exclusioneleveses_form_url" value="/exclusioneleveses?form" />
+						<spring:url var="exclusioneleveses_list_url" value="/exclusioneleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${exclusioneleveses_form_url}"><spring:message code="global_menu_nouvelle" arguments="exclusion" /></a></li>
+						<li><a href="${exclusioneleveses_list_url}"><spring:message code="global_menu_list" arguments="exclusion" /></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Avertissements
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="avertissementeleveses_form_url" value="/avertissementeleveses?form" />
+						<spring:url var="avertissementeleveses_list_url" value="/avertissementeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${avertissementeleveses_form_url}"><spring:message code="global_menu_newe" arguments="avertissement" /></a></li>
+						<li><a href="${avertissementeleveses_list_url}"><spring:message code="global_menu_list" arguments="avertissement" /></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Absences Eleves
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="absenceeleveses_form_url" value="/absenceeleveses?form" />
+						<spring:url var="absenceeleveses_list_url" value="/absenceeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${absenceeleveses_form_url}"><spring:message code="global_menu_nouvelle" arguments="absence" /></a></li>
+						<li><a href="${absenceeleveses_list_url}"><spring:message code="global_menu_list" arguments="absence" /></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Consignes Eleves
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="consigneeleveses_form_url" value="/consigneeleveses?form" />
+						<spring:url var="consigneeleveses_list_url" value="/consigneeleveses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${consigneeleveses_form_url}"><spring:message code="global_menu_nouvelle" arguments="consigne" /></a></li>
+						<li><a href="${consigneeleveses_list_url}"><spring:message code="global_menu_list" arguments="consigne" /></a></li>
+					</ul>
+				</li>
+				
+			
+		  </ul>
+		  
+		    </security:authorize>
+		
+		   
+		   
+		  
+		  <!-- ////////////////////////////////////////////Securite//////////////////////////////// -->	
+		  	
+		  	<security:authorize ifAnyGranted="ROLE_ADMINISTRATEUR,ROLE_DIRECTION">
+		  	
+	<ul id="secuMod" style="display:${securite}" class="module" >
+				<li>
+					<a href="#"><span>
+						Machines
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="machineses_form_url" value="/machineses?form" />
+						<spring:url var="machineses_list_url" value="/machineses?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						<li><a href="${machineses_form_url}"><spring:message code="global_menu_nouvelle" arguments="machine" /></a></li>
+						<li><a href="${machineses_list_url}"><spring:message code="global_menu_list" arguments="machine" /></a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"><span>
+						Utilisateurs
+						<em >
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url var="users_form_url" value="/adschoolusers?form" />
+						<spring:url var="users_reset_url" value="/passwordresets?form" />
+						
+						<spring:url var="users_list_url" value="/adschoolusers?page=1&amp;size=${empty param.size ? 10 : param.size}" />
+						
+						<li><a href="${users_form_url}"><spring:message text="Creer Un Utilisateur" /></a></li>
+						<li><a href="${users_list_url}"><spring:message text="Lister les Utilisateurs" /></a></li>
+						<li><a href="${users_reset_url}"><spring:message text="Reset PassWord" /></a></li>
+					</ul>
+				</li>
+				
+			
+		  </ul>
+		  
+		 		  
+		    </security:authorize>
+		  
+		  
+<!-- ////////////////////////////////Modules/////////////////////////////////////////////////  -->	
+	
+		<c:choose>
+  				<c:when test="${pageContext['request'].userPrincipal != null}">  		
+  						
+			<ul id="module" >
+				<li style="float: right;margin-right: 40px;" >
+					<a href="#"><span>
+						Modules
+						<em>
+							<img src="${dropdown}" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul >
+						<spring:url value="/home/module" var="module_url" ></spring:url>
+						<li><a href="${module_url}?wchich=configuration" id="conf" class="mod" >CONFIGURATIONS</a></li>
+						<li><a href="${module_url}?wchich=economat" id="econ" class="mod" >ECONOMAT</a></li>
+						<li><a href="${module_url}?wchich=maintenance" id="main" class="mod" >MAINTENANCE</a></li>
+						<li><a href="${module_url}?wchich=pedagogie" id="peda" class="mod" >GESTION ACADEMIQUE</a></li>
+						
+						<li><a href="${module_url}?wchich=discipline" id="disci" class="mod" >DISCIPLINE</a></li>
+						<li><a href="${module_url}?wchich=securite" id="secu" class="mod" >SECURITE</a></li>
+					</ul>
+				</li>
+			</ul>			 
+
+  				</c:when>
+  			
+  			</c:choose>
+		  
+	
+
+		</div>
+		
+		
+		</security:authorize>
+		
+</div> 
+
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+	<!-- HTTP security configurations -->
+    <http auto-config="true" use-expressions="true">
+    	<form-login login-processing-url="/resources/j_spring_security_check" login-page="/login" authentication-failure-url="/login?login_error=t"/>
+        <logout logout-url="/resources/j_spring_security_logout" />
+        
+        <!-- Configure these elements to secure URIs in your application -->
+        <intercept-url pattern="/choices/**" access="hasRole('ROLE_ADMINISTRATEUR')" />
+       
+        <intercept-url pattern="/inscriptions/**" access="hasRole('ROLE_ADMINISTRATEUR')" />
+        
+        <intercept-url pattern="/adschoolusers/**" access="hasRole('ROLE_ADMINISTRATEUR')" />
+        
+        <intercept-url pattern="/passwordresets/**" access="isAuthenticated()" />
+        
+        <intercept-url pattern="/salles/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION','ROLE_AGENT_APPUI')" />
+        
+        <intercept-url pattern="/salles/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION','ROLE_SURVEILLANT')" />
+        
+        <intercept-url pattern="/parents/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION','ROLE_SURVEILLANT')" />
+        
+        <intercept-url pattern="/payses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/filieres/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/enseignants/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/cycleses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/diplomes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/absenceseleveses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/anneeescolaires/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/avertissementeleveses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/consigneeleveses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/batiments/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/classes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        
+        <intercept-url pattern="/diplomes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/docinscriptions/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/classes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/eleves/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/enseignantmatieres/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/matieres/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/machines/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        
+        <intercept-url pattern="/evaluations/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/groupematieres/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/etablissements/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/mentiones/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/footprints/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/configpensions/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/configinscriptions/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        
+        
+        
+        
+        
+        <intercept-url pattern="/famillematieres/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/exclusioneleveses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/enseignantprincipals/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/periodes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/regimes/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/pointageenseignantses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+        <intercept-url pattern="/paiementpensionses/**" access="hasAnyRole('ROLE_ADMINISTRATEUR','ROLE_DIRECTION')" />
+        
+       
+        <intercept-url pattern="/member/**" access="isAuthenticated()" />
+        <intercept-url pattern="/resources/**" access="permitAll" />
+        <intercept-url pattern="/" access="isAuthenticated()" />
+        
+         <intercept-url pattern="/home/module/**" access="isAuthenticated()" />
+        
+        
+    </http>
+
+	<!-- Configure Authentication mechanism -->
+		<authentication-manager>
+	    <authentication-provider  user-service-ref='adSchoolUserDetailsService' >
+	    	<password-encoder base64="false" hash="md5">
+	    		<salt-source system-wide="ace6b4f53"/>
+	    	</password-encoder>
+	    </authentication-provider>
+  	  </authentication-manager>
+	<global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
+
+</beans:beans>

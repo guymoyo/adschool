@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Document" items="${documents}" z="i8erqEDbK451L7y3GB8dET+lsoE=">
+        <table:table data="${documents}" id="l_adschool_domain_Document" path="/documents" z="8S9ehHORlRRBwo/zz/OIhJX6TWE=">
+            <table:column id="c_adschool_domain_Document_documentkey" property="documentkey" z="rVElv8Irm06F++I4LNaUrBgiXeI="/>
+            <table:column id="c_adschool_domain_Document_libelle" property="libelle" z="30EFvCvkWMzTEAA5JpRZhIW6f/0="/>
+            <table:column id="c_adschool_domain_Document_actif" property="actif" z="fzsKJKTNb/WV6SevTBH2Msm0DF0="/>
+        </table:table>
+    </page:list>
+</div>

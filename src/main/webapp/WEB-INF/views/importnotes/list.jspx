@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_ImportNote" items="${importnotes}" z="/GxfdtTBWyENhwbextQwTZiRPps=">
+        <table:table data="${importnotes}" id="l_adschool_domain_ImportNote" path="/importnotes" z="7euClBJ36aXIm8rfCsaFN8m1qWw=">
+            <table:column id="c_adschool_domain_ImportNote_fichier" property="fichier" z="JgPJVpjwb3oOW06cYj/PirOvzL0="/>
+            <table:column id="c_adschool_domain_ImportNote_classe" property="classe" z="EoYDZvrn+DOSv7AeNZaAr1jB6JY="/>
+            <table:column id="c_adschool_domain_ImportNote_matiere" property="matiere" z="4UUokcg7CsStIuFN+hF2Y+yf2lw="/>
+            <table:column id="c_adschool_domain_ImportNote_chemin" property="chemin" z="co4Tg4PHlbMKTjcWR0K5Aflerik="/>
+            <table:column id="c_adschool_domain_ImportNote_evaluation" property="evaluation" z="twxaGyd/HHOA5UVDcR/QjNP46h8="/>
+            <table:column id="c_adschool_domain_ImportNote_etablissement" property="etablissement" z="21E83K5B6bxDWCu+Iq4c9J/zSdg="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <spring:message code="informations_student" var="informations_student"/>
+    <script>  
+   
+    $(function() {
+    	
+    //	alert("Test");
+    	var _matricule_id = "_matricule_id";
+    	hideComponent(_matricule_id);
+     
+    	function hideComponent(args){
+	        if(args == null ){
+	                console.log("returning...");
+	                return ;
+	        }
+	        $("#"+args).attr({disabled:true});
+	        
+    	}
+     
+	});
+    
+ 	</script>
+    <form:update id="fu_adschool_domain_Eleve" modelAttribute="eleve" multipart="true" path="/eleves" versionField="Version" z="user-managed">
+        <fieldset>
+            <LEGEND>${informations_student}</LEGEND>
+            <DIV style="float: left;">
+                <field:image id="${eleve.id}" imagePath="${eleve.pathPhoto}"/>
+            </DIV>
+            <DIV style="float: left; margin-left: 50px;">
+                <field:display field="matricule" id="c_adschool_domain_Eleve_matricule" object="${eleve}" showhidden="true" z="user-managed"/>
+                <field:input field="nom" id="c_adschool_domain_Eleve_nom" z="user-managed"/>
+                <field:input field="prenom" id="c_adschool_domain_Eleve_prenom" z="user-managed"/>
+                <field:input field="lieuNaissance" id="c_adschool_domain_Eleve_lieuNaissance" z="UAQijip96jglbxQq6A4Qg2ew0tc="/>
+                <field:input field="cni" id="c_adschool_domain_Eleve_cni" z="R1EdDFcJO83ea756+pq8abVryKU="/>
+                <field:input field="telephone" id="c_adschool_domain_Eleve_telephone" z="jHGVA9R6ehiTqZxsBMLDBzY/4mQ="/>
+                <field:datetime dateTimePattern="${eleve_datenaissance_date_format}" field="dateNaissance" id="c_adschool_domain_Eleve_dateNaissance" z="4jMb5MvhwK8ZXFP+UVBsuhw7Lgw="/>
+            </DIV>
+            <DIV style="float: left; margin-left: 50px;">
+                <field:select field="nationalite" id="c_adschool_domain_Eleve_nationalite" itemLabel="libelle" itemValue="id" items="${payses}" path="/payses" z="user-managed"/>
+                <field:select field="genre" id="c_adschool_domain_Eleve_genre" items="${genres}" path="genres" z="6Ga95jzREVVEoUsM53TAYJVrMSE="/>
+                <field:input field="boitePostale" id="c_adschool_domain_Eleve_boitePostale" z="Krfi22lHq58oNK4XGUwQUGmZrzw="/>
+                <field:input field="userImage" id="c_adschool_domain_Eleve_userImage" type="file" z="user-managed"/>
+                <field:input field="pathPhoto" id="c_adschool_domain_Eleve_pathPhoto" type="hidden" z="user-managed"/>
+                <field:select field="etablissement" id="c_adschool_domain_Eleve_etablissement" itemLabel="nomEtablissement" itemValue="id" items="${etablissements}" path="/etablissements" z="user-managed"/>
+                <field:select field="parent" id="c_adschool_domain_Eleve_parent" itemLabel="nomPere" itemValue="id" items="${parents}" path="/parents" z="user-managed"/>
+                <field:input field="parentId" id="c_adschool_domain_Eleve_parentId" render="false" validationMessageCode="field_invalid_integer" z="user-managed"/>
+                <field:input field="email" id="c_adschool_domain_Eleve_email" validationMessageCode="field_invalid_email" z="fwoLVJXJXwFGFHVOmfDf4yFu3UI="/>
+                <field:input field="emailExterne" id="c_adschool_domain_Eleve_emailExterne" render="false" validationMessageCode="field_invalid_email" z="user-managed"/>
+                <field:input field="solde" id="c_adschool_domain_Eleve_solde" render="false" z="user-managed"/>
+                <field:input field="password" id="c_adschool_domain_Eleve_password" render="false" z="user-managed"/>
+            </DIV>
+        </fieldset>
+        <field:input field="fullName" id="c_adschool_domain_Eleve_fullName" render="false" z="user-managed"/>
+    </form:update>
+</div>

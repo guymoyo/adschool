@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_adschool_domain_Salle" object="${salle}" path="/salles" z="D0OS6q31XXZvjkaM9ILa9NP8b+M=">
+        <field:display field="salleKey" id="s_adschool_domain_Salle_salleKey" object="${salle}" z="i/Me4rnPlOZVx0ywY0Z2s/2i8ws="/>
+        <field:display field="nomsalle" id="s_adschool_domain_Salle_nomsalle" object="${salle}" z="pcTn2/0qsWQ21Ge1YPx8EGStQ+o="/>
+        <field:display field="nombrePlace" id="s_adschool_domain_Salle_nombrePlace" object="${salle}" z="5qNidvMbSg/Tg3SurcpguYc8F50="/>
+        <field:display field="disponible" id="s_adschool_domain_Salle_disponible" object="${salle}" z="J6Zo3yD7suw8eKmXMZTHHxCH9xY="/>
+        <field:display field="actif" id="s_adschool_domain_Salle_actif" object="${salle}" z="/pZyb1eXMks9/+d9dQf9nEk5ePI="/>
+        <field:display field="longueur" id="s_adschool_domain_Salle_longueur" object="${salle}" z="M4zpTrS/jaVLVGhb/82/w/K23UM="/>
+        <field:display field="largeur" id="s_adschool_domain_Salle_largeur" object="${salle}" z="qY/5mBxlfX0yXNPczRM1D+g+2EE="/>
+        <field:display field="batiment" id="s_adschool_domain_Salle_batiment" object="${salle}" z="Ec626BtIjZPShG/+cl92ux/EJT8="/>
+    </page:show>
+</div>

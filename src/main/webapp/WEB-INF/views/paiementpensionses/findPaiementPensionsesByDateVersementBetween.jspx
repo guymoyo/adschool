@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:find finderName="ByDateVersementBetween" id="ff_adschool_domain_PaiementPensions"  path="/paiementpensionses" z="Qf9CboxsqzdePPyuNLFgLP2caMk=">
+        <field:datetime dateTimePattern="${paiementPensions_mindateversement_date_format}" disableFormBinding="true" field="minDateVersement" id="f_adschool_domain_PaiementPensions_minDateVersement" required="true" z="99pHije6xWWNhcBzXCwtk3AI6+I="/>
+        <field:datetime dateTimePattern="${paiementPensions_maxdateversement_date_format}" disableFormBinding="true" field="maxDateVersement" id="f_adschool_domain_PaiementPensions_maxDateVersement" required="true" z="cQqAsF8yTZJQqY0jbbvTkjz3RXs="/>
+    </form:find>
+</div>

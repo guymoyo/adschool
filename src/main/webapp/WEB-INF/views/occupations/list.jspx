@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_adschool_domain_Occupation" items="${occupations}" z="XU7DTp6Pd+Spn1NjFnEfKAOODAo=">
+        <table:table data="${occupations}" id="l_adschool_domain_Occupation" path="/occupations" z="Q/J3S5NE/G4y1YOCiFXVBFepwOo=">
+            <table:column id="c_adschool_domain_Occupation_occupationKey" property="occupationKey" z="OifrNYGtHqQ6b47+V2WJhAtU5b0="/>
+            <table:column id="c_adschool_domain_Occupation_classe" property="classe" z="h9bW7XCk9jYzDyQ4gzQOnH5eKdc="/>
+            <table:column id="c_adschool_domain_Occupation_salle" property="salle" z="f8AXgIBkEwH8SEBXHEFhZcAXKVw="/>
+            <table:column date="true" dateTimePattern="${occupation_heurestart_date_format}" id="c_adschool_domain_Occupation_heureStart" property="heureStart" z="oqc/NYLDwv0uONPCcWeUD54XZxM="/>
+            <table:column date="true" dateTimePattern="${occupation_heurestop_date_format}" id="c_adschool_domain_Occupation_heureStop" property="heureStop" z="/W/EqxY0iXhlcnoYE1/HZakbKg0="/>
+            <table:column id="c_adschool_domain_Occupation_jour" property="jour" z="P/o6gMQZuHYWKYgFSpzP+W3uqQ4="/>
+        </table:table>
+    </page:list>
+</div>

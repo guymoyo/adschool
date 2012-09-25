@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_adschool_domain_PensionEleves" modelAttribute="pensionEleves" path="/pensioneleveses" render="${empty dependencies}" z="8FzEtlnKpTQ4DyBh77IZ5GF3DW8=">
+        <field:input field="pensionKey" id="c_adschool_domain_PensionEleves_pensionKey" z="+6XGlfG0TkSencbYgTYQql89YpQ="/>
+        <field:select field="inscriptionEleve" id="c_adschool_domain_PensionEleves_inscriptionEleve" itemValue="id" items="${inscriptions}" path="/inscriptions" z="mioZye43J2ZHK8Jo9enFDYpnCdU="/>
+        <field:input field="tranche" id="c_adschool_domain_PensionEleves_tranche" z="2ZS+SIKplZWPgorYtMIMk+D0rIQ="/>
+        <field:datetime dateTimePattern="${pensionEleves_datelimitepaiement_date_format}" field="dateLimitePaiement" id="c_adschool_domain_PensionEleves_dateLimitePaiement" z="C2qtVlsJcHObGwYk3Q1LuczcGv4="/>
+        <field:select field="annee" id="c_adschool_domain_PensionEleves_annee" itemValue="id" items="${anneescolaires}" path="/anneescolaires" z="nlA0pXYVuV4KsEevKM4F9tfJ6rA="/>
+        <field:select field="classe" id="c_adschool_domain_PensionEleves_classe" itemValue="id" items="${classes}" path="/classes" z="GPrWB9QhgtaDSwXHlQtF5y7NuHU="/>
+        <field:input field="montant" id="c_adschool_domain_PensionEleves_montant" z="uKqISIKDfX1/nkATsJhCSiNiwsE="/>
+        <field:input field="reduction" id="c_adschool_domain_PensionEleves_reduction" z="ldzEtbieFed21kJu+8KmceNuXEU="/>
+        <field:input field="avance" id="c_adschool_domain_PensionEleves_avance" z="M4W/lSRZxHU+GJZcFehxDne0wgA="/>
+        <field:checkbox field="solder" id="c_adschool_domain_PensionEleves_solder" z="f6kOqgYYsSBOsyDpl+lIw6VxXpY="/>
+        <field:select field="regime" id="c_adschool_domain_PensionEleves_regime" itemValue="id" items="${regimes}" path="/regimes" z="AodS4oz1kA1TrZz3XpMnlS3yfjk="/>
+        <field:select field="eleve" id="c_adschool_domain_PensionEleves_eleve" itemValue="id" items="${eleves}" path="/eleves" z="Fx2DpR1i45hLgSVH+6Jnc6Sh0pg="/>
+        <field:input field="netAPayer" id="c_adschool_domain_PensionEleves_netAPayer" z="QTeNMZKNHkkYxmopbsbNEEiGxzE="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_adschool_domain_PensionEleves" render="${not empty dependencies}" z="sHAU++ueoW3n1Ae6Gohn6MUYpdc="/>
+</div>
